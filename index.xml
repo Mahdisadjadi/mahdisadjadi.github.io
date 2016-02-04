@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mahdi Sadjadi</title>
-    <link>http://mahdisadjadi.com/</link>
+    <link>mahdisadjadi.github.io/</link>
     <description>Recent content on Mahdi Sadjadi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</managingEditor>
     <webMaster>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</webMaster>
     <lastBuildDate>Tue, 02 Feb 2016 22:10:07 -0700</lastBuildDate>
-    <atom:link href="http://mahdisadjadi.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="mahdisadjadi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>publications</title>
-      <link>http://mahdisadjadi.com/publications/</link>
+      <link>/mahdisadjadi.github.io/publications/</link>
       <pubDate>Tue, 02 Feb 2016 22:10:07 -0700</pubDate>
       <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
-      <guid>http://mahdisadjadi.com/publications/</guid>
+      <guid>/mahdisadjadi.github.io/publications/</guid>
       <description>
 
-&lt;h5 id=&#34;peer-reviewed-journals:480c4de99851329b51acecc000e2e84f&#34;&gt;Peer-reviewed Journals&lt;/h5&gt;
+&lt;h5 id=&#34;peer-reviewed-journals&#34;&gt;Peer-reviewed Journals&lt;/h5&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Theran, Louis, Anthony Nixon, Elissa Ross, Mahdi Sadjadi, Brigitte Servatius,
@@ -27,7 +27,7 @@ and Michael F. Thorpe. &amp;laquo;Anchored boundary conditions for locally isost
 networks.&amp;raquo; Physical Review E 92, no. 5 (2015): 053306. (&lt;a href=&#34;http://arxiv.org/abs/1508.00666&#34;&gt;arXiv:1508.00666&lt;/a&gt;)&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h5 id=&#34;conference-proceedings:480c4de99851329b51acecc000e2e84f&#34;&gt;Conference Proceedings&lt;/h5&gt;
+&lt;h5 id=&#34;conference-proceedings&#34;&gt;Conference Proceedings&lt;/h5&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Sadjadi, Mahdi, and M. F. Thorpe. &amp;laquo;Minimal energy configurations in isostatic
@@ -38,22 +38,22 @@ networks.&amp;raquo; Bulletin of the American Physical Society 60 (2015). (&lt;a
     
     <item>
       <title>research</title>
-      <link>http://mahdisadjadi.com/research/</link>
+      <link>/mahdisadjadi.github.io/research/</link>
       <pubDate>Tue, 02 Feb 2016 22:10:07 -0700</pubDate>
       <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
-      <guid>http://mahdisadjadi.com/research/</guid>
+      <guid>/mahdisadjadi.github.io/research/</guid>
       <description>
 
-&lt;h5 id=&#34;silica-bilayers:42f623b3bad309d5d6619d450af47d40&#34;&gt;Silica bilayers&lt;/h5&gt;
+&lt;h5 id=&#34;silica-bilayers&#34;&gt;Silica bilayers&lt;/h5&gt;
 </description>
     </item>
     
     <item>
       <title>about</title>
-      <link>http://mahdisadjadi.com/about/</link>
+      <link>/mahdisadjadi.github.io/about/</link>
       <pubDate>Sun, 31 Jan 2016 01:29:56 -0700</pubDate>
       <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
-      <guid>http://mahdisadjadi.com/about/</guid>
+      <guid>/mahdisadjadi.github.io/about/</guid>
       <description>&lt;p&gt;Hello! I am &lt;em&gt;Mahdi Sadjadi&lt;/em&gt;, a physics PhD student at
 &lt;a href=&#34;http://asu.edu&#34;&gt;Arizona State University&lt;/a&gt;. I work under &lt;a href=&#34;http://thorpe2.la.asu.edu/thorpe/&#34;&gt;Mike Thorpe&lt;/a&gt;.
 My research is primarily on amorphous materials and rigidity theory.&lt;/p&gt;
