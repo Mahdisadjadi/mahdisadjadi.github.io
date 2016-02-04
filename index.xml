@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mahdi Sadjadi</title>
-    <link>http://mahdisadjadi.github.io/</link>
+    <link>http://mahdisadjadi.com/</link>
     <description>Recent content on Mahdi Sadjadi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</managingEditor>
     <webMaster>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</webMaster>
     <lastBuildDate>Tue, 02 Feb 2016 22:10:07 -0700</lastBuildDate>
-    <atom:link href="http://mahdisadjadi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://mahdisadjadi.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>publications</title>
-      <link>http://mahdisadjadi.github.io/publications/</link>
+      <link>http://mahdisadjadi.com/publications/</link>
       <pubDate>Tue, 02 Feb 2016 22:10:07 -0700</pubDate>
       <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
-      <guid>http://mahdisadjadi.github.io/publications/</guid>
+      <guid>http://mahdisadjadi.com/publications/</guid>
       <description>
 
 &lt;h5 id=&#34;peer-reviewed-journals:480c4de99851329b51acecc000e2e84f&#34;&gt;Peer-reviewed Journals&lt;/h5&gt;
@@ -38,22 +38,22 @@ networks.&amp;raquo; Bulletin of the American Physical Society 60 (2015). (&lt;a
     
     <item>
       <title>research</title>
-      <link>http://mahdisadjadi.github.io/research/</link>
+      <link>http://mahdisadjadi.com/research/</link>
       <pubDate>Tue, 02 Feb 2016 22:10:07 -0700</pubDate>
       <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
-      <guid>http://mahdisadjadi.github.io/research/</guid>
+      <guid>http://mahdisadjadi.com/research/</guid>
       <description>
 
-&lt;h5 id=&#34;silica-bilayers&#34;&gt;Silica bilayers&lt;/h5&gt;
+&lt;h5 id=&#34;silica-bilayers:42f623b3bad309d5d6619d450af47d40&#34;&gt;Silica bilayers&lt;/h5&gt;
 </description>
     </item>
     
     <item>
       <title>about</title>
-      <link>http://mahdisadjadi.github.io/about/</link>
+      <link>http://mahdisadjadi.com/about/</link>
       <pubDate>Sun, 31 Jan 2016 01:29:56 -0700</pubDate>
       <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
-      <guid>http://mahdisadjadi.github.io/about/</guid>
+      <guid>http://mahdisadjadi.com/about/</guid>
       <description>&lt;p&gt;Hello! I am &lt;em&gt;Mahdi Sadjadi&lt;/em&gt;, a physics PhD student at
 &lt;a href=&#34;http://asu.edu&#34;&gt;Arizona State University&lt;/a&gt;. I work under &lt;a href=&#34;http://thorpe2.la.asu.edu/thorpe/&#34;&gt;Mike Thorpe&lt;/a&gt;.
 My research is primarily on amorphous materials and rigidity theory.&lt;/p&gt;
