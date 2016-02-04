@@ -8,8 +8,39 @@
     <language>en-us</language>
     <managingEditor>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</managingEditor>
     <webMaster>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</webMaster>
-    <lastBuildDate>Tue, 02 Feb 2016 22:10:07 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 04 Feb 2016 13:47:02 -0700</lastBuildDate>
     <atom:link href="http://mahdisadjadi.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CV</title>
+      <link>http://mahdisadjadi.com/content/CV/</link>
+      <pubDate>Thu, 04 Feb 2016 13:47:02 -0700</pubDate>
+      <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
+      <guid>http://mahdisadjadi.com/content/CV/</guid>
+      <description>
+
+&lt;h2 id=&#34;mahdi-sadjadi:9050bfbb5830a4cf272651225847860e&#34;&gt;Mahdi Sadjadi&lt;/h2&gt;
+
+&lt;h4 id=&#34;education:9050bfbb5830a4cf272651225847860e&#34;&gt;Education&lt;/h4&gt;
+
+&lt;p&gt;2014-2017 (expected) &lt;br/&gt;
+Ph.D., Physics, Arizona State University. &lt;br/&gt;
+Dissertation:
+Advisor: Michael Thorpe&lt;/p&gt;
+
+&lt;p&gt;2010-2012  University of Tehran.
+M.S., Cosmology, University of Tehran. &lt;br/&gt;
+Dissertation: On the spacetime decomposition &lt;br/&gt;
+Advisor: Mohammad Nouri-Zonoz&lt;/p&gt;
+
+&lt;p&gt;2006-2010 &lt;br/&gt;
+B.S., Physics,  University of Tehran.&lt;/p&gt;
+
+&lt;h4 id=&#34;research-interests:9050bfbb5830a4cf272651225847860e&#34;&gt;Research Interests&lt;/h4&gt;
+
+&lt;p&gt;Amorphous materials, rigidity theory, elasticity.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>publications</title>
@@ -21,18 +52,19 @@
 
 &lt;h5 id=&#34;peer-reviewed-journals&#34;&gt;Peer-reviewed Journals&lt;/h5&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Theran, Louis, Anthony Nixon, Elissa Ross, Mahdi Sadjadi, Brigitte Servatius,
-and Michael F. Thorpe. &amp;laquo;Anchored boundary conditions for locally isostatic
-networks.&amp;raquo; Physical Review E 92, no. 5 (2015): 053306. (&lt;a href=&#34;http://arxiv.org/abs/1508.00666&#34;&gt;arXiv:1508.00666&lt;/a&gt;)&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Anchored boundary conditions for locally isostatic networks&lt;/strong&gt; &lt;br/&gt;
+Louis Theran, Anthony Nixon, Elissa Ross, Mahdi Sadjadi, Brigitte Servatius, Michael Thorpe.&lt;br/&gt;
+Phys. Rev. E 92, 053306 (2015)&lt;br/&gt;
+(&lt;a href=&#34;http://dx.doi.org/10.1103/PhysRevE.92.053306&#34;&gt;DOI&lt;/a&gt; ,
+&lt;a href=&#34;http://arxiv.org/abs/1508.00666&#34;&gt;arXiv:1508.00666&lt;/a&gt;) &lt;br/&gt;
+Featured in &lt;a href=&#34;https://journals.aps.org/pre/kaleidoscope/pre/92/5/053306&#34;&gt;kaleidoscope&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h5 id=&#34;conference-proceedings&#34;&gt;Conference Proceedings&lt;/h5&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Sadjadi, Mahdi, and M. F. Thorpe. &amp;laquo;Minimal energy configurations in isostatic
-networks.&amp;raquo; Bulletin of the American Physical Society 60 (2015). (&lt;a href=&#34;http://meetings.aps.org/Meeting/4CF15/Event/258459&#34;&gt;link&lt;/a&gt;)&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Minimal energy configurations in isostatic networks&lt;/strong&gt; &lt;br/&gt;
+Mahdi Sadjadi, Michael Thorpe &lt;br/&gt;
+Bulletin of the American Physical Society 60 (2015) &lt;br/&gt;
+(&lt;a href=&#34;http://meetings.aps.org/Meeting/4CF15/Event/258459&#34;&gt;link&lt;/a&gt;)&lt;/p&gt;
 </description>
     </item>
     
