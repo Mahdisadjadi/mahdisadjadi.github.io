@@ -636,7 +636,7 @@ html {
     font-size: 62.5%
 }
 body {
-    font-size: 1.2rem
+    font-size: 1.4rem
 }
 .h1-like,
 .h2-like,
@@ -885,14 +885,12 @@ progress {
         display: block
     }
 }
-@media only screen and (min-width:960px) {
+@media only screen and (min-width: 960px) {
     .main_wrapper.has-sidebar {
-        padding-left: 300px
-         /* it was 320 */
+        padding-left: 320px
     }
     .main_wrapper.has-sidebar .main_header {
-        width: 300px
-        /* it was 320 */
+        width: 320px
     }
 }
 @media only screen and (min-width: 640px) {
