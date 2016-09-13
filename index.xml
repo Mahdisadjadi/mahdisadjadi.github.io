@@ -25,7 +25,7 @@
 comment
 --&gt;
 
-&lt;p&gt;&lt;strong&gt;2.Ring correlations in random networks&lt;/strong&gt; &lt;br/&gt;
+&lt;p&gt;&lt;strong&gt;2. Ring correlations in random networks&lt;/strong&gt; &lt;br/&gt;
 Mahdi Sadjadi, M.F. Thorpe.&lt;br/&gt;
 Submitted (2016)
 (&lt;a href=&#34;https://arxiv.org/abs/1607.06568&#34;&gt;arXiv:1607.06568&lt;/a&gt;) &lt;br/&gt;&lt;/p&gt;
@@ -103,25 +103,27 @@ $$\lim_{d \rightarrow \infty}\eta_c = 2^{-d}$$
 
 &lt;h5 id=&#34;spacetime-or-space-time&#34;&gt;Spacetime or space+time?&lt;/h5&gt;
 
-&lt;p&gt;Relativity theories try to tell us that space and time are not that different.
+&lt;!---
+Relativity theories try to tell us that space and time are not that different.
 They are relative: they depend on how an observer measures them. General relativity
 shows that our universe is made of tangled fabric: spacetime. But we, humans,
 perceive spacetime as space (three dimensional) and time (flowing in one direction).
-Can we find a way to write &lt;code&gt;spacetime = space+time&lt;/code&gt;?
+Can we find a way to write `spacetime = space+time`?
 In my Masters, I worked on a thesis about two methods to decompose spacetime to
-space and time. Since our world has 4 dimensions, there are two possible ways:&lt;/p&gt;
+space and time. Since our world has 4 dimensions, there are two possible ways:
 
 &lt;div&gt;$$4 = 1 + 3 = 3 + 1$$&lt;/div&gt;
 
-&lt;p&gt;Well, of course these are not usual number. &amp;laquo;3+1&amp;raquo; means that you look at all points (3)
-at a specific moment of time (1). &amp;laquo;1+3&amp;raquo; means you follow paths of particles during all times.&lt;/p&gt;
+Well, of course these are not usual number. &#34;3+1&#34; means that you look at all points (3)
+at a specific moment of time (1). &#34;1+3&#34; means you follow paths of particles during all times.
 
-&lt;p&gt;At the end, none of these are better than the other but 1+3 is more interesting since
-it leads to a set of equations similar to Maxwell&amp;rsquo;s equations in Electromagnetism, so
-called &lt;em&gt;Gravitoelectromagnetic&lt;/em&gt;.&lt;/p&gt;
+At the end, none of these are better than the other but 1+3 is more interesting since
+it leads to a set of equations similar to Maxwell&#39;s equations in Electromagnetism, so
+called _Gravitoelectromagnetic_.
 
-&lt;p&gt;References:
-1.&lt;/p&gt;
+References:
+1.
+--&gt;
 </description>
     </item>
     
