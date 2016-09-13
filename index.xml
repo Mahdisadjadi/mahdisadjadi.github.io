@@ -12,6 +12,73 @@
     <atom:link href="http://mahdisadjadi.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Links</title>
+      <link>http://mahdisadjadi.com/softwares/</link>
+      <pubDate>Mon, 12 Sep 2016 22:10:07 -0700</pubDate>
+      <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
+      <guid>http://mahdisadjadi.com/softwares/</guid>
+      <description>
+
+&lt;h1 id=&#34;software&#34;&gt;Software&lt;/h1&gt;
+
+&lt;p&gt;I am tired of finding good codes and keeping lots of tabs open in my browser! So here is the list of software I think are useful but I don&amp;rsquo;t necessarily use them.&lt;/p&gt;
+
+&lt;h3 id=&#34;ann&#34;&gt;ANN&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ANN is a library written in C++, which supports data structures and algorithms for both exact and approximate nearest neighbor searching in arbitrarily high dimensions. In the nearest neighbor problem a set of data points in d-dimensional space is given. These points are preprocessed into a data structure, so that given any query point q, the nearest or generally k nearest points of P to q can be reported efficiently. The distance between two points can be defined in many ways. ANN assumes that distances are measured using any class of distance functions called Minkowski metrics. These include the well known Euclidean distance, Manhattan distance, and max distance.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.cs.umd.edu/~mount/ANN/&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;autograd&#34;&gt;Autograd&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Autograd can automatically differentiate native Python and Numpy code. It can handle a large subset of Python&amp;rsquo;s features, including loops, ifs, recursion and closures, and it can even take derivatives of derivatives of derivatives.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/HIPS/autograd&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dynamo&#34;&gt;Dynamo&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;DynamO is a free and open-source event-driven particle simulator. Event-driven simulation is a fast and analytical technique for particle simulation and is an alternative approach to the more traditional time-stepping approaches (such as those found in Gromacs, Liggghts, and NAMD). DynamO is a reference implementation of many established event-driven models and a research platform for the latest advances in event-driven algorithms.&amp;raquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dynamomd.org/&#34;&gt;Website&lt;/a&gt; |
+&lt;a href=&#34;https://github.com/toastedcrumpets/DynamO&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;eigen&#34;&gt;Eigen&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Eigen is a[n excellent] C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://eigen.tuxfamily.org/index.php?title=Main_Page&#34;&gt;Website&lt;/a&gt; |
+&lt;a href=&#34;https://github.com/toastedcrumpets/DynamO&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;geomtery-algorithms&#34;&gt;Geomtery algorithms&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is not a library in the techinical sense but the purpose of this site is to provide practical geometric algorithms for the software developer. It has explanation
+of algorithms plus C++ code.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://geomalgorithms.com/&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;hoomd-blue&#34;&gt;HOOMD-blue&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;HOOMD-blue is a general-purpose particle simulation toolkit. It scales from a single CPU core to thousands of GPUs.
+You define particle initial conditions and interactions in a high-level python script. Then tell HOOMD-blue how you want to execute the job and it takes care of the rest. Python job scripts give you unlimited flexibility to create custom initialization routines, control simulation parameters, and perform in situ analysis.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://glotzerlab.engin.umich.edu/hoomd-blue/&#34;&gt;Website&lt;/a&gt; |
+&lt;a href=&#34;https://bitbucket.org/glotzer/hoomd-blue&#34;&gt;Bitbucket&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>publications</title>
       <link>http://mahdisadjadi.com/publications/</link>
       <pubDate>Mon, 12 Sep 2016 22:10:07 -0700</pubDate>
@@ -138,73 +205,6 @@ References:
 My research is primarily on amorphous materials and rigidity theory.&lt;/p&gt;
 
 &lt;p&gt;I also enjoy working on data and coding in Python.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://mahdisadjadi.com/softwares/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>sadjadi.seyedmahdi AT gmail DOT com (Mahdi Sadjadi)</author>
-      <guid>http://mahdisadjadi.com/softwares/</guid>
-      <description>
-
-&lt;h1 id=&#34;software&#34;&gt;Software&lt;/h1&gt;
-
-&lt;p&gt;I am tired of finding good codes and keeping lots of tabs open in my browser! So here is the list of software I think are useful but I don&amp;rsquo;t necessarily use them.&lt;/p&gt;
-
-&lt;h3 id=&#34;ann&#34;&gt;ANN&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ANN is a library written in C++, which supports data structures and algorithms for both exact and approximate nearest neighbor searching in arbitrarily high dimensions. In the nearest neighbor problem a set of data points in d-dimensional space is given. These points are preprocessed into a data structure, so that given any query point q, the nearest or generally k nearest points of P to q can be reported efficiently. The distance between two points can be defined in many ways. ANN assumes that distances are measured using any class of distance functions called Minkowski metrics. These include the well known Euclidean distance, Manhattan distance, and max distance.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.cs.umd.edu/~mount/ANN/&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;autograd&#34;&gt;Autograd&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Autograd can automatically differentiate native Python and Numpy code. It can handle a large subset of Python&amp;rsquo;s features, including loops, ifs, recursion and closures, and it can even take derivatives of derivatives of derivatives.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/HIPS/autograd&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;dynamo&#34;&gt;Dynamo&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;DynamO is a free and open-source event-driven particle simulator. Event-driven simulation is a fast and analytical technique for particle simulation and is an alternative approach to the more traditional time-stepping approaches (such as those found in Gromacs, Liggghts, and NAMD). DynamO is a reference implementation of many established event-driven models and a research platform for the latest advances in event-driven algorithms.&amp;raquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dynamomd.org/&#34;&gt;Website&lt;/a&gt; |
-&lt;a href=&#34;https://github.com/toastedcrumpets/DynamO&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;eigen&#34;&gt;Eigen&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Eigen is a[n excellent] C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://eigen.tuxfamily.org/index.php?title=Main_Page&#34;&gt;Website&lt;/a&gt; |
-&lt;a href=&#34;https://github.com/toastedcrumpets/DynamO&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;geomtery-algorithms&#34;&gt;Geomtery algorithms&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;This is not a library in the techinical sense but the purpose of this site is to provide practical geometric algorithms for the software developer. It has explanation
-of algorithms plus C++ code.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://geomalgorithms.com/&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;hoomd-blue&#34;&gt;HOOMD-blue&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;HOOMD-blue is a general-purpose particle simulation toolkit. It scales from a single CPU core to thousands of GPUs.
-You define particle initial conditions and interactions in a high-level python script. Then tell HOOMD-blue how you want to execute the job and it takes care of the rest. Python job scripts give you unlimited flexibility to create custom initialization routines, control simulation parameters, and perform in situ analysis.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://glotzerlab.engin.umich.edu/hoomd-blue/&#34;&gt;Website&lt;/a&gt; |
-&lt;a href=&#34;https://bitbucket.org/glotzer/hoomd-blue&#34;&gt;Bitbucket&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
