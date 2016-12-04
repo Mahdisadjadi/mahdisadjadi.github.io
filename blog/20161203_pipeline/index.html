@@ -606,7 +606,7 @@ Image('./incident_states.png')
 
 <h3 id="incidents-on-map">Incidents on map</h3>
 
-<p>Finally, maybe the most informative plot is the spatial distribution of all incidents. The map shows that spills really happen wherever there is a pipeline. Possibly connecting points will show exatcly where pipelines are placed.The color of points is proportional to the released volume. The lonely red point in the map is an accident in North Dakota (July 2013) with over 865000 released costing more than $20 million.</p>
+<p>Finally, maybe the most informative plot is the spatial distribution of all incidents. The map shows that spills really happen wherever there is a pipeline. Possibly connecting points will show exatcly where pipelines are placed.The color of points is proportional to the released volume. The two large black points are two accidents in North Dakota (July 2013, 865000 gallons, \$20 million) and Michigan (July 2010, 843000 gallons, \$1 billion).</p>
 
 <pre><code class="language-python">datax = [ dict(
         type = 'scattergeo',
@@ -670,6 +670,7 @@ Image('./incident_ditribution.png')
 <li>How long was the response time?</li>
 <li>What are the most vulnerable areas? Is the vulnerability related to their age?</li>
 <li>How does cost depend on the commodity, volume and cost?</li>
+<li>Categorize spills based on the volume and cost because many spills have really small volumes.</li>
 </ul>
 
 <p>I&rsquo;ll be grateful to hear your ideas, comments, and suggestions!</p>
