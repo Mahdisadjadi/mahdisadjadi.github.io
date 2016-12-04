@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project-rsses on Mahdi Sadjadi</title>
-    <link>mahdisadjadi.github.io/project/index.xml</link>
+    <link>http://mahdisadjadi.github.io/project/index.xml</link>
     <description>Recent content in Project-rsses on Mahdi Sadjadi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Cellular materials</title>
-      <link>/mahdisadjadi.github.io/project/cellular_materials/</link>
+      <link>http://mahdisadjadi.github.io/project/cellular_materials/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/mahdisadjadi.github.io/project/cellular_materials/</guid>
+      <guid>http://mahdisadjadi.github.io/project/cellular_materials/</guid>
       <description>&lt;p&gt;You can barely find someone not amazed by honeycombs: a packing of seemingly
 perfect hexagons. Honeycomb is a cellular network. In fact,
 they are many similar structures in nature resembling the honeycomb. Although,
@@ -26,7 +26,7 @@ there are a few cells with 5 neighbors instead of 6.&lt;/p&gt;
 
 &lt;figure &gt;
     &lt;a href=&#34;http://www.newdesignfile.com/post_honeycomb-texture-psd-free_202486/&#34;&gt;
-        &lt;img src=&#34;mahdisadjadi.github.io/img/projects_cellmaterials_01.jpg&#34; /&gt;
+        &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_01.jpg&#34; /&gt;
     &lt;/a&gt;
     
     &lt;figcaption&gt;
@@ -50,7 +50,7 @@ tendency of smaller and larger rings being adjacent is called &amp;ldquo;Aboav-W
 
 &lt;figure &gt;
     &lt;a href=&#34;https://en.wikipedia.org/wiki/File:Order_and_Chaos.tif&#34;&gt;
-        &lt;img src=&#34;mahdisadjadi.github.io/img/projects_cellmaterials_02.jpg&#34; /&gt;
+        &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_02.jpg&#34; /&gt;
     &lt;/a&gt;
     
     &lt;figcaption&gt;
@@ -98,10 +98,10 @@ materials but they also have wide applications. These materials are low density
     
     <item>
       <title>Deep Learning</title>
-      <link>/mahdisadjadi.github.io/project/deep-learning/</link>
+      <link>http://mahdisadjadi.github.io/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/mahdisadjadi.github.io/project/deep-learning/</guid>
+      <guid>http://mahdisadjadi.github.io/project/deep-learning/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -116,10 +116,10 @@ materials but they also have wide applications. These materials are low density
     
     <item>
       <title>External Project</title>
-      <link>/mahdisadjadi.github.io/project/example-external-project/</link>
+      <link>http://mahdisadjadi.github.io/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/mahdisadjadi.github.io/project/example-external-project/</guid>
+      <guid>http://mahdisadjadi.github.io/project/example-external-project/</guid>
       <description></description>
     </item>
     

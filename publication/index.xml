@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publication-rsses on Mahdi Sadjadi</title>
-    <link>mahdisadjadi.github.io/publication/index.xml</link>
+    <link>http://mahdisadjadi.github.io/publication/index.xml</link>
     <description>Recent content in Publication-rsses on Mahdi Sadjadi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,19 +12,19 @@
     
     <item>
       <title>Ring correlations in random networks</title>
-      <link>/mahdisadjadi.github.io/publication/02/</link>
+      <link>http://mahdisadjadi.github.io/publication/02/</link>
       <pubDate>Mon, 14 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/mahdisadjadi.github.io/publication/02/</guid>
+      <guid>http://mahdisadjadi.github.io/publication/02/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Anchored boundary conditions for locally isostatic networks</title>
-      <link>/mahdisadjadi.github.io/publication/01/</link>
+      <link>http://mahdisadjadi.github.io/publication/01/</link>
       <pubDate>Mon, 30 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>/mahdisadjadi.github.io/publication/01/</guid>
+      <guid>http://mahdisadjadi.github.io/publication/01/</guid>
       <description>&lt;p&gt;Feature in &lt;a href=&#34;https://journals.aps.org/pre/kaleidoscope/pre/92/5/053306&#34;&gt;kaleidoscope&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>

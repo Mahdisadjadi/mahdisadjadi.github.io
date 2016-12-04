@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog-rsses on Mahdi Sadjadi</title>
-    <link>mahdisadjadi.github.io/blog/index.xml</link>
+    <link>http://mahdisadjadi.github.io/blog/index.xml</link>
     <description>Recent content in Blog-rsses on Mahdi Sadjadi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Pipelines and oil spills: what data show</title>
-      <link>/mahdisadjadi.github.io/blog/20161203_pipeline/</link>
+      <link>http://mahdisadjadi.github.io/blog/20161203_pipeline/</link>
       <pubDate>Sat, 03 Dec 2016 12:00:00 +0000</pubDate>
       
-      <guid>/mahdisadjadi.github.io/blog/20161203_pipeline/</guid>
+      <guid>http://mahdisadjadi.github.io/blog/20161203_pipeline/</guid>
       <description>
 
 &lt;p&gt;Dakota Access Pipeline is no longer an unfamiliar name. The controversy over the pipeline comes from two opposing views. On the one hand, people are of afraid of (water) pollution. On the contrary, the corporation responsible for the pipeline says it&amp;rsquo;s safe. So the question is clear: Is the pipeline really safe?&lt;/p&gt;
@@ -224,7 +224,7 @@ for ax in axes:
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_6_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_6_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Based on the commodity, the crude oil is the leading commodity that is released. Among 2693 incidents (roughly 1.5 incidents a day) reported from 2010 to October 2016, 1344 incidents involves releasing crude oil followed by refined fluid by 911 incidents. Together they make up ~$\%84$ of the incidents.&lt;/p&gt;
 
@@ -237,7 +237,7 @@ plt.tight_layout()
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_8_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_8_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It is worrying that number of the incidents has been constantly growing. Let&amp;rsquo;s look at the data by year and the reason of spill. Obviously &lt;em&gt;leak&lt;/em&gt; is the leading cause and unfortunately constantly number of the leaks is increasing. I see no reason that this trend  stops at this year. Other causes have more or less the same frequency over these years.&lt;/p&gt;
 
@@ -251,7 +251,7 @@ plt.tight_layout()
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_10_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_10_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;From here on, I will focus on incidents involving crude oil only. The number of such incidents has constantly increased with the exception of 2011. But the volume released in years follows no such pattern. Also, as dataset clearly mentions, part of the released oil can be recovered but it is not reported in the dataset. In 1344 incidents of crude oil, about more than 8.5 million gallons are released.&lt;/p&gt;
 
@@ -383,7 +383,7 @@ for p in axes[1].patches:
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_13_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_13_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;which-states-are-dealing-with-the-incidents&#34;&gt;Which states are dealing with the incidents?&lt;/h3&gt;
 
@@ -402,7 +402,7 @@ plt.show()
 data[&amp;quot;state&amp;quot;].value_counts(sort=True,normalize=True)[0:2].sum()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_16_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_16_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;0.51190476190476186
 &lt;/code&gt;&lt;/pre&gt;
@@ -421,7 +421,7 @@ for p in ax.patches:
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_19_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_19_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;was-water-contaminated&#34;&gt;Was water contaminated?&lt;/h3&gt;
 
@@ -431,7 +431,7 @@ plt.show()
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_22_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_22_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;geographic-distributions&#34;&gt;Geographic distributions&lt;/h2&gt;
 
@@ -482,7 +482,7 @@ fig = dict( data=datax, layout=layout )
 Image(&#39;./incident_states.png&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_27_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_27_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;incidents-on-map&#34;&gt;Incidents on map&lt;/h3&gt;
 
@@ -530,7 +530,7 @@ fig = dict( data=datax, layout=layout )
 Image(&#39;./incident_ditribution.png&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;mahdisadjadi.github.io/img/20161203_pipeline_output_29_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_29_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;conclusion-future-ideas&#34;&gt;Conclusion &amp;amp; future ideas&lt;/h2&gt;
 
