@@ -3,32 +3,52 @@
   
   <url>
     <loc>http://mahdisadjadi.com/</loc>
-    <lastmod>2016-09-12T22:10:07-07:00</lastmod>
+    <lastmod>2016-12-03T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mahdisadjadi.com/blog/20161203_pipeline/</loc>
+    <lastmod>2016-12-03T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mahdisadjadi.com/publication/02/</loc>
+    <lastmod>2016-11-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://mahdisadjadi.com/links/</loc>
-    <lastmod>2016-09-12T22:10:07-07:00</lastmod>
+    <lastmod>2016-10-30T22:10:07-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mahdisadjadi.com/publications/</loc>
-    <lastmod>2016-09-12T22:10:07-07:00</lastmod>
+    <loc>http://mahdisadjadi.com/project/cellular_materials/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mahdisadjadi.com/content/CV/</loc>
-    <lastmod>2016-02-04T13:47:02-07:00</lastmod>
+    <loc>http://mahdisadjadi.com/project/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mahdisadjadi.com/research/</loc>
-    <lastmod>2016-02-02T22:10:07-07:00</lastmod>
+    <loc>http://mahdisadjadi.com/project/example-external-project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mahdisadjadi.com/about/</loc>
-    <lastmod>2016-01-31T01:29:56-07:00</lastmod>
+    <loc>http://mahdisadjadi.com/home/about/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mahdisadjadi.com/publication/01/</loc>
+    <lastmod>2015-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mahdisadjadi.com/home/teaching/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

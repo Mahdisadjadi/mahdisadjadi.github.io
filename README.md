@@ -1,2 +1,0 @@
-# mahdisadjadi.github.io
-webpage

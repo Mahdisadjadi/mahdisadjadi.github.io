@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project-rsses on Mahdi Sadjadi</title>
+    <link>http://mahdisadjadi.com/project/index.xml</link>
+    <description>Recent content in Project-rsses on Mahdi Sadjadi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mahdi Sadjadi</copyright>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cellular materials</title>
+      <link>http://mahdisadjadi.com/project/cellular_materials/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.com/project/cellular_materials/</guid>
+      <description>&lt;p&gt;You can barely find someone not amazed by honeycombs: a packing of seemingly
+perfect hexagons. Honeycomb is a cellular network. In fact,
+they are many similar structures in nature resembling the honeycomb. Although,
+most naturally occurring cellular networks are not as ordered as honeycomb. But
+it&amp;rsquo;s not hard to notice in the image (top left corner), even in honeycomb
+there are a few cells with 5 neighbors instead of 6.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    &lt;a href=&#34;http://www.newdesignfile.com/post_honeycomb-texture-psd-free_202486/&#34;&gt;
+        &lt;img src=&#34;http://mahdisadjadi.com/img/projects_cellmaterials_01.jpg&#34; /&gt;
+    &lt;/a&gt;
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Honeycomb, a cellular material&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Partitioning any surface or volume into closed
+cells results in a &amp;ldquo;cellular network&amp;rdquo;.
+Examples are soap foam, grains, biological tissues, crack networks, ecological
+territories, and Voronoi tessellations. It is amazing how very distinct processes
+lead to cellular networks which are topologically the same. The following image
+shows bubbles as a cellular network where an interface separates order-disorder phases.
+If you look at the disordered phase carefully, you will notice that large bubbles are
+surrounded by small bubbles. This is no accident! This
+tendency of smaller and larger rings being adjacent is called &amp;ldquo;Aboav-Weaire&amp;rdquo; law.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/File:Order_and_Chaos.tif&#34;&gt;
+        &lt;img src=&#34;http://mahdisadjadi.com/img/projects_cellmaterials_02.jpg&#34; /&gt;
+    &lt;/a&gt;
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;A foam with interface order-disorder&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;According to the law, average size of cells $m(n)$ around a cell with $n$ sides is:&lt;/p&gt;
+
+&lt;p&gt;$$
+m(n) = A+\frac{B}{n}
+$$&lt;/p&gt;
+
+&lt;p&gt;$A$ and $B$ are two constants determined for each specific network. This is not
+an exact equation but works very well!&lt;/p&gt;
+
+&lt;p&gt;My interest in cellular networks comes from network glasses. Although in glass science,
+they are often called random network instead of cellular network and cells
+are called &amp;ldquo;rings&amp;rdquo;. Network glasses are very important networks since they
+are microscopic and interactions are vert different from commonly studied random
+networks. But the issue is, rings in bulk glasses (which are 3D) are hard to
+observe or even define uniquely.&lt;/p&gt;
+
+&lt;p&gt;The breakthrough happened only recently. Researchers have been able to image
+a bilayer silica (SiO${}_{2}$) showing, for the very first time, how atoms are arranged to
+make the network of polygons creating the ring structure of the glass.
+Another example of these thin materials is
+amorphous graphene. Although people have studied glasses for years, the issue is
+ their structure is disordered (and there are $~10^{23}$ atoms to image!),
+so experimental methods used in crystallography (like x-ray) can&amp;rsquo;t determine
+the structure uniquely. This leaves a lot of room for &lt;em&gt;scientific&lt;/em&gt; speculations.&lt;/p&gt;
+
+&lt;p&gt;Note how different these materials are, ranging from atomic scale to&lt;/p&gt;
+
+&lt;p&gt;Although my research is mainly concerned with fundamental aspects of cellular
+materials but they also have wide applications. These materials are low density
+(lightweight) and are suitable to make boats, airplane and our bones.&lt;/p&gt;
+
+&lt;p&gt;[1] Sadjadi, Mahdi, and M. F. Thorpe. &amp;ldquo;Ring correlations in random networks.&amp;rdquo; arXiv preprint arXiv:1607.06568 (2016).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>http://mahdisadjadi.com/project/deep-learning/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.com/project/deep-learning/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>http://mahdisadjadi.com/project/example-external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.com/project/example-external-project/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
