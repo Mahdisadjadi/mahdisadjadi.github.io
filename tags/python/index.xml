@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mahdi Sadjadi</title>
+    <link>http://mahdisadjadi.github.io/tags/python/index.xml</link>
+    <description>Recent content on Mahdi Sadjadi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mahdi Sadjadi</copyright>
+    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Pipelines incidents: not as rare!</title>
+      <link>http://mahdisadjadi.github.io/blog/20161203_pipeline/</link>
+      <pubDate>Sat, 03 Dec 2016 12:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/blog/20161203_pipeline/</guid>
+      <description>
+
+&lt;p&gt;Dakota Access Pipeline is no longer an unfamiliar name. The controversy over the pipeline comes from two opposing views. On the one hand, people are of afraid of (water) pollution. On the contrary, the corporation responsible for the pipeline says it&amp;rsquo;s safe. So the question is clear: Is the pipeline really safe?&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s hard to answer this for a not operational pipeline, but we can look at pipeline incidents data to answer if &lt;em&gt;pipelines&lt;/em&gt; are safe. Fortunately, the Pipeline and Hazardous Materials Safety (PHMS) Administration provides data on every single pipeline accidents from 1986 to now. The dataset is rich with a lot of raw data showing all kinds of details about the accidents.&lt;/p&gt;
+
+&lt;p&gt;The analysis of the pipeline data is not unprecedented. The New York Times in 2014, created an interactive map of &lt;a href=&#34;http://www.nytimes.com/interactive/2014/11/23/us/north-dakota-spill-database.html?_r=0&#34;&gt;environmental incidents in North Dakota&lt;/a&gt; from 2006-2014. Back in 2015, &lt;a href=&#34;http://www.scpr.org/news/2015/06/10/52332/santa-barbara-oil-spill-cleanup-costs-reach-69m-3m/&#34;&gt;High Country News&lt;/a&gt; wrote a piece on crude oil spills after an incident in &lt;a href=&#34;http://www.scpr.org/news/2015/06/10/52332/santa-barbara-oil-spill-cleanup-costs-reach-69m-3m/&#34;&gt;Santa Barbara&lt;/a&gt; costing more than $62M at the time. Also after an incident in &lt;a href=&#34;http://insideenergy.org/2015/01/28/in-north-dakota-oilfield-spill-problems-worsen/&#34;&gt;North Dakota&lt;/a&gt;, Inside Energy analyzed &lt;a href=&#34;http://insideenergy.org/2015/01/30/wastewater-spills-in-north-dakota-what-the-data-tell-us/&#34;&gt;wastewater spills in North Dakota&lt;/a&gt;. All these articles emphasize that the spills are not as rare as one might think.&lt;/p&gt;
+
+&lt;p&gt;This post is my take on the pipeline incidents. I&amp;rsquo;m interested in answering these specific questions:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;How common are spills?&lt;/li&gt;
+&lt;li&gt;What is their spatial and temporal distributions?&lt;/li&gt;
+&lt;li&gt;What is their scale regarding volume and cost?&lt;/li&gt;
+&lt;li&gt;What are the main causes of spills?&lt;/li&gt;
+&lt;li&gt;What places have a higher risk?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are tons of other questions to ask, but these are basic questions to understand the problem better. Hopefully, similar studies are done for policy making.&lt;/p&gt;
+
+&lt;h2 id=&#34;dataset-and-technical-details&#34;&gt;Dataset and technical details&lt;/h2&gt;
+
+&lt;p&gt;I am doing the analysis in &lt;code&gt;Python&lt;/code&gt; using its standard libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;numpy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pandas&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;matplotlib&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I also use &lt;code&gt;plotly&lt;/code&gt;, but only for plotting points on the US map. I have customized &lt;code&gt;matplotlib&lt;/code&gt; style using the recommendations of &lt;a href=&#34;http://www.futurile.net/2016/02/27/matplotlib-beautiful-plots-with-style/&#34;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+%matplotlib inline
+plt.style.use(&#39;ggplot&#39;)
+plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;
+plt.rcParams[&#39;font.serif&#39;] = &#39;Helvetica Neue&#39;
+plt.rcParams[&#39;font.monospace&#39;] = &#39;Helvetica Neue&#39;
+plt.rcParams[&#39;font.size&#39;] = 10
+plt.rcParams[&#39;axes.labelsize&#39;] = 10
+plt.rcParams[&#39;axes.labelweight&#39;] = &#39;bold&#39;
+plt.rcParams[&#39;axes.titlesize&#39;] = 12
+plt.rcParams[&#39;xtick.labelsize&#39;] = 10
+plt.rcParams[&#39;ytick.labelsize&#39;] = 10
+plt.rcParams[&#39;legend.fontsize&#39;] = 10
+plt.rcParams[&#39;figure.titlesize&#39;] = 12
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can download the dataset from &lt;a href=&#34;http://www.phmsa.dot.gov/pipeline/library/data-stats/flagged-data-files&#34;&gt;PHMS website&lt;/a&gt; with &lt;code&gt;xlsx&lt;/code&gt; format.  The dataset is broken into different time periods. Here I only focus on the data from 2010-2016 (filename is &lt;code&gt;hl2010toPresent&lt;/code&gt;, converted to &lt;code&gt;CSV&lt;/code&gt; format). Although, many incidents in 2016 are reported yet. This data contains massive details of each incident (having 255 columns for each record shows this!). I only select a few columns and rename them to be more descriptive:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Year&lt;/li&gt;
+&lt;li&gt;Location (longitude and latitude)&lt;/li&gt;
+&lt;li&gt;Commodity type&lt;/li&gt;
+&lt;li&gt;The released volume (in barrels)&lt;/li&gt;
+&lt;li&gt;State&lt;/li&gt;
+&lt;li&gt;Release type&lt;/li&gt;
+&lt;li&gt;Whether water was contaminated&lt;/li&gt;
+&lt;li&gt;Total cost (in 1984 dollars)&lt;/li&gt;
+&lt;li&gt;Cause&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I make a few changes in the dataset to make it more approachable:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The cost comes in 1984 dollar. According to &lt;a href=&#34;http://www.in2013dollars.com/1984-dollars-in-2016?amount=1&#34;&gt;this website&lt;/a&gt;, \$1 in 1984 is equal to \$2.3 in 2016.&lt;/li&gt;
+&lt;li&gt;The released volume is in barrels, so I convert it to gallons which I have a better sense of (1 barrel = 42 US gallons).&lt;/li&gt;
+&lt;li&gt;The commodity names are long, so I make them shorter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;usefulcols=[&amp;quot;LOCAL_DATETIME&amp;quot;,&amp;quot;IYEAR&amp;quot;,&amp;quot;LOCATION_LATITUDE&amp;quot;,&amp;quot;LOCATION_LONGITUDE&amp;quot;,
+            &amp;quot;COMMODITY_RELEASED_TYPE&amp;quot;,&amp;quot;UNINTENTIONAL_RELEASE_BBLS&amp;quot;,&amp;quot;ONSHORE_STATE_ABBREVIATION&amp;quot;,
+            &amp;quot;RELEASE_TYPE&amp;quot;,&amp;quot;WATER_CONTAM_IND&amp;quot;,&amp;quot;TOTAL_COST_IN84&amp;quot;,&amp;quot;CAUSE&amp;quot;]
+dataset = pd.read_csv(&amp;quot;./hl2010toPresent.csv&amp;quot;, usecols = usefulcols)
+
+dataset.columns = [&amp;quot;time&amp;quot;, &amp;quot;year&amp;quot;, &amp;quot;lat&amp;quot;, &amp;quot;long&amp;quot;, &amp;quot;commodity&amp;quot;, &amp;quot;volume&amp;quot;,&amp;quot;state&amp;quot;, &amp;quot;release type&amp;quot;, &amp;quot;water&amp;quot;,&amp;quot;cost&amp;quot;,&amp;quot;cause&amp;quot;]
+
+dataset[&#39;commodity&#39;].unique()
+dataset[&#39;commodity&#39;].replace(
+    {&#39;REFINED AND/OR PETROLEUM PRODUCT (NON-HVL) WHICH IS A LIQUID AT AMBIENT CONDITIONS&#39;:&#39;REFINED LIQUIDS&#39;,
+    &#39;CO2 (CARBON DIOXIDE)&#39;: &#39;CARBON DIOXIDE&#39;,
+    &#39;HVL OR OTHER FLAMMABLE OR TOXIC FLUID WHICH IS A GAS AT AMBIENT CONDITIONS&#39;:&#39;FLAMMABLE GASES&#39;,
+    &#39;BIOFUEL / ALTERNATIVE FUEL(INCLUDING ETHANOL BLENDS)&#39;:&#39;BIOFUEL&#39;
+    }
+    , inplace=True)
+
+# convert to gallons
+dataset[&#39;volume&#39;] = 42 * (dataset[&#39;volume&#39;].astype(int))
+
+# convert to 2016 dollars
+dataset[&#39;cost&#39;] = 2.3 * dataset[&#39;cost&#39;]
+
+dataset.head(5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;year&lt;/th&gt;
+      &lt;th&gt;lat&lt;/th&gt;
+      &lt;th&gt;long&lt;/th&gt;
+      &lt;th&gt;commodity&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;release type&lt;/th&gt;
+      &lt;th&gt;water&lt;/th&gt;
+      &lt;th&gt;cost&lt;/th&gt;
+      &lt;th&gt;cause&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;2/16/10 7:42&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;41.94352&lt;/td&gt;
+      &lt;td&gt;-88.23353&lt;/td&gt;
+      &lt;td&gt;REFINED LIQUIDS&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;IL&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;38379.865371&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;3/1/10 11:50&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;37.10847&lt;/td&gt;
+      &lt;td&gt;-100.80037&lt;/td&gt;
+      &lt;td&gt;CARBON DIOXIDE&lt;/td&gt;
+      &lt;td&gt;84&lt;/td&gt;
+      &lt;td&gt;KS&lt;/td&gt;
+      &lt;td&gt;OTHER&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;4414.659264&lt;/td&gt;
+      &lt;td&gt;OTHER INCIDENT CAUSE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;2/22/10 10:38&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;32.22471&lt;/td&gt;
+      &lt;td&gt;-101.40440&lt;/td&gt;
+      &lt;td&gt;FLAMMABLE GASES&lt;/td&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;33782.834143&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2/19/10 6:50&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;40.60860&lt;/td&gt;
+      &lt;td&gt;-74.23990&lt;/td&gt;
+      &lt;td&gt;REFINED LIQUIDS&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;NJ&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;21507.314365&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2/21/10 12:45&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;31.13284&lt;/td&gt;
+      &lt;td&gt;-101.18974&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;378&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;21991.543373&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;spread-of-spills&#34;&gt;Spread of spills&lt;/h2&gt;
+
+&lt;p&gt;The first plot shows the volume of the released commodities for all incidents in each year. Both plots are exactly the same, except the marker size is representing two different things. On the left plot, the size shows the cost of the spill. Unsurprisingly, the most costly incidents are those with a high volume usually $&amp;gt;10^4$.&lt;/p&gt;
+
+&lt;p&gt;The right panel, on the other hand, offers an alternative and interesting view (and it looks like they are a bunch of earrings!). The size of each point is proportional to the cost of the spill divided by the release volume. This reveals a very interesting trend: The cost per volume is more for small spills! I don&amp;rsquo;t know exactly why but my guess is the actions need to be taken are partly independent of the spill volume (this is up for debate, of course).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, axes = plt.subplots(nrows=1, ncols=2,figsize=(12,6))
+dataset.plot.scatter(x=&amp;quot;year&amp;quot;, y=&amp;quot;volume&amp;quot;,s=dataset.cost/80000,ax=axes[0])
+dataset.plot.scatter(x=&amp;quot;year&amp;quot;, y=&amp;quot;volume&amp;quot;,s=0.04*dataset.cost/dataset.volume,ax=axes[1])
+for ax in axes:
+    ax.get_xaxis().get_major_formatter().set_useOffset(False)
+    ax.set_yscale(&#39;log&#39;)
+    ax.set_xlim([2009,2017])
+    ax.set_ylim([10**0,10**7])
+    ax.set_ylabel(&#39;Volume (Gallons)&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_6_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Based on the commodity, the crude oil is the leading released commodity. Among 2693 incidents (roughly 1.5 incidents a day) reported from 2010 to October 2016, 1344 incidents involve releasing crude oil followed by refined fluid by 911 incidents. Together they make up ~$\%84$ of the incidents.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax = dataset[&amp;quot;commodity&amp;quot;].value_counts(sort=True).plot.barh()
+ax.set_title(&amp;quot;The number of spills by commodity&amp;quot;)
+for p in ax.patches:
+    ax.annotate(&#39;{:.0f}&#39;.format(p.get_width()), (1.1*p.get_x()+p.get_width(), p.get_y()+p.get_height()/3 ))
+ax.set_xlim(0,1500)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_8_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is worrying that number of the incidents has been constantly growing. Let&amp;rsquo;s look at the data by year and the reason of spill. Obviously &lt;em&gt;leak&lt;/em&gt; is the leading cause and unfortunately constantly number of the leaks is increasing. I see no reason that this trend  stops at this year. Other causes have more or less the same frequency over these years.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;release_year = pd.crosstab(dataset[&#39;year&#39;],dataset[&#39;release type&#39;])
+ax = release_year.plot(kind=&#39;bar&#39;, stacked=True, grid=False)
+ax.set_ylabel(&amp;quot;number of incidents&amp;quot;)
+ax.set_xlabel(&amp;quot;year&amp;quot;)
+ax.legend(loc = &#39;upper left&#39;)
+ax.set_ylim(0,700)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_10_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From here on, I will focus on incidents involving crude oil only. The number of such incidents has constantly increased with the exception of 2011. But the released volume follows no such pattern. Also, as dataset clearly mentions, part of the released oil can be recovered but it is not reported in the dataset. In 1344 incidents of crude oil, about more than 8.5 million gallons are released.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;data = dataset[dataset[&amp;quot;commodity&amp;quot;]==&amp;quot;CRUDE OIL&amp;quot;]
+data.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;year&lt;/th&gt;
+      &lt;th&gt;lat&lt;/th&gt;
+      &lt;th&gt;long&lt;/th&gt;
+      &lt;th&gt;commodity&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;release type&lt;/th&gt;
+      &lt;th&gt;water&lt;/th&gt;
+      &lt;th&gt;cost&lt;/th&gt;
+      &lt;th&gt;cause&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;ctime&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2/21/10 12:45&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;31.13284&lt;/td&gt;
+      &lt;td&gt;-101.18974&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;378&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;21991.543373&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-02-21&lt;/td&gt;
+      &lt;td&gt;2/21/10 12:45&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;2/20/10 6:30&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;32.47850&lt;/td&gt;
+      &lt;td&gt;-94.86790&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;336&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;OVERFILL OR OVERFLOW&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;117614.823872&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-02-20&lt;/td&gt;
+      &lt;td&gt;2/20/10 6:30&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt;3/1/10 9:16&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;47.68857&lt;/td&gt;
+      &lt;td&gt;-95.41732&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;126&lt;/td&gt;
+      &lt;td&gt;MN&lt;/td&gt;
+      &lt;td&gt;OVERFILL OR OVERFLOW&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;23997.634976&lt;/td&gt;
+      &lt;td&gt;INCORRECT OPERATION&lt;/td&gt;
+      &lt;td&gt;2010-03-01&lt;/td&gt;
+      &lt;td&gt;3/1/10 9:16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;td&gt;3/1/10 8:10&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;32.48325&lt;/td&gt;
+      &lt;td&gt;-94.83034&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;8316&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;RUPTURE&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;20146.442193&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-03-01&lt;/td&gt;
+      &lt;td&gt;3/1/10 8:10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;1/25/10 11:07&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;29.47000&lt;/td&gt;
+      &lt;td&gt;-90.25444&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;8484&lt;/td&gt;
+      &lt;td&gt;LA&lt;/td&gt;
+      &lt;td&gt;OVERFILL OR OVERFLOW&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;838911.034004&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-01-25&lt;/td&gt;
+      &lt;td&gt;1/25/10 11:07&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, axes = plt.subplots(nrows=1, ncols=2,figsize=(12,6))
+data[&amp;quot;year&amp;quot;].value_counts(sort=False).plot(kind=&#39;bar&#39;,rot=0,ax=axes[0])
+
+axes[0].set_title(&amp;quot;The number of crude oil accidents per year&amp;quot;)
+axes[0].set_ylabel(&amp;quot;number of accidents&amp;quot;)
+axes[0].set_xlabel(&amp;quot;year&amp;quot;)
+for p in axes[0].patches:
+    # write number on the bars
+    axes[0].annotate(&#39;{:.0f}&#39;.format(p.get_height()), (p.get_x() + p.get_width()/8, p.get_height() * 1.005))
+
+(data.groupby([&#39;year&#39;])[&#39;volume&#39;].sum()/(10**6)).plot(kind=&#39;bar&#39;,rot=0,ax=axes[1])
+axes[1].set_title(&amp;quot;The volume of crude oil in million gallons per year&amp;quot;)
+axes[1].set_ylabel(&amp;quot;volume (million gallons)&amp;quot;)
+axes[1].set_xlabel(&amp;quot;year&amp;quot;)
+for p in axes[1].patches:
+    axes[1].annotate(&#39;{:.1f}&#39;.format(p.get_height()), (p.get_x() + p.get_width()/8, p.get_height() * 1.005))
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_13_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;which-states-are-dealing-with-the-incidents&#34;&gt;Which states are dealing with the incidents?&lt;/h3&gt;
+
+&lt;p&gt;Texas by far has the most spills, followed by Oklahoma, California, and Wyoming. In fact, Texas and Oklahoma deal with more than %51 of the accidents. This is not unexpected as according to &lt;a href=&#34;http://www.rrc.state.tx.us/pipeline-safety/&#34;&gt;Railroad Commission of Texas&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Texas has the largest pipeline infrastructure in the nation, with more than 439,771 miles of pipeline representing about &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;6&lt;/sub&gt; of the total pipeline mileage of the entire United States.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax=data[&amp;quot;state&amp;quot;].value_counts(sort=True).plot(kind=&#39;bar&#39;)
+ax.set_title(&amp;quot;The number of crude oil accidents in different states&amp;quot;)
+ax.set_ylabel(&amp;quot;number of accidents&amp;quot;)
+ax.set_xlabel(&amp;quot;state&amp;quot;)
+plt.show()
+# share of the first two states from the incidents
+data[&amp;quot;state&amp;quot;].value_counts(sort=True,normalize=True)[0:2].sum()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_16_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0.51190476190476186
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;what-is-total-money-spent&#34;&gt;What is total money spent?&lt;/h3&gt;
+
+&lt;p&gt;Another factor in pipeline incident is the cost of each incident. Shown in 2016 dollar, look at the alternating pattern of cost from year to year. This is probably because cleaning and fixing the issue takes a long time (maybe about a year?). Also, the companies are supposed to report the data at the end of fixing and cleaning process, so some incidents are not reported completely. The total cost has been $2.16 billion since 2010.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax = (data.groupby([&#39;year&#39;])[&#39;cost&#39;].sum()/10**6).plot(kind=&#39;bar&#39;,rot=0)
+ax.set_title(&amp;quot;The total cost of spills in 2016 dollar&amp;quot;)
+ax.set_ylabel(&amp;quot;million dollar&amp;quot;)
+ax.set_xlabel(&amp;quot;year&amp;quot;)
+for p in ax.patches:
+    ax.annotate(&#39;{:.0f}&#39;.format(p.get_height()), (p.get_x()+ p.get_width()/2, p.get_height() * 0.98),
+                ha=&#39;center&#39;, va=&#39;center&#39;, xytext=(0, 10), textcoords=&#39;offset points&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_19_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;was-water-contaminated&#34;&gt;Was water contaminated?&lt;/h3&gt;
+
+&lt;p&gt;Maybe the most concerning aspect of spills is whether they pollute the water. Fortunately, this is often not the case (in %91 of cases). Although, we don&amp;rsquo;t know if those spills happen close to the water or not. Maybe, we have been lucky that pipelines mostly are not crossing close to the water resources.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;data[&#39;water&#39;].value_counts().plot.bar(title=&amp;quot;Whether water was contaminated or not&amp;quot;,rot=0)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_22_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;geographic-distributions&#34;&gt;Geographic distributions&lt;/h2&gt;
+
+&lt;p&gt;The color intensity represents the number of spills in each states. The color palettes
+on the US map is from &lt;a href=&#34;http://colorbrewer2.org/&#34;&gt;colorbrewer2&lt;/a&gt;. As it was mentioned, Texas is by far the worst state
+in terms of number of incididents.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+from IPython.display import Image
+init_notebook_mode(connected=True)
+import plotly.plotly as py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script&gt;requirejs.config({paths: { &#39;plotly&#39;: [&#39;https://cdn.plot.ly/plotly-latest.min&#39;]},});if(!window.Plotly) {{require([&#39;plotly&#39;],function(plotly) {window.Plotly=plotly;});}}&lt;/script&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.DataFrame(data[&amp;quot;state&amp;quot;].value_counts(sort=True).reset_index())
+df.columns = [&amp;quot;code&amp;quot;,&amp;quot;counts&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;datax = [ dict(
+        type=&#39;choropleth&#39;,
+        autocolorscale = False,
+        colorscale=[[0, &#39;rgb(255,237,160)&#39;],[0.5, &#39;rgb(254,178,76)&#39;],[1, &#39;rgb(240,59,32)&#39;]],
+        locations = df[&amp;quot;code&amp;quot;],
+        z = df[&amp;quot;counts&amp;quot;],
+        locationmode = &#39;USA-states&#39;,
+        marker = dict(line = dict (color = &#39;rgb(0,0,0)&#39;,width = 1,) ),
+        colorbar = dict(title = &amp;quot;&amp;quot;),
+        ) ]
+
+layout = dict(
+        title = &#39;The number of spills from 2010-October 2016&#39;,  
+        geo = dict(
+            scope=&#39;usa&#39;,
+            projection=dict( type=&#39;albers usa&#39; ),
+            showland = True,
+            landcolor = &amp;quot;rgb(229, 229, 229)&amp;quot;,
+            subunitcolor = &amp;quot;rgb(0,5,5)&amp;quot;,
+            countrycolor = &amp;quot;rgb(0,50,5)&amp;quot;,
+            countrywidth = 0.5,
+            subunitwidth = 0.5        
+        ),
+    )
+
+fig = dict( data=datax, layout=layout )
+#iplot( fig, filename=&#39;./d3-cloropleth-map&#39;,) #image=&#39;png&#39;
+#py.image.save_as(fig,&#39;./incident_states.png&#39;)
+Image(&#39;./incident_states.png&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_27_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;incidents-on-map&#34;&gt;Incidents on map&lt;/h3&gt;
+
+&lt;p&gt;Finally, maybe the most informative plot is the spatial distribution of all incidents. The map shows that spills really happen wherever there is a pipeline. Possibly connecting points will show exactly where pipelines are placed. The color of points is proportional to the released volume. The two large black points are two accidents in North Dakota (July 2013, 865000 gallons, \$20 million) and Michigan (July 2010, 843000 gallons, \$1 billion).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;datax = [ dict(
+        type = &#39;scattergeo&#39;,
+        locationmode = &#39;USA-states&#39;,
+        lon = data[&#39;long&#39;],
+        lat = data[&#39;lat&#39;],
+        text = data[&#39;cost&#39;].astype(str),
+        mode = &#39;markers&#39;,
+        hoverinfo = &#39;lon+lat+location&#39;,
+        marker = dict(
+            size = 9,
+            symbol = &#39;circle&#39;,
+            line = dict(width=1,color=&#39;rgba(10, 10, 1)&#39;),
+            opacity = 0.9,
+            reversescale = False,
+            autocolorscale = False,
+            colorscale=[[0, &#39;rgb(255,237,160)&#39;],[0.5, &#39;rgb(254,178,76)&#39;],[1, &#39;rgb(240,59,32)&#39;]],
+            cmin = 0,
+            color = data[&#39;volume&#39;],
+            cmax = data[&#39;volume&#39;].max(),
+            colorbar=dict(title=&amp;quot;Gallons&amp;quot;),
+        ))]
+
+layout = dict(
+        title = &#39;All crude oil incidents from 2010-October 2016&#39;,   
+        geo = dict(
+            scope=&#39;usa&#39;,
+            projection=dict( type=&#39;albers usa&#39; ),
+            showland = True,
+            landcolor = &amp;quot;rgb(229, 229, 229)&amp;quot;,
+            subunitcolor = &amp;quot;rgb(0,5,5)&amp;quot;,
+            countrycolor = &amp;quot;rgb(0,50,5)&amp;quot;,
+            countrywidth = 0.5,
+            subunitwidth = 0.5        
+        ),
+    )
+
+fig = dict( data=datax, layout=layout )
+#iplot( fig, filename=&#39;d3-airports&#39; )
+#py.image.save_as(fig,&#39;./incident_ditribution.png&#39;)
+Image(&#39;./incident_ditribution.png&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_29_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion-future-ideas&#34;&gt;Conclusion &amp;amp; future ideas&lt;/h2&gt;
+
+&lt;p&gt;During the period 2010 to October 2016, more than 8.5 million gallons of crude oil is spilled. The total cost of these spills is well over 2 billion dollars. In one of the worst cases, 843444 gallons was released in Michigan, resulting in a massive 1 billion cost in 2016 dollars and water contamination. In 2016 alone, more than 54 million dollars is the cost of releasing 800000 gallons of crude oil. Although, &lt;a href=&#34;http://www.pipeline101.com/are-pipelines-safe&#34;&gt;it is claimed&lt;/a&gt; that most incidents happen within the facilities not in the public land. Although, confirming this needs further analysis.&lt;/p&gt;
+
+&lt;p&gt;As &lt;a href=&#34;http://www.christopherfjones.com/&#34;&gt;Christofer Jones&lt;/a&gt;, historian of energy at ASU &lt;a href=&#34;http://www.zocalopublicsquare.org/2015/06/11/theres-no-such-thing-as-a-spill-proof-way-to-transport-oil/ideas/nexus/&#34;&gt;points out&lt;/a&gt;: &amp;ldquo;While it’s true that improved technology and regulation have reduced spills significantly—much like flying today is far safer than in the early years of commercial aviation—the fact remains that there exists no such thing as a spill-proof pipeline. Recognizing this historical reality is crucial to crafting future policy.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Whether this is currently a real priority is another question. At the time of writing, there are &lt;a href=&#34;http://phmsa.dot.gov/pipeline/inspections&#34;&gt;188 federal and 340 state inspectors&lt;/a&gt; to inspect &amp;ldquo;2.7 million miles of pipelines, 148 liquefied natural gas plants, and 7,574 hazardous liquid breakout tanks.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;This quick analysis shows different aspects of the pipeline incidents but many aspects of this dataset is unexplored. Some that I can think of are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The number of casualties,&lt;/li&gt;
+&lt;li&gt;Whether the pipeline is underground or on ground ,&lt;/li&gt;
+&lt;li&gt;possible seasonal/temporal patterns in incidents (one might guess winters are the worst seasons!),&lt;/li&gt;
+&lt;li&gt;Whether the spill happened close to the well or far from the pipeline. This is important as some pipelines cross lands close to farming areas and cities.&lt;/li&gt;
+&lt;li&gt;How long was the response time?&lt;/li&gt;
+&lt;li&gt;What are the most vulnerable areas? Is the vulnerability related to their age?&lt;/li&gt;
+&lt;li&gt;How does cost depend on the commodity, volume and cost?&lt;/li&gt;
+&lt;li&gt;Categorizing spills based on the volume and cost because many spills have really small volumes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;ll be grateful to hear your ideas, comments, and suggestions!&lt;/p&gt;
+
+&lt;p&gt;This post is written in Jupyter notebook and is available with the required dataset
+as a &lt;a href=&#34;https://github.com/Mahdisadjadi/pipeline-incidents&#34;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
