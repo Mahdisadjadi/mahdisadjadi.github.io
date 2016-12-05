@@ -208,7 +208,7 @@ dataset.head(5)
 
 &lt;h2 id=&#34;spread-of-spills&#34;&gt;Spread of spills&lt;/h2&gt;
 
-&lt;p&gt;The first plot shows the volume of the released commodities for all incidents in each year. Both plots are exactly the same, except the marker size is representing two different things. On the left plot, the size shows the cost of the spill. Unsurprisingly, the most costly incidents are those with a high volume usually in the range of $&amp;gt;10^4$.&lt;/p&gt;
+&lt;p&gt;The first plot shows the volume of the released commodities for all incidents in each year. Both plots are exactly the same, except the marker size is representing two different things. On the left plot, the size shows the cost of the spill. Unsurprisingly, the most costly incidents are those with a high volume usually $&amp;gt;10^4$.&lt;/p&gt;
 
 &lt;p&gt;The right panel, on the other hand, offers an alternative and interesting view (and it looks like they are a bunch of earrings!). The size of each point is proportional to the cost of the spill divided by the release volume. This reveals a very interesting trend: The cost per volume is more for small spills! I don&amp;rsquo;t know exactly why but my guess is the actions need to be taken are partly independent of the spill volume (this is up for debate, of course).&lt;/p&gt;
 
@@ -226,7 +226,7 @@ plt.show()
 
 &lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_6_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Based on the commodity, the crude oil is the leading commodity that is released. Among 2693 incidents (roughly 1.5 incidents a day) reported from 2010 to October 2016, 1344 incidents involves releasing crude oil followed by refined fluid by 911 incidents. Together they make up ~$\%84$ of the incidents.&lt;/p&gt;
+&lt;p&gt;Based on the commodity, the crude oil is the leading released commodity. Among 2693 incidents (roughly 1.5 incidents a day) reported from 2010 to October 2016, 1344 incidents involve releasing crude oil followed by refined fluid by 911 incidents. Together they make up ~$\%84$ of the incidents.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax = dataset[&amp;quot;commodity&amp;quot;].value_counts(sort=True).plot.barh()
 ax.set_title(&amp;quot;The number of spills by commodity&amp;quot;)
@@ -253,7 +253,7 @@ plt.show()
 
 &lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_10_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;From here on, I will focus on incidents involving crude oil only. The number of such incidents has constantly increased with the exception of 2011. But the volume released in years follows no such pattern. Also, as dataset clearly mentions, part of the released oil can be recovered but it is not reported in the dataset. In 1344 incidents of crude oil, about more than 8.5 million gallons are released.&lt;/p&gt;
+&lt;p&gt;From here on, I will focus on incidents involving crude oil only. The number of such incidents has constantly increased with the exception of 2011. But the released volume follows no such pattern. Also, as dataset clearly mentions, part of the released oil can be recovered but it is not reported in the dataset. In 1344 incidents of crude oil, about more than 8.5 million gallons are released.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;data = dataset[dataset[&amp;quot;commodity&amp;quot;]==&amp;quot;CRUDE OIL&amp;quot;]
 data.head()
@@ -409,7 +409,7 @@ data[&amp;quot;state&amp;quot;].value_counts(sort=True,normalize=True)[0:2].sum(
 
 &lt;h3 id=&#34;what-is-total-money-spent&#34;&gt;What is total money spent?&lt;/h3&gt;
 
-&lt;p&gt;Another factor in pipeline incident is the cost of each incident. Shown in 2016 dollar, look at the alternative pattern of cost from year to year. This is probably because cleaning and fixing the issue takes a long time (maybe about a year?). Also, the companies are supposed to report the data at the end of fixing and cleaning process, so some incidents are not reported completely. The total cost has been $2.16 billion since 2010.&lt;/p&gt;
+&lt;p&gt;Another factor in pipeline incident is the cost of each incident. Shown in 2016 dollar, look at the alternating pattern of cost from year to year. This is probably because cleaning and fixing the issue takes a long time (maybe about a year?). Also, the companies are supposed to report the data at the end of fixing and cleaning process, so some incidents are not reported completely. The total cost has been $2.16 billion since 2010.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax = (data.groupby([&#39;year&#39;])[&#39;cost&#39;].sum()/10**6).plot(kind=&#39;bar&#39;,rot=0)
 ax.set_title(&amp;quot;The total cost of spills in 2016 dollar&amp;quot;)
@@ -486,7 +486,7 @@ Image(&#39;./incident_states.png&#39;)
 
 &lt;h3 id=&#34;incidents-on-map&#34;&gt;Incidents on map&lt;/h3&gt;
 
-&lt;p&gt;Finally, maybe the most informative plot is the spatial distribution of all incidents. The map shows that spills really happen wherever there is a pipeline. Possibly connecting points will show exatcly where pipelines are placed.The color of points is proportional to the released volume. The two large black points are two accidents in North Dakota (July 2013, 865000 gallons, \$20 million) and Michigan (July 2010, 843000 gallons, \$1 billion).&lt;/p&gt;
+&lt;p&gt;Finally, maybe the most informative plot is the spatial distribution of all incidents. The map shows that spills really happen wherever there is a pipeline. Possibly connecting points will show exactly where pipelines are placed. The color of points is proportional to the released volume. The two large black points are two accidents in North Dakota (July 2013, 865000 gallons, \$20 million) and Michigan (July 2010, 843000 gallons, \$1 billion).&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;datax = [ dict(
         type = &#39;scattergeo&#39;,
@@ -534,23 +534,23 @@ Image(&#39;./incident_ditribution.png&#39;)
 
 &lt;h2 id=&#34;conclusion-future-ideas&#34;&gt;Conclusion &amp;amp; future ideas&lt;/h2&gt;
 
-&lt;p&gt;During the period 2010 to October 2016, more than 8.5 million gallons of crude oil is spilled. The total cost of these spills is well over 2 billion dollars. In one of the worst cases, 843444 gallons was released in Michigan, resulting in a massive 1 billion loss in 2016 dollars and water contamination. In 2016 alone, more than 54 million dollars is the cost of releasing 800000 gallons of crude oil. Although, it is claimed that most incidents happen within the facilities not in the public land &lt;a href=&#34;http://www.pipeline101.com/are-pipelines-safe&#34;&gt;pipeline101 claims&lt;/a&gt;. Although, confirming this needs futhur analysis.&lt;/p&gt;
+&lt;p&gt;During the period 2010 to October 2016, more than 8.5 million gallons of crude oil is spilled. The total cost of these spills is well over 2 billion dollars. In one of the worst cases, 843444 gallons was released in Michigan, resulting in a massive 1 billion cost in 2016 dollars and water contamination. In 2016 alone, more than 54 million dollars is the cost of releasing 800000 gallons of crude oil. Although, &lt;a href=&#34;http://www.pipeline101.com/are-pipelines-safe&#34;&gt;it is claimed&lt;/a&gt; that most incidents happen within the facilities not in the public land. Although, confirming this needs further analysis.&lt;/p&gt;
 
 &lt;p&gt;As &lt;a href=&#34;http://www.christopherfjones.com/&#34;&gt;Christofer Jones&lt;/a&gt;, historian of energy at ASU &lt;a href=&#34;http://www.zocalopublicsquare.org/2015/06/11/theres-no-such-thing-as-a-spill-proof-way-to-transport-oil/ideas/nexus/&#34;&gt;points out&lt;/a&gt;: &amp;ldquo;While it’s true that improved technology and regulation have reduced spills significantly—much like flying today is far safer than in the early years of commercial aviation—the fact remains that there exists no such thing as a spill-proof pipeline. Recognizing this historical reality is crucial to crafting future policy.&amp;rdquo;&lt;/p&gt;
 
-&lt;p&gt;Whether this is currently a real priority is another question. At the time that I am writing this rpeort, there are &lt;a href=&#34;http://phmsa.dot.gov/pipeline/inspections&#34;&gt;188 federal and 340 state inspectors&lt;/a&gt; to inspect &amp;ldquo;2.7 million miles of pipelines, 148 liquefied natural gas plants, and 7,574 hazardous liquid breakout tanks.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Whether this is currently a real priority is another question. At the time of writing, there are &lt;a href=&#34;http://phmsa.dot.gov/pipeline/inspections&#34;&gt;188 federal and 340 state inspectors&lt;/a&gt; to inspect &amp;ldquo;2.7 million miles of pipelines, 148 liquefied natural gas plants, and 7,574 hazardous liquid breakout tanks.&amp;rdquo;&lt;/p&gt;
 
 &lt;p&gt;This quick analysis shows different aspects of the pipeline incidents but many aspects of this dataset is unexplored. Some that I can think of are:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;The number of casualties,&lt;/li&gt;
 &lt;li&gt;Whether the pipeline is underground or on ground ,&lt;/li&gt;
-&lt;li&gt;possible seasonal/temporal patterns in incidents (One might guess winters are the worst seasons!),&lt;/li&gt;
+&lt;li&gt;possible seasonal/temporal patterns in incidents (one might guess winters are the worst seasons!),&lt;/li&gt;
 &lt;li&gt;Whether the spill happened close to the well or far from the pipeline. This is important as some pipelines cross lands close to farming areas and cities.&lt;/li&gt;
 &lt;li&gt;How long was the response time?&lt;/li&gt;
 &lt;li&gt;What are the most vulnerable areas? Is the vulnerability related to their age?&lt;/li&gt;
 &lt;li&gt;How does cost depend on the commodity, volume and cost?&lt;/li&gt;
-&lt;li&gt;Categorize spills based on the volume and cost because many spills have really small volumes.&lt;/li&gt;
+&lt;li&gt;Categorizing spills based on the volume and cost because many spills have really small volumes.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I&amp;rsquo;ll be grateful to hear your ideas, comments, and suggestions!&lt;/p&gt;
