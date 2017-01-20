@@ -65,7 +65,7 @@ plt.rcParams[&#39;legend.fontsize&#39;] = 10
 plt.rcParams[&#39;figure.titlesize&#39;] = 12
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;You can download the dataset from &lt;a href=&#34;http://www.phmsa.dot.gov/pipeline/library/data-stats/flagged-data-files&#34;&gt;PHMS website&lt;/a&gt; with &lt;code&gt;xlsx&lt;/code&gt; format.  The dataset is broken into different time periods. Here I only focus on the data from 2010-2016 (filename is &lt;code&gt;hl2010toPresent&lt;/code&gt;, converted to &lt;code&gt;CSV&lt;/code&gt; format). Although, many incidents in 2016 are reported yet. This data contains massive details of each incident (having 255 columns for each record shows this!). I only select a few columns and rename them to be more descriptive:&lt;/p&gt;
+&lt;p&gt;You can download the dataset from &lt;a href=&#34;http://www.phmsa.dot.gov/pipeline/library/data-stats/flagged-data-files&#34;&gt;PHMS website&lt;/a&gt; with &lt;code&gt;xlsx&lt;/code&gt; format.  The dataset is broken into different time periods. Here I only focus on the data from 2010-2016 (filename is &lt;code&gt;hl2010toPresent&lt;/code&gt;, converted to &lt;code&gt;CSV&lt;/code&gt; format). Although, many incidents in 2016 are not reported yet. This data contains massive details of each incident (having 255 columns for each record shows this!). I only select a few columns and rename them to be more descriptive:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Year&lt;/li&gt;
@@ -109,6 +109,8 @@ dataset[&#39;volume&#39;] = 42 * (dataset[&#39;volume&#39;].astype(int))
 # convert to 2016 dollars
 dataset[&#39;cost&#39;] = 2.3 * dataset[&#39;cost&#39;]
 
+# save the cleaned dataset in a new file
+dataset.to_csv(&#39;./hl2010toPresent_cleaned.csv&#39;)
 dataset.head(5)
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -252,7 +254,7 @@ plt.show()
 
 &lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_10_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;From here on, I will focus on incidents involving crude oil only. The number of such incidents has constantly increased with the exception of 2011. But the released volume follows no such pattern. Also, as dataset clearly mentions, part of the released oil can be recovered but it is not reported in the dataset. In 1344 incidents of crude oil, about more than 8.5 million gallons are released.&lt;/p&gt;
+&lt;p&gt;From here on, I will focus on incidents involving crude oil only. The number of such incidents has constantly increased with the exception of 2011. But the released volume follows no such pattern. Also, as dataset clearly mentions, part of the released oil can be recovered but it is not reported in the dataset. In 1344 incidents of crude oil, more than 8.5 million gallons are released.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;data = dataset[dataset[&amp;quot;commodity&amp;quot;]==&amp;quot;CRUDE OIL&amp;quot;]
 data.head()
@@ -386,7 +388,7 @@ plt.show()
 
 &lt;h3 id=&#34;which-states-are-dealing-with-the-incidents&#34;&gt;Which states are dealing with the incidents?&lt;/h3&gt;
 
-&lt;p&gt;Texas by far has the most spills, followed by Oklahoma, California, and Wyoming. In fact, Texas and Oklahoma deal with more than %51 of the accidents. This is not unexpected as according to &lt;a href=&#34;http://www.rrc.state.tx.us/pipeline-safety/&#34;&gt;Railroad Commission of Texas&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Texas by far has the most spills, followed by Oklahoma, California, and Wyoming. In fact, Texas and Oklahoma deal with more than %51 of the incidents. This is not unexpected as according to &lt;a href=&#34;http://www.rrc.state.tx.us/pipeline-safety/&#34;&gt;Railroad Commission of Texas&lt;/a&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Texas has the largest pipeline infrastructure in the nation, with more than 439,771 miles of pipeline representing about &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;6&lt;/sub&gt; of the total pipeline mileage of the entire United States.&lt;/p&gt;
@@ -408,7 +410,7 @@ data[&amp;quot;state&amp;quot;].value_counts(sort=True,normalize=True)[0:2].sum(
 
 &lt;h3 id=&#34;what-is-total-money-spent&#34;&gt;What is total money spent?&lt;/h3&gt;
 
-&lt;p&gt;Another factor in pipeline incident is the cost of each incident. Shown in 2016 dollar, look at the alternating pattern of cost from year to year. This is probably because cleaning and fixing the issue takes a long time (maybe about a year?). Also, the companies are supposed to report the data at the end of fixing and cleaning process, so some incidents are not reported completely. The total cost has been $2.16 billion since 2010.&lt;/p&gt;
+&lt;p&gt;Another factor in a pipeline incident is the cost of each incident. Shown in 2016 dollar, look at the alternating pattern in the cost. This is probably because cleaning and fixing the issue takes a long time (maybe about a year?). Also, the companies are supposed to report the data at the end of fixing and cleaning process, so some incidents are not reported completely. The total reported cost so far has been $2.16 billion since 2010.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax = (data.groupby([&#39;year&#39;])[&#39;cost&#39;].sum()/10**6).plot(kind=&#39;bar&#39;,rot=0)
 ax.set_title(&amp;quot;The total cost of spills in 2016 dollar&amp;quot;)
