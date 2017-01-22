@@ -231,7 +231,7 @@ dataset['volume'] = 42 * (dataset['volume'].astype(int))
 dataset['cost'] = 2.3 * dataset['cost']
 
 # save the cleaned dataset in a new file
-dataset.to_csv('./hl2010toPresent_cleaned.csv')
+dataset.to_csv('./hl2010toPresent_cleaned.csv',index=False)
 dataset.head(5)
 </code></pre>
 
