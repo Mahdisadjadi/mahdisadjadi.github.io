@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mahdi Sadjadi</title>
-    <link>http://mahdisadjadi.github.io/tags/data/index.xml</link>
-    <description>Recent content on Mahdi Sadjadi</description>
+    <title>Data on Mahdi Sadjadi</title>
+    <link>http://mahdisadjadi.github.io/tags/data/</link>
+    <description>Recent content in Data on Mahdi Sadjadi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
-    <atom:link href="/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2016 12:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/data/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Pipelines incidents: not as rare!</title>
