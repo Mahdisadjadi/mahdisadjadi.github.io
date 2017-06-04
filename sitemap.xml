@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/</loc>
+    <lastmod>2017-06-03T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mahdisadjadi.github.io/blog/20161203_pipeline/</loc>
     <lastmod>2016-12-03T12:00:00+00:00</lastmod>
   </url>
@@ -38,7 +43,7 @@
   
   <url>
     <loc>http://mahdisadjadi.github.io/blog/</loc>
-    <lastmod>2016-12-03T12:00:00+00:00</lastmod>
+    <lastmod>2017-06-03T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -49,7 +54,7 @@
   
   <url>
     <loc>http://mahdisadjadi.github.io/tags/data/</loc>
-    <lastmod>2016-12-03T12:00:00+00:00</lastmod>
+    <lastmod>2017-06-03T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -79,13 +84,13 @@
   
   <url>
     <loc>http://mahdisadjadi.github.io/tags/python/</loc>
-    <lastmod>2016-12-03T12:00:00+00:00</lastmod>
+    <lastmod>2017-06-03T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://mahdisadjadi.github.io/tags/</loc>
-    <lastmod>2016-12-03T12:00:00+00:00</lastmod>
+    <lastmod>2017-06-03T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

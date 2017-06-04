@@ -7,8 +7,342 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
-    <lastBuildDate>Sat, 03 Dec 2016 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jun 2017 12:00:00 +0000</lastBuildDate>
     <atom:link href="/blog/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Scrapping Geno 2.0 Next Generation wepage in Python using BeautifulSoup</title>
+      <link>http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/</link>
+      <pubDate>Sat, 03 Jun 2017 12:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/</guid>
+      <description>
+
+&lt;h1 id=&#34;scrapping-geno-2-0-next-generation-webpage-in-python-using-beautifulsoup&#34;&gt;Scrapping Geno 2.0 Next Generation webpage in Python using BeautifulSoup&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.crummy.com/software/BeautifulSoup/&#34;&gt;&lt;code&gt;Beautiful Soup&lt;/code&gt;&lt;/a&gt; is a Python library to search and extract what we need from a document. In this post, I use it to access the data in &lt;code&gt;Geno 2.0 Next Generation&lt;/code&gt; &lt;a href=&#34;https://genographic.nationalgeographic.com/reference-populations-next-gen/&#34;&gt;webpage&lt;/a&gt; for each population. This project contains information of more than 830000 volunteers from 140 countries who have participated in the project. The webpage summarizes the results and shows what is share of various genetic affiliations in each population. Possibly, novel insights is hidden in the data, but first of all we need to have them in a place!&lt;/p&gt;
+
+&lt;p&gt;The overall workflow looks like this:
+1. Identify a source, whether a website url or a locally saved file.
+2. In BeautifulSoup, use a parser to parse HTML source code. The default is &lt;code&gt;html.parser&lt;/code&gt;. Other options include &lt;code&gt;html5lib&lt;/code&gt; library to parse sources written in HTML5, but you have install it separately. see the instructions &lt;a href=&#34;https://pypi.python.org/pypi/html5lib&#34;&gt;here&lt;/a&gt;.
+3. Find HTML elements  such as &lt;code&gt;div&lt;/code&gt; or &lt;code&gt;a&lt;/code&gt; that hold the required data. We can also select elements with certain &lt;code&gt;id&lt;/code&gt; or &lt;code&gt;class&lt;/code&gt;.
+4. Then use commands such as &lt;code&gt;findAll&lt;/code&gt; or &lt;code&gt;find&lt;/code&gt; to find all or an instance of the data, you are looking for.
+5. Possibly do a post-process on the scraped data, to make it in the required format. Here, I collect them in an ordered dictionary to convert the dataset into &lt;code&gt;JSON&lt;/code&gt; file and &lt;code&gt;pandas&lt;/code&gt; dataframe.&lt;/p&gt;
+
+&lt;p&gt;This script uses libraries:
+* &lt;code&gt;BeautifulSoup&lt;/code&gt;: To scrape the webpage
+* &lt;code&gt;Collections&lt;/code&gt;: To hold an ordered list of items in a dictionary
+* &lt;code&gt;json&lt;/code&gt;: To save extracted data in JSON format
+* &lt;code&gt;pandas&lt;/code&gt;: To create a dataframe
+* &lt;code&gt;numpy&lt;/code&gt;: To do numerics&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from bs4 import BeautifulSoup
+from collections import OrderedDict
+import json
+import pandas as pd
+import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;specify-the-source&#34;&gt;Specify the source&lt;/h3&gt;
+
+&lt;p&gt;As I said in the above workflow, we could use either a locally save file or a url. The most usual way is to use a url using libraries like &lt;code&gt;urllib&lt;/code&gt; or &lt;code&gt;requests&lt;/code&gt;. But for this particular webpage that I am intrested in, we are not able to extract all data because part of data is generated through javascript code. There are workarounds to access data in webpages rendered by javascript (like &lt;a href=&#34;https://github.com/niklasb/dryscrape&#34;&gt;&lt;code&gt;dryscrape&lt;/code&gt;&lt;/a&gt;), but since I only work with 1 page, it is easier to save it locally. I have saved a local copy of the webpage in &lt;code&gt;webpage&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# url to scrape
+url_to_scrape = &#39;https://genographic.nationalgeographic.com/reference-populations-next-gen/&#39;
+
+# local file to scrape
+file_to_scrape = open(&amp;quot;./webpage/Reference Populations - Geno 2.0 Next Generation.html&amp;quot;)
+# Create a beautifulsoup object from html content
+soup = BeautifulSoup(file_to_scrape,&amp;quot;html.parser&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;looking-into-soup&#34;&gt;Looking into soup!&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see what is inside the variable &lt;code&gt;soup&lt;/code&gt;. It contains all HTML elements in the webpage. Looking through the code, I realized the info that I&amp;rsquo;m interested in are wrapped in &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements that look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;pop-211&amp;quot;&amp;gt;
+...
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The class name is &lt;code&gt;pop-x&lt;/code&gt; where &lt;code&gt;x&lt;/code&gt; ranges from 200 to 260. But we don&amp;rsquo;t need to know the exact range, as we will see later. Within each of these &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements, there are a few &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; items which look like the following block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;li class=&amp;quot;pop-id-2105&amp;quot; style=&amp;quot;width:8%;&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;wp-autosomal-bar-label&amp;quot;&amp;gt;
+                &amp;lt;p&amp;gt;Eastern Africa&amp;lt;/p&amp;gt;
+                &amp;lt;div class=&amp;quot;wp-autosomal-bar-line&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div class=&amp;quot;wp-autosomal-bar-section&amp;quot;&amp;gt;
+                &amp;lt;h3&amp;gt;2%&amp;lt;/h3&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We are interested in the strings within &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; (&lt;code&gt;&amp;lt;p&amp;gt;Eastern Africa&amp;lt;/p&amp;gt;&lt;/code&gt;) and &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt; (&lt;code&gt;&amp;lt;h3&amp;gt;2%&amp;lt;/h3&amp;gt;&lt;/code&gt;) tags. So the idea is this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Find all &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements with &lt;code&gt;class=pop-x&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;Extract the text within &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; elements in &lt;code&gt;&amp;lt;div class=&amp;quot;wp-autosomal-bar-label&amp;quot;&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Extract the text within &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt; elements in &lt;code&gt;&amp;lt;div class=&amp;quot;wp-autosomal-bar-section&amp;quot;&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Number two gives the population name and number three gives us the percentage. We&amp;rsquo;re ready to crawl the webpage and extract the data. The idea is going through the page and collect the data in a dictionary. Later, we use the dictionaries to create a dataframe.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# create an empty parent dictionary containing
+# dictionaries for all labels
+dic = []
+
+for identifier in range(200,261):
+    # make sure you use a wide enough range
+    # to include all possible numbers
+
+    # create an ordered dictionary to keep
+    # all info about genetic contributions
+    # of this identifier
+    d = OrderedDict()
+
+    # find all `div elements corresponding to `identifier`
+    # This contains all HTML codes within that &amp;lt;div&amp;gt;
+    data = soup.findAll(&#39;div&#39;, class_=&amp;quot;pop-&amp;quot;+str(identifier))[0]
+
+    # Population selected to find its genetic contributions
+    population_label = data.findAll(&#39;h3&#39;)[0].get_text()
+    d[&#39;title&#39;] = population_label
+
+    # How much each gene contributes in the selected populations
+    # find &amp;lt;div&amp;gt;s with the mentioned classes
+    label = [key.find(&#39;p&#39;).text for key in data.findAll(&#39;div&#39;,class_=&amp;quot;wp-autosomal-bar-label&amp;quot;)]
+    percent = [key.find(&#39;h3&#39;).text for key in data.findAll(&#39;div&#39;,class_=&amp;quot;wp-autosomal-bar-section&amp;quot;)]
+
+    # make sure that the number of labels
+    # and percentages match!
+    if (len(label)==len(percent)):
+        # if yes, put them in an ordered dictionary
+        for i in range(len(label)):
+            d[label[i]]=percent[i].split(&#39;%&#39;)[0]
+
+    # append the ordered dictionary to the parent dictionary
+    dic.append(d)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we could see how a dictionary for each label looks like. It contains a &lt;code&gt;title&lt;/code&gt; (e.g. Chinese) with a set of &lt;code&gt;labels&lt;/code&gt; (e.g. &amp;lsquo;Finland &amp;amp; Northern Siberia&amp;rsquo;,&amp;hellip;) and &lt;code&gt;values&lt;/code&gt; (e.g. &amp;lsquo;2&amp;rsquo;, &amp;hellip;) for each genetic type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dic[7]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;OrderedDict([(&#39;title&#39;, &#39;Chinese&#39;),
+             (&#39;Finland &amp;amp; Northern Siberia&#39;, &#39;2&#39;),
+             (&#39;Eastern Asia&#39;, &#39;81&#39;),
+             (&#39;Central Asia&#39;, &#39;8&#39;),
+             (&#39;Southeast Asia &amp;amp; Oceania&#39;, &#39;7&#39;)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;saving-the-results&#34;&gt;Saving the results&lt;/h3&gt;
+
+&lt;p&gt;Finally we need to decide what is the best way to store data in a file. For example, I can save all the results in a &lt;code&gt;JSON&lt;/code&gt; (JavaScript Object Notation) file to use it later in a &lt;code&gt;D3&lt;/code&gt; visualization.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;quot;&amp;quot;&amp;quot;with open(&#39;data.json&#39;, &#39;w&#39;) as outfile:
+    json.dump(dic, outfile)&amp;quot;&amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;with open(&#39;data.json&#39;, &#39;w&#39;) as outfile:\n    json.dump(dic, outfile)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But a very common way is to save data in a dataframe. We need to achieve a dataframe that looks like this:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Population&lt;/th&gt;
+&lt;th&gt;Arabia&lt;/th&gt;
+&lt;th&gt;Asia Minor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;African-American (Southwestern US)&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Altaian (Siberian)&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Amerindian (Mexico)&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So all populations are stored in a column while each regional affiliation has its own column. The numbers show percentage of the share of regional affiliations in that population. So I need to find out all regional affiliations plus all populations by looping through &lt;code&gt;dic&lt;/code&gt; which hold all scraped data. Since an affiliations can appears in more than one population, we need to find unique affiliations, so we use &lt;code&gt;set&lt;/code&gt; class to hold them. We&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# find all regional affiliations and sort them
+regions = sorted(list(set([keys for v in dic for keys in v if keys!=&#39;title&#39;])))
+# find all populations
+titles = [v[&#39;title&#39;] for v in dic]
+# what is the number of rows in our dataset?
+n = len(titles)
+# initialize a dataset but set the share equal to zero temporarily
+columns=OrderedDict()
+for r in regions:
+    print
+    columns[r]=np.zeros(n)
+df = pd.DataFrame(columns,index=titles)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we created the dataframe using pandas but the all elements are zero. So we loop through &lt;code&gt;dic&lt;/code&gt; again to fill the dataset with scraped values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for d in dic:
+    # the population
+    title = d[&#39;title&#39;]
+    # select the row related the title
+    row = df.loc[title]
+    # fill the cell using the percentage value
+    for k in d:
+        if k!=&#39;title&#39;: row[k]=d[k]
+df.ix[0:5,0:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Arabia&lt;/th&gt;
+      &lt;th&gt;Asia Minor&lt;/th&gt;
+      &lt;th&gt;Central Asia&lt;/th&gt;
+      &lt;th&gt;Eastern Africa&lt;/th&gt;
+      &lt;th&gt;Eastern Asia&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;African-American (Southwestern US)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Altaian (Siberian)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;42.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Amerindian (Mexico)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Bermudian&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Bougainville-Nasioi (Oceania)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;13.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now the dataset contains the percentage values and if an affiliation does not contribute into a population, its share is 0. Finally I convert the populations into a column on their own and save the dataset to use it in my next project.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.reset_index(inplace=True)
+df.ix[0:5,0:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;index&lt;/th&gt;
+      &lt;th&gt;Arabia&lt;/th&gt;
+      &lt;th&gt;Asia Minor&lt;/th&gt;
+      &lt;th&gt;Central Asia&lt;/th&gt;
+      &lt;th&gt;Eastern Africa&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;African-American (Southwestern US)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Altaian (Siberian)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;42.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Amerindian (Mexico)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Bermudian&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Bougainville-Nasioi (Oceania)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;British (United Kingdom)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.to_csv(&#39;./geno2.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This post is written in Jupyter notebook and is available with the required dataset as a &lt;a href=&#34;https://github.com/Mahdisadjadi/gene-similarity&#34;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pipelines incidents: not as rare!</title>

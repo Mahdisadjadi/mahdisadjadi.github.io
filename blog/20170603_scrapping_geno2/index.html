@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.20.2" />
+  <meta name="author" content="Mahdi Sadjadi">
+  <meta name="description" content="PhD student">
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://mahdisadjadi.github.io/index.xml" type="application/rss+xml" title="Mahdi Sadjadi">
+  <link rel="feed" href="http://mahdisadjadi.github.io/index.xml" type="application/rss+xml" title="Mahdi Sadjadi">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/">
+
+  <title>Scrapping Geno 2.0 Next Generation wepage in Python using BeautifulSoup | Mahdi Sadjadi</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mahdisadjadi.github.io/">Mahdi Sadjadi</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="nav-item"><a href="http://mahdisadjadi.github.io/#top">Home</a></li>
+                
+                <li class="nav-item"><a href="http://mahdisadjadi.github.io/#publications">Publications</a></li>
+                
+                <li class="nav-item"><a href="http://mahdisadjadi.github.io//blog/">Blog</a></li>
+                
+                <li class="nav-item"><a href="http://mahdisadjadi.github.io/#projects">Projects</a></li>
+                
+                <li class="nav-item"><a href="http://mahdisadjadi.github.io/#teaching">Teaching</a></li>
+                
+                <li class="nav-item"><a href="http://mahdisadjadi.github.io//links">Links</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        
+
+        <h1 itemprop="name">Scrapping Geno 2.0 Next Generation wepage in Python using BeautifulSoup</h1>
+
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-06-03 12:00:00 &#43;0000 UTC" itemprop="datePublished">Sat, 3 Jun 2017</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="http://mahdisadjadi.github.io/tags/data">data</a>, 
+        
+        <a class="article-tag-link" href="http://mahdisadjadi.github.io/tags/python">python</a>
+        
+    </span>
+    
+    
+
+    
+        
+<div class="share-box">
+    <ul class="share">
+        <li>
+            <a class="facebook" href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fmahdisadjadi.github.io%2fblog%2f20170603_scrapping_geno2%2f" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Scrapping%20Geno%202.0%20Next%20Generation%20wepage%20in%20Python%20using%20BeautifulSoup&amp;url=http%3a%2f%2fmahdisadjadi.github.io%2fblog%2f20170603_scrapping_geno2%2f" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fmahdisadjadi.github.io%2fblog%2f20170603_scrapping_geno2%2f&amp;title=Scrapping%20Geno%202.0%20Next%20Generation%20wepage%20in%20Python%20using%20BeautifulSoup" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li>
+            <a class="weibo" href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fmahdisadjadi.github.io%2fblog%2f20170603_scrapping_geno2%2f&amp;title=Scrapping%20Geno%202.0%20Next%20Generation%20wepage%20in%20Python%20using%20BeautifulSoup" target="_blank">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+        <li>
+            <a class="email" href="mailto:?subject=Scrapping%20Geno%202.0%20Next%20Generation%20wepage%20in%20Python%20using%20BeautifulSoup&amp;body=http%3a%2f%2fmahdisadjadi.github.io%2fblog%2f20170603_scrapping_geno2%2f">
+                <i class="fa fa-envelope"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+    
+
+</div>
+
+
+        <div class="article-style" itemprop="articleBody">
+            
+
+<h1 id="scrapping-geno-2-0-next-generation-webpage-in-python-using-beautifulsoup">Scrapping Geno 2.0 Next Generation webpage in Python using BeautifulSoup</h1>
+
+<p><a href="https://www.crummy.com/software/BeautifulSoup/"><code>Beautiful Soup</code></a> is a Python library to search and extract what we need from a document. In this post, I use it to access the data in <code>Geno 2.0 Next Generation</code> <a href="https://genographic.nationalgeographic.com/reference-populations-next-gen/">webpage</a> for each population. This project contains information of more than 830000 volunteers from 140 countries who have participated in the project. The webpage summarizes the results and shows what is share of various genetic affiliations in each population. Possibly, novel insights is hidden in the data, but first of all we need to have them in a place!</p>
+
+<p>The overall workflow looks like this:
+1. Identify a source, whether a website url or a locally saved file.
+2. In BeautifulSoup, use a parser to parse HTML source code. The default is <code>html.parser</code>. Other options include <code>html5lib</code> library to parse sources written in HTML5, but you have install it separately. see the instructions <a href="https://pypi.python.org/pypi/html5lib">here</a>.
+3. Find HTML elements  such as <code>div</code> or <code>a</code> that hold the required data. We can also select elements with certain <code>id</code> or <code>class</code>.
+4. Then use commands such as <code>findAll</code> or <code>find</code> to find all or an instance of the data, you are looking for.
+5. Possibly do a post-process on the scraped data, to make it in the required format. Here, I collect them in an ordered dictionary to convert the dataset into <code>JSON</code> file and <code>pandas</code> dataframe.</p>
+
+<p>This script uses libraries:
+* <code>BeautifulSoup</code>: To scrape the webpage
+* <code>Collections</code>: To hold an ordered list of items in a dictionary
+* <code>json</code>: To save extracted data in JSON format
+* <code>pandas</code>: To create a dataframe
+* <code>numpy</code>: To do numerics</p>
+
+<pre><code class="language-python">from bs4 import BeautifulSoup
+from collections import OrderedDict
+import json
+import pandas as pd
+import numpy as np
+</code></pre>
+
+<h3 id="specify-the-source">Specify the source</h3>
+
+<p>As I said in the above workflow, we could use either a locally save file or a url. The most usual way is to use a url using libraries like <code>urllib</code> or <code>requests</code>. But for this particular webpage that I am intrested in, we are not able to extract all data because part of data is generated through javascript code. There are workarounds to access data in webpages rendered by javascript (like <a href="https://github.com/niklasb/dryscrape"><code>dryscrape</code></a>), but since I only work with 1 page, it is easier to save it locally. I have saved a local copy of the webpage in <code>webpage</code> directory.</p>
+
+<pre><code class="language-python"># url to scrape
+url_to_scrape = 'https://genographic.nationalgeographic.com/reference-populations-next-gen/'
+
+# local file to scrape
+file_to_scrape = open(&quot;./webpage/Reference Populations - Geno 2.0 Next Generation.html&quot;)
+# Create a beautifulsoup object from html content
+soup = BeautifulSoup(file_to_scrape,&quot;html.parser&quot;)
+</code></pre>
+
+<h1 id="looking-into-soup">Looking into soup!</h1>
+
+<p>Let&rsquo;s see what is inside the variable <code>soup</code>. It contains all HTML elements in the webpage. Looking through the code, I realized the info that I&rsquo;m interested in are wrapped in <code>&lt;div&gt;</code> elements that look like this:</p>
+
+<pre><code>&lt;div class=&quot;pop-211&quot;&gt;
+...
+&lt;/div&gt;
+</code></pre>
+
+<p>The class name is <code>pop-x</code> where <code>x</code> ranges from 200 to 260. But we don&rsquo;t need to know the exact range, as we will see later. Within each of these <code>&lt;div&gt;</code> elements, there are a few <code>&lt;li&gt;</code> items which look like the following block:</p>
+
+<pre><code>&lt;li class=&quot;pop-id-2105&quot; style=&quot;width:8%;&quot;&gt;
+            &lt;div class=&quot;wp-autosomal-bar-label&quot;&gt;
+                &lt;p&gt;Eastern Africa&lt;/p&gt;
+                &lt;div class=&quot;wp-autosomal-bar-line&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;wp-autosomal-bar-section&quot;&gt;
+                &lt;h3&gt;2%&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+</code></pre>
+
+<p>We are interested in the strings within <code>&lt;p&gt;</code> (<code>&lt;p&gt;Eastern Africa&lt;/p&gt;</code>) and <code>&lt;h3&gt;</code> (<code>&lt;h3&gt;2%&lt;/h3&gt;</code>) tags. So the idea is this:</p>
+
+<ol>
+<li>Find all <code>&lt;div&gt;</code> elements with <code>class=pop-x</code>,</li>
+<li>Extract the text within <code>&lt;p&gt;</code> elements in <code>&lt;div class=&quot;wp-autosomal-bar-label&quot;&gt;</code>.</li>
+<li>Extract the text within <code>&lt;h3&gt;</code> elements in <code>&lt;div class=&quot;wp-autosomal-bar-section&quot;&gt;</code>.</li>
+</ol>
+
+<p>Number two gives the population name and number three gives us the percentage. We&rsquo;re ready to crawl the webpage and extract the data. The idea is going through the page and collect the data in a dictionary. Later, we use the dictionaries to create a dataframe.</p>
+
+<pre><code class="language-python"># create an empty parent dictionary containing
+# dictionaries for all labels
+dic = []
+
+for identifier in range(200,261):
+    # make sure you use a wide enough range
+    # to include all possible numbers
+
+    # create an ordered dictionary to keep
+    # all info about genetic contributions
+    # of this identifier
+    d = OrderedDict()
+
+    # find all `div elements corresponding to `identifier`
+    # This contains all HTML codes within that &lt;div&gt;
+    data = soup.findAll('div', class_=&quot;pop-&quot;+str(identifier))[0]
+
+    # Population selected to find its genetic contributions
+    population_label = data.findAll('h3')[0].get_text()
+    d['title'] = population_label
+
+    # How much each gene contributes in the selected populations
+    # find &lt;div&gt;s with the mentioned classes
+    label = [key.find('p').text for key in data.findAll('div',class_=&quot;wp-autosomal-bar-label&quot;)]
+    percent = [key.find('h3').text for key in data.findAll('div',class_=&quot;wp-autosomal-bar-section&quot;)]
+
+    # make sure that the number of labels
+    # and percentages match!
+    if (len(label)==len(percent)):
+        # if yes, put them in an ordered dictionary
+        for i in range(len(label)):
+            d[label[i]]=percent[i].split('%')[0]
+
+    # append the ordered dictionary to the parent dictionary
+    dic.append(d)
+</code></pre>
+
+<p>Now we could see how a dictionary for each label looks like. It contains a <code>title</code> (e.g. Chinese) with a set of <code>labels</code> (e.g. &lsquo;Finland &amp; Northern Siberia&rsquo;,&hellip;) and <code>values</code> (e.g. &lsquo;2&rsquo;, &hellip;) for each genetic type.</p>
+
+<pre><code class="language-python">dic[7]
+</code></pre>
+
+<pre><code>OrderedDict([('title', 'Chinese'),
+             ('Finland &amp; Northern Siberia', '2'),
+             ('Eastern Asia', '81'),
+             ('Central Asia', '8'),
+             ('Southeast Asia &amp; Oceania', '7')])
+</code></pre>
+
+<h3 id="saving-the-results">Saving the results</h3>
+
+<p>Finally we need to decide what is the best way to store data in a file. For example, I can save all the results in a <code>JSON</code> (JavaScript Object Notation) file to use it later in a <code>D3</code> visualization.</p>
+
+<pre><code class="language-python">&quot;&quot;&quot;with open('data.json', 'w') as outfile:
+    json.dump(dic, outfile)&quot;&quot;&quot;
+</code></pre>
+
+<pre><code>&quot;with open('data.json', 'w') as outfile:\n    json.dump(dic, outfile)&quot;
+</code></pre>
+
+<p>But a very common way is to save data in a dataframe. We need to achieve a dataframe that looks like this:</p>
+
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>Arabia</th>
+<th>Asia Minor</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>African-American (Southwestern US)</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Altaian (Siberian)</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Amerindian (Mexico)</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>So all populations are stored in a column while each regional affiliation has its own column. The numbers show percentage of the share of regional affiliations in that population. So I need to find out all regional affiliations plus all populations by looping through <code>dic</code> which hold all scraped data. Since an affiliations can appears in more than one population, we need to find unique affiliations, so we use <code>set</code> class to hold them. We</p>
+
+<pre><code class="language-python"># find all regional affiliations and sort them
+regions = sorted(list(set([keys for v in dic for keys in v if keys!='title'])))
+# find all populations
+titles = [v['title'] for v in dic]
+# what is the number of rows in our dataset?
+n = len(titles)
+# initialize a dataset but set the share equal to zero temporarily
+columns=OrderedDict()
+for r in regions:
+    print
+    columns[r]=np.zeros(n)
+df = pd.DataFrame(columns,index=titles)
+</code></pre>
+
+<p>Now we created the dataframe using pandas but the all elements are zero. So we loop through <code>dic</code> again to fill the dataset with scraped values:</p>
+
+<pre><code class="language-python">for d in dic:
+    # the population
+    title = d['title']
+    # select the row related the title
+    row = df.loc[title]
+    # fill the cell using the percentage value
+    for k in d:
+        if k!='title': row[k]=d[k]
+df.ix[0:5,0:5]
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Arabia</th>
+      <th>Asia Minor</th>
+      <th>Central Asia</th>
+      <th>Eastern Africa</th>
+      <th>Eastern Asia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>African-American (Southwestern US)</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Altaian (Siberian)</th>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>42.0</td>
+      <td>0.0</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>Amerindian (Mexico)</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Bermudian</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Bougainville-Nasioi (Oceania)</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>13.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Now the dataset contains the percentage values and if an affiliation does not contribute into a population, its share is 0. Finally I convert the populations into a column on their own and save the dataset to use it in my next project.</p>
+
+<pre><code class="language-python">df.reset_index(inplace=True)
+df.ix[0:5,0:5]
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>Arabia</th>
+      <th>Asia Minor</th>
+      <th>Central Asia</th>
+      <th>Eastern Africa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>African-American (Southwestern US)</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Altaian (Siberian)</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>42.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Amerindian (Mexico)</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bermudian</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bougainville-Nasioi (Oceania)</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>British (United Kingdom)</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.to_csv('./geno2.csv')
+</code></pre>
+
+<p>This post is written in Jupyter notebook and is available with the required dataset as a <a href="https://github.com/Mahdisadjadi/gene-similarity">github repository</a>.</p>
+
+        </div>
+
+    </article>
+
+    <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="http://mahdisadjadi.github.io/blog/20161203_pipeline/"><span aria-hidden="true">&larr;</span> Pipelines incidents: not as rare!</a></li>
+        
+
+        
+    </ul>
+</nav>
+
+    
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'blogmahdi';
+    var disqus_identifier = 'http:\/\/mahdisadjadi.github.io\/blog\/20170603_scrapping_geno2\/';
+    var disqus_title = 'Scrapping Geno 2.0 Next Generation wepage in Python using BeautifulSoup';
+    var disqus_url = 'http:\/\/mahdisadjadi.github.io\/blog\/20170603_scrapping_geno2\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            Mahdi Sadjadi &middot; 
+
+            Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="http://mahdisadjadi.github.io/js/jquery-1.12.3.min.js"></script>
+        <script src="http://mahdisadjadi.github.io/js/bootstrap.min.js"></script>
+        <script src="http://mahdisadjadi.github.io/js/hugo-academic.js"></script>
+        
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-73339990-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+        </script>
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        
+
+    </body>
+</html>
+
