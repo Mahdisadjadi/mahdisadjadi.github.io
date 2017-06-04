@@ -149,8 +149,6 @@
         <div class="article-style" itemprop="articleBody">
             
 
-<h1 id="scrapping-geno-2-0-next-generation-webpage-in-python-using-beautifulsoup">Scrapping Geno 2.0 Next Generation webpage in Python using BeautifulSoup</h1>
-
 <p><a href="https://www.crummy.com/software/BeautifulSoup/"><code>Beautiful Soup</code></a> is a Python library to search and extract what we need from a document. In this post, I use it to access the data in <code>Geno 2.0 Next Generation</code> <a href="https://genographic.nationalgeographic.com/reference-populations-next-gen/">webpage</a> for each population. This project contains information of more than 830000 volunteers from 140 countries who have participated in the project. The webpage summarizes the results and shows what is share of various genetic affiliations in each population. Possibly, novel insights is hidden in the data, but first of all we need to have them in a place!</p>
 
 <p>The overall workflow looks like this:
@@ -174,7 +172,7 @@ import pandas as pd
 import numpy as np
 </code></pre>
 
-<h3 id="specify-the-source">Specify the source</h3>
+<h2 id="specifying-the-source">Specifying the source</h2>
 
 <p>As I said in the above workflow, we could use either a locally save file or a url. The most usual way is to use a url using libraries like <code>urllib</code> or <code>requests</code>. But for this particular webpage that I am intrested in, we are not able to extract all data because part of data is generated through javascript code. There are workarounds to access data in webpages rendered by javascript (like <a href="https://github.com/niklasb/dryscrape"><code>dryscrape</code></a>), but since I only work with 1 page, it is easier to save it locally. I have saved a local copy of the webpage in <code>webpage</code> directory.</p>
 
@@ -187,7 +185,7 @@ file_to_scrape = open(&quot;./webpage/Reference Populations - Geno 2.0 Next Gene
 soup = BeautifulSoup(file_to_scrape,&quot;html.parser&quot;)
 </code></pre>
 
-<h1 id="looking-into-soup">Looking into soup!</h1>
+<h2 id="looking-into-soup">Looking into soup!</h2>
 
 <p>Let&rsquo;s see what is inside the variable <code>soup</code>. It contains all HTML elements in the webpage. Looking through the code, I realized the info that I&rsquo;m interested in are wrapped in <code>&lt;div&gt;</code> elements that look like this:</p>
 
@@ -268,7 +266,7 @@ for identifier in range(200,261):
              ('Southeast Asia &amp; Oceania', '7')])
 </code></pre>
 
-<h3 id="saving-the-results">Saving the results</h3>
+<h2 id="saving-the-results">Saving the results</h2>
 
 <p>Finally we need to decide what is the best way to store data in a file. For example, I can save all the results in a <code>JSON</code> (JavaScript Object Notation) file to use it later in a <code>D3</code> visualization.</p>
 
