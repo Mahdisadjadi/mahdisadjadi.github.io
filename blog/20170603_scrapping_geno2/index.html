@@ -273,11 +273,8 @@ for identifier in range(200,261):
 
 <p>Finally we need to decide what is the best way to store data in a file. For example, I can save all the results in a <code>JSON</code> (JavaScript Object Notation) file to use it later in a <code>D3</code> visualization.</p>
 
-<pre><code class="language-python">&quot;&quot;&quot;with open('data.json', 'w') as outfile:
-    json.dump(dic, outfile)&quot;&quot;&quot;
-</code></pre>
-
-<pre><code>&quot;with open('data.json', 'w') as outfile:\n    json.dump(dic, outfile)&quot;
+<pre><code class="language-python">with open('data.json', 'w') as outfile:
+    json.dump(dic, outfile)
 </code></pre>
 
 <p>But a very common way is to save data in a dataframe. We need to achieve a dataframe that looks like this:</p>

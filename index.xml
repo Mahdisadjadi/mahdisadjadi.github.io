@@ -142,11 +142,8 @@ for identifier in range(200,261):
 
 &lt;p&gt;Finally we need to decide what is the best way to store data in a file. For example, I can save all the results in a &lt;code&gt;JSON&lt;/code&gt; (JavaScript Object Notation) file to use it later in a &lt;code&gt;D3&lt;/code&gt; visualization.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;quot;&amp;quot;&amp;quot;with open(&#39;data.json&#39;, &#39;w&#39;) as outfile:
-    json.dump(dic, outfile)&amp;quot;&amp;quot;&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;with open(&#39;data.json&#39;, &#39;w&#39;) as outfile:\n    json.dump(dic, outfile)&amp;quot;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;with open(&#39;data.json&#39;, &#39;w&#39;) as outfile:
+    json.dump(dic, outfile)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;But a very common way is to save data in a dataframe. We need to achieve a dataframe that looks like this:&lt;/p&gt;
