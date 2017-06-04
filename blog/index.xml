@@ -27,12 +27,15 @@
 4. Then use commands such as &lt;code&gt;findAll&lt;/code&gt; or &lt;code&gt;find&lt;/code&gt; to find all or an instance of the data, you are looking for.
 5. Possibly do a post-process on the scraped data, to make it in the required format. Here, I collect them in an ordered dictionary to convert the dataset into &lt;code&gt;JSON&lt;/code&gt; file and &lt;code&gt;pandas&lt;/code&gt; dataframe.&lt;/p&gt;
 
-&lt;p&gt;This script uses libraries:
-* &lt;code&gt;BeautifulSoup&lt;/code&gt;: To scrape the webpage
-* &lt;code&gt;Collections&lt;/code&gt;: To hold an ordered list of items in a dictionary
-* &lt;code&gt;json&lt;/code&gt;: To save extracted data in JSON format
-* &lt;code&gt;pandas&lt;/code&gt;: To create a dataframe
-* &lt;code&gt;numpy&lt;/code&gt;: To do numerics&lt;/p&gt;
+&lt;p&gt;This script uses libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BeautifulSoup&lt;/code&gt;: To scrape the webpage&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Collections&lt;/code&gt;: To hold an ordered list of items in a dictionary&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;json&lt;/code&gt;: To save extracted data in JSON format&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pandas&lt;/code&gt;: To create a dataframe&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;numpy&lt;/code&gt;: To do numerics&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from bs4 import BeautifulSoup
 from collections import OrderedDict

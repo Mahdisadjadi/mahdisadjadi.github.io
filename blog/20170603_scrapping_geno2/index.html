@@ -158,12 +158,15 @@
 4. Then use commands such as <code>findAll</code> or <code>find</code> to find all or an instance of the data, you are looking for.
 5. Possibly do a post-process on the scraped data, to make it in the required format. Here, I collect them in an ordered dictionary to convert the dataset into <code>JSON</code> file and <code>pandas</code> dataframe.</p>
 
-<p>This script uses libraries:
-* <code>BeautifulSoup</code>: To scrape the webpage
-* <code>Collections</code>: To hold an ordered list of items in a dictionary
-* <code>json</code>: To save extracted data in JSON format
-* <code>pandas</code>: To create a dataframe
-* <code>numpy</code>: To do numerics</p>
+<p>This script uses libraries:</p>
+
+<ul>
+<li><code>BeautifulSoup</code>: To scrape the webpage</li>
+<li><code>Collections</code>: To hold an ordered list of items in a dictionary</li>
+<li><code>json</code>: To save extracted data in JSON format</li>
+<li><code>pandas</code>: To create a dataframe</li>
+<li><code>numpy</code>: To do numerics</li>
+</ul>
 
 <pre><code class="language-python">from bs4 import BeautifulSoup
 from collections import OrderedDict
