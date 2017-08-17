@@ -11,6 +11,18 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Pipeline incident in the US</title>
+      <link>http://mahdisadjadi.github.io/project/oil_pipelines/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/project/oil_pipelines/</guid>
+      <description>&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/pipeline-incidents&#34;&gt;https://github.com/Mahdisadjadi/pipeline-incidents&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Report (blog post): &lt;a href=&#34;http://mahdisadjadi.com/blog/20161203_pipeline/&#34;&gt;http://mahdisadjadi.com/blog/20161203_pipeline/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Scrapping Geno 2.0 Next Generation webpage in Python using BeautifulSoup</title>
       <link>http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/</link>
       <pubDate>Sat, 03 Jun 2017 12:00:00 +0000</pubDate>
@@ -1170,8 +1182,7 @@ the structure uniquely. This leaves a lot of room for &lt;em&gt;scientific&lt;/e
 materials but they also have wide applications. These materials are low density
 (lightweight) and are suitable to make boats, airplane and our bones.&lt;/p&gt;
 
-&lt;p&gt;[1] Sadjadi M, Thorpe MF. Ring correlations in random networks. Physical Review E. 2016 Dec 9;94(6):062304.
-arXiv:&lt;a href=&#34;https://arxiv.org/abs/1607.06568&#34;&gt;1607.06568&lt;/a&gt;; &lt;a href=&#34;https://doi.org/10.1103/PhysRevE.94.062304&#34;&gt;DOI&lt;/a&gt; (2016).&lt;/p&gt;
+&lt;p&gt;[1] Sadjadi, Mahdi, and M. F. Thorpe. &amp;ldquo;Ring correlations in random networks.&amp;rdquo; arXiv preprint arXiv:1607.06568 (2016).&lt;/p&gt;
 </description>
     </item>
     
