@@ -11,7 +11,17 @@
     <atom:link href="/project/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Pipeline incident in the US</title>
+      <title>A python wrapper around arxiv.org API</title>
+      <link>http://mahdisadjadi.github.io/project/arxiv_scraper/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/project/arxiv_scraper/</guid>
+      <description>&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/arxivscraper&#34;&gt;https://github.com/Mahdisadjadi/arxivscraper&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pipeline incidents in the US</title>
       <link>http://mahdisadjadi.github.io/project/oil_pipelines/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
