@@ -26,8 +26,21 @@
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/phoenix_crimes/</guid>
-      <description>&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/phoenixcrime&#34;&gt;https://github.com/Mahdisadjadi/phoenixcrime&lt;/a&gt;
-Webpage: &lt;a href=&#34;http://mahdisadjadi.com/phoenixcrime/&#34;&gt;http://mahdisadjadi.com/phoenixcrime/&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Analysis of crime data is not only important to prevent criminal acts and to
+provide a safer environment, it contains rich interesting patterns related to
+the local community, geography and culture.&lt;/p&gt;
+
+&lt;p&gt;The city of Phoenix has published such data since November 2015. In this project,
+I look at the crimes trend in Phoenix, AZ. The weekly and monthly trends
+of various crime types are studied. I also provide a D3 visualization of
+weekly trends for all crime types. In addition, safer zip codes are determined.&lt;/p&gt;
+
+&lt;p&gt;A Bernoulli Naive Bayes classifier is trained on data to predict the type of
+a crime given its location and time.&lt;/p&gt;
+
+&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/phoenixcrime&#34;&gt;https://github.com/Mahdisadjadi/phoenixcrime&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Webpage: &lt;a href=&#34;http://mahdisadjadi.com/phoenixcrime/&#34;&gt;http://mahdisadjadi.com/phoenixcrime/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
