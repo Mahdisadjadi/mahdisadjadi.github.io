@@ -24,12 +24,12 @@ their research.&lt;/p&gt;
 
 &lt;p&gt;Arxivscraper is a python module written to simplify the access to
 related papers in a given area. The user can pass a category and a date range
-to receive all papers submitted or update within that range. The user has also
+to receive all papers submitted or updated during that range. The user has also
 the option to filter those papers based on their author, subcategory, title and
 abstract. For more information on how to install and use the module, see its
 GitHub repository:&lt;/p&gt;
 
-&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/arxivscraper&#34;&gt;https://github.com/Mahdisadjadi/arxivscraper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/mahdisadjadi/arxivscraper&#34;&gt;https://github.com/mahdisadjadi/arxivscraper&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
