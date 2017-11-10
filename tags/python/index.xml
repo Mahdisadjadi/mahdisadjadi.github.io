@@ -11,6 +11,42 @@
     <atom:link href="/tags/python/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title></title>
+      <link>http://mahdisadjadi.github.io/blog/20171002_cafe_science_talk/</link>
+      <pubDate>Sat, 03 Jun 2017 12:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/blog/20171002_cafe_science_talk/</guid>
+      <description>&lt;p&gt;Recently (Sep 28, 2017), I had the pleasure of speaking at a
+&lt;a href=&#34;http://www.sciencecafes.org/&#34;&gt;Science Cafe&lt;/a&gt;. I did not know what a Science
+Cafe is before being asked to give a talk at one! They are, in fact, scientific
+events that happen in public places. The goal is not to give a lecture but rather
+the hope is to have an informal discussion about a scientific topic.&lt;/p&gt;
+
+&lt;p&gt;This was not the first time I spoke for general audience but this was the first
+time I did it in a restaurant and surely it was an exciting experience! The turnout
+was good. There were a few ASU physics folks, a high school chemistry teacher,
+a family with their beautiful kids and some ASU undergrads!&lt;/p&gt;
+
+&lt;p&gt;My talk was about glasses. How do we make glass? Why do
+glasses have such properties? What are the way to make better glasses?
+I made sure I am showing people tons of pretty pictures with minimal text,
+and of course no equation! In particular, I wanted to show them how glass is
+part of our lives, from art to our cell phones, from cookware
+to scientific research!&lt;/p&gt;
+
+&lt;p&gt;At the end, people asked me questions, some of them really hard!&lt;/p&gt;
+
+&lt;p&gt;One thing I wish I was more prepared for was about units and scales! When I was
+asked about atom-thick glasses, someone asked me how thick is that? And
+I dropped the ball and said nm! So they asked me how much is a nanometer? and
+it took me a good 10 seconds to come up with a intuitive answer. So an advice
+for my future self: learn some intuitive ways to related units and scale
+to everyday life. How much is 1K? 300 times less than boiling point of water!
+How much is an angstrom? 1000 times smaller than a needle tip!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Scrapping Geno 2.0 Next Generation webpage in Python using BeautifulSoup</title>
       <link>http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/</link>
       <pubDate>Sat, 03 Jun 2017 12:00:00 +0000</pubDate>
