@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
     <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/publication/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://mahdisadjadi.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Two-dimensionsal Glasses</title>
@@ -34,8 +36,7 @@
       <pubDate>Mon, 14 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/publication/02/</guid>
-      <description>&lt;p&gt;Featured in &lt;a href=&#34;https://journals.aps.org/pre/kaleidoscope/pre/94/6/062304&#34;&gt;kaleidoscope&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Featured in kaleidoscope.</description>
     </item>
     
     <item>
@@ -44,8 +45,7 @@
       <pubDate>Mon, 30 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/publication/01/</guid>
-      <description>&lt;p&gt;Featured in &lt;a href=&#34;https://journals.aps.org/pre/kaleidoscope/pre/92/5/053306&#34;&gt;kaleidoscope&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Featured in kaleidoscope.</description>
     </item>
     
   </channel>

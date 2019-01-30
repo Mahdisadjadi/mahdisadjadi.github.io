@@ -57,17 +57,10 @@ GitHub repository:&lt;/p&gt;
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/phoenix_crimes/</guid>
-      <description>
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://github.com/Mahdisadjadi/phoenixcrime/raw/master/heatmap.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;weekly crime trend&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+      <description>&lt;figure&gt;
+    &lt;img src=&#34;https://github.com/Mahdisadjadi/phoenixcrime/raw/master/heatmap.png&#34;/&gt; &lt;figcaption&gt;
+            &lt;h4&gt;weekly crime trend&lt;/h4&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
@@ -1210,17 +1203,10 @@ most naturally occurring cellular networks are not as ordered as honeycomb. But
 it&amp;rsquo;s not hard to notice in the image (top left corner), even in honeycomb
 there are a few cells with 5 neighbors instead of 6.&lt;/p&gt;
 
-
-&lt;figure &gt;
-    &lt;a href=&#34;http://www.newdesignfile.com/post_honeycomb-texture-psd-free_202486/&#34;&gt;
-        &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_01.jpg&#34; /&gt;
-    &lt;/a&gt;
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Honeycomb, a cellular material&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;figure&gt;&lt;a href=&#34;http://www.newdesignfile.com/post_honeycomb-texture-psd-free_202486/&#34;&gt;
+    &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_01.jpg&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Honeycomb, a cellular material&lt;/h4&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
@@ -1234,17 +1220,10 @@ If you look at the disordered phase carefully, you will notice that large bubble
 surrounded by small bubbles. This is no accident! This
 tendency of smaller and larger rings being adjacent is called &amp;ldquo;Aboav-Weaire&amp;rdquo; law.&lt;/p&gt;
 
-
-&lt;figure &gt;
-    &lt;a href=&#34;https://en.wikipedia.org/wiki/File:Order_and_Chaos.tif&#34;&gt;
-        &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_02.jpg&#34; /&gt;
-    &lt;/a&gt;
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;A foam with interface order-disorder&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;figure&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/File:Order_and_Chaos.tif&#34;&gt;
+    &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_02.jpg&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+            &lt;h4&gt;A foam with interface order-disorder&lt;/h4&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 

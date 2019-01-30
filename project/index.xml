@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
     <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/project/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://mahdisadjadi.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ArxivScraper: A python module based on arxiv.org API</title>
@@ -16,21 +18,8 @@
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/arxiv_scraper/</guid>
-      <description>&lt;p&gt;Arxiv.org is a repository for scientific preprints in various fields of
-study. Visiting the website daily to find the latest papers is a routine for
-many researchers. However, Arxiv receives thousands of monthly submissions and
-researchers often have to browse tens of papers to find preprints relevant to
-their research.&lt;/p&gt;
-
-&lt;p&gt;Arxivscraper is a python module written to simplify the access to
-related papers in a given area. The user can pass a category and a date range
-to receive all papers submitted or updated during that range. The user has also
-the option to filter those papers based on their author, subcategory, title and
-abstract. For more information on how to install and use the module, see its
-GitHub repository:&lt;/p&gt;
-
-&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/mahdisadjadi/arxivscraper&#34;&gt;https://github.com/mahdisadjadi/arxivscraper&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Arxiv.org is a repository for scientific preprints in various fields of study. Visiting the website daily to find the latest papers is a routine for many researchers. However, Arxiv receives thousands of monthly submissions and researchers often have to browse tens of papers to find preprints relevant to their research.
+Arxivscraper is a python module written to simplify the access to related papers in a given area. The user can pass a category and a date range to receive all papers submitted or updated during that range.</description>
     </item>
     
     <item>
@@ -39,36 +28,8 @@ GitHub repository:&lt;/p&gt;
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/phoenix_crimes/</guid>
-      <description>
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://github.com/Mahdisadjadi/phoenixcrime/raw/master/heatmap.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;weekly crime trend&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;Analysis of crime data is not only important to prevent criminal acts and to
-provide a safer environment, it contains rich interesting patterns related to
-the local community, geography and culture.&lt;/p&gt;
-
-&lt;p&gt;The city of Phoenix has published such data since November 2015. In this project,
-I look at the crimes trend in Phoenix, AZ. The weekly and monthly trends
-of various crime types are studied. I also provide a D3 visualization of
-weekly trends for all crime types. In addition, safer zip codes are determined.&lt;/p&gt;
-
-&lt;p&gt;A Bernoulli Naive Bayes classifier is trained on data to predict the type of
-a crime given its location and time.&lt;/p&gt;
-
-&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/phoenixcrime&#34;&gt;https://github.com/Mahdisadjadi/phoenixcrime&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Webpage: &lt;a href=&#34;http://mahdisadjadi.com/phoenixcrime/&#34;&gt;http://mahdisadjadi.com/phoenixcrime/&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>weekly crime trend   Analysis of crime data is not only important to prevent criminal acts and to provide a safer environment, it contains rich interesting patterns related to the local community, geography and culture.
+The city of Phoenix has published such data since November 2015. In this project, I look at the crimes trend in Phoenix, AZ. The weekly and monthly trends of various crime types are studied.</description>
     </item>
     
     <item>
@@ -77,12 +38,8 @@ a crime given its location and time.&lt;/p&gt;
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/oil_pipelines/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_29_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/pipeline-incidents&#34;&gt;https://github.com/Mahdisadjadi/pipeline-incidents&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Report (blog post): &lt;a href=&#34;http://mahdisadjadi.com/blog/20161203_pipeline/&#34;&gt;http://mahdisadjadi.com/blog/20161203_pipeline/&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Repository: https://github.com/Mahdisadjadi/pipeline-incidents
+Report (blog post): http://mahdisadjadi.com/blog/20161203_pipeline/</description>
     </item>
     
     <item>
@@ -91,85 +48,7 @@ a crime given its location and time.&lt;/p&gt;
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/cellular_materials/</guid>
-      <description>&lt;p&gt;You can barely find someone not amazed by honeycombs: a packing of seemingly
-perfect hexagons. Honeycomb is a cellular network. In fact,
-they are many similar structures in nature resembling the honeycomb. Although,
-most naturally occurring cellular networks are not as ordered as honeycomb. But
-it&amp;rsquo;s not hard to notice in the image (top left corner), even in honeycomb
-there are a few cells with 5 neighbors instead of 6.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    &lt;a href=&#34;http://www.newdesignfile.com/post_honeycomb-texture-psd-free_202486/&#34;&gt;
-        &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_01.jpg&#34; /&gt;
-    &lt;/a&gt;
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Honeycomb, a cellular material&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;Partitioning any surface or volume into closed
-cells results in a &amp;ldquo;cellular network&amp;rdquo;.
-Examples are soap foam, grains, biological tissues, crack networks, ecological
-territories, and Voronoi tessellations. It is amazing how very distinct processes
-lead to cellular networks which are topologically the same. The following image
-shows bubbles as a cellular network where an interface separates order-disorder phases.
-If you look at the disordered phase carefully, you will notice that large bubbles are
-surrounded by small bubbles. This is no accident! This
-tendency of smaller and larger rings being adjacent is called &amp;ldquo;Aboav-Weaire&amp;rdquo; law.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    &lt;a href=&#34;https://en.wikipedia.org/wiki/File:Order_and_Chaos.tif&#34;&gt;
-        &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_02.jpg&#34; /&gt;
-    &lt;/a&gt;
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;A foam with interface order-disorder&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;According to the law, average size of cells $m(n)$ around a cell with $n$ sides is:&lt;/p&gt;
-
-&lt;p&gt;$$
-m(n) = A+\frac{B}{n}
-$$&lt;/p&gt;
-
-&lt;p&gt;$A$ and $B$ are two constants determined for each specific network. This is not
-an exact equation but works very well!&lt;/p&gt;
-
-&lt;p&gt;My interest in cellular networks comes from network glasses. Although in glass science,
-they are often called random network instead of cellular network and cells
-are called &amp;ldquo;rings&amp;rdquo;. Network glasses are very important networks since they
-are microscopic and interactions are vert different from commonly studied random
-networks. But the issue is, rings in bulk glasses (which are 3D) are hard to
-observe or even define uniquely.&lt;/p&gt;
-
-&lt;p&gt;The breakthrough happened only recently. Researchers have been able to image
-a bilayer silica (SiO${}_{2}$) showing, for the very first time, how atoms are arranged to
-make the network of polygons creating the ring structure of the glass.
-Another example of these thin materials is
-amorphous graphene. Although people have studied glasses for years, the issue is
- their structure is disordered (and there are $~10^{23}$ atoms to image!),
-so experimental methods used in crystallography (like x-ray) can&amp;rsquo;t determine
-the structure uniquely. This leaves a lot of room for &lt;em&gt;scientific&lt;/em&gt; speculations.&lt;/p&gt;
-
-&lt;p&gt;Note how different these materials are, ranging from atomic scale to&lt;/p&gt;
-
-&lt;p&gt;Although my research is mainly concerned with fundamental aspects of cellular
-materials but they also have wide applications. These materials are low density
-(lightweight) and are suitable to make boats, airplane and our bones.&lt;/p&gt;
-
-&lt;p&gt;[1] Sadjadi M, Thorpe MF. Ring correlations in random networks. Physical Review E. 2016 Dec 9;94(6):062304.
-arXiv:&lt;a href=&#34;https://arxiv.org/abs/1607.06568&#34;&gt;1607.06568&lt;/a&gt;; &lt;a href=&#34;https://doi.org/10.1103/PhysRevE.94.062304&#34;&gt;DOI&lt;/a&gt; (2016).&lt;/p&gt;
-</description>
+      <description>You can barely find someone not amazed by honeycombs: a packing of seemingly perfect hexagons. Honeycomb is a cellular network. In fact, they are many similar structures in nature resembling the honeycomb. Although, most naturally occurring cellular networks are not as ordered as honeycomb. But it&amp;rsquo;s not hard to notice in the image (top left corner), even in honeycomb there are a few cells with 5 neighbors instead of 6.</description>
     </item>
     
   </channel>

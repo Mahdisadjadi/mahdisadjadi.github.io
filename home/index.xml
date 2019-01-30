@@ -8,7 +8,28 @@
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/home/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://mahdisadjadi.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>teaching</title>
+      <link>http://mahdisadjadi.github.io/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/home/teaching/</guid>
+      <description> 09-10 Sep 2017 - Software Carpentry at Utah State University, website 14-15 Aug 2017 - Software Carpentry at University of Delaware,website 18-19 May 2017 - Software Carpentry at University of Arkansas, website 22-23 Aug 2016 - Software Carpentry at Johns Hopkins University, website  </description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://mahdisadjadi.github.io/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/home/about/</guid>
+      <description>Hello! I am Mahdi Sadjadi, a recent physics Ph.D. from ASU. My advisor was Mike Thorpe. My research combined experimental results, computer simulations and mathematical theorems to gain a better understanding of glass structure and their rigidity.
+I have a strong passion for data science, analytics and programming. Since 2016, I have been an instructor at Software Carpentry. I was also a Data Science Fellow at Insight Data Science during Spring 2018.</description>
+    </item>
     
   </channel>
 </rss>
