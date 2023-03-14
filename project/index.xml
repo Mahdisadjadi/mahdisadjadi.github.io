@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Mahdi Sadjadi</title>
@@ -7,14 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
-    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://mahdisadjadi.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://mahdisadjadi.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>ArxivScraper: A python module based on arxiv.org API</title>
       <link>http://mahdisadjadi.github.io/project/arxiv_scraper/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/arxiv_scraper/</guid>
-      <description>A python module to scrape arxiv.org for specific date range and categories</description>
+      <description>Arxiv.org is a repository for scientific preprints in various fields of study. Visiting the website daily to find the latest papers is a routine for many researchers. However, Arxiv receives thousands of monthly submissions and researchers often have to browse tens of papers to find preprints relevant to their research.
+Arxivscraper is a python module written to simplify the access to related papers in a given area. The user can pass a category and a date range to receive all papers submitted or updated during that range.</description>
     </item>
     
     <item>
@@ -23,7 +28,8 @@
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/phoenix_crimes/</guid>
-      <description>The data analysis crimes in Phoenix,AZ</description>
+      <description>weekly crime trend   Analysis of crime data is not only important to prevent criminal acts and to provide a safer environment, it contains rich interesting patterns related to the local community, geography and culture.
+The city of Phoenix has published such data since November 2015. In this project, I look at the crimes trend in Phoenix, AZ. The weekly and monthly trends of various crime types are studied.</description>
     </item>
     
     <item>
@@ -32,7 +38,8 @@
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/oil_pipelines/</guid>
-      <description>Analysis of pipeline incidents in the US</description>
+      <description>Repository: https://github.com/Mahdisadjadi/pipeline-incidents
+Report (blog post): http://mahdisadjadi.com/blog/20161203_pipeline/</description>
     </item>
     
     <item>
@@ -41,7 +48,7 @@
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/project/cellular_materials/</guid>
-      <description>Rings and their topological and geometrical correlations</description>
+      <description>You can barely find someone not amazed by honeycombs: a packing of seemingly perfect hexagons. Honeycomb is a cellular network. In fact, they are many similar structures in nature resembling the honeycomb. Although, most naturally occurring cellular networks are not as ordered as honeycomb. But it&amp;rsquo;s not hard to notice in the image (top left corner), even in honeycomb there are a few cells with 5 neighbors instead of 6.</description>
     </item>
     
   </channel>

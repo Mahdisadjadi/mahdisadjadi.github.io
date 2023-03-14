@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mahdi Sadjadi on Mahdi Sadjadi</title>
@@ -6,34 +7,987 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
-    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Publications</title>
-      <link>http://mahdisadjadi.github.io/publication/</link>
+      <title>Two-dimensionsal Glasses</title>
+      <link>http://mahdisadjadi.github.io/publication/04/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://mahdisadjadi.github.io/publication/</guid>
+      <guid>http://mahdisadjadi.github.io/publication/04/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Projects</title>
-      <link>http://mahdisadjadi.github.io/project/</link>
+      <title>Refining glass structure in two dimensions</title>
+      <link>http://mahdisadjadi.github.io/publication/03/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/publication/03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ArxivScraper: A python module based on arxiv.org API</title>
+      <link>http://mahdisadjadi.github.io/project/arxiv_scraper/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mahdisadjadi.github.io/project/</guid>
-      <description></description>
+      <guid>http://mahdisadjadi.github.io/project/arxiv_scraper/</guid>
+      <description>&lt;p&gt;Arxiv.org is a repository for scientific preprints in various fields of
+study. Visiting the website daily to find the latest papers is a routine for
+many researchers. However, Arxiv receives thousands of monthly submissions and
+researchers often have to browse tens of papers to find preprints relevant to
+their research.&lt;/p&gt;
+
+&lt;p&gt;Arxivscraper is a python module written to simplify the access to
+related papers in a given area. The user can pass a category and a date range
+to receive all papers submitted or updated during that range. The user has also
+the option to filter those papers based on their author, subcategory, title and
+abstract. For more information on how to install and use the module, see its
+GitHub repository:&lt;/p&gt;
+
+&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/mahdisadjadi/arxivscraper&#34;&gt;https://github.com/mahdisadjadi/arxivscraper&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Blogs</title>
-      <link>http://mahdisadjadi.github.io/blog/</link>
+      <title>Phoenix crime analysis</title>
+      <link>http://mahdisadjadi.github.io/project/phoenix_crimes/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/project/phoenix_crimes/</guid>
+      <description>&lt;figure&gt;
+    &lt;img src=&#34;https://github.com/Mahdisadjadi/phoenixcrime/raw/master/heatmap.png&#34;/&gt; &lt;figcaption&gt;
+            &lt;h4&gt;weekly crime trend&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;p&gt;Analysis of crime data is not only important to prevent criminal acts and to
+provide a safer environment, it contains rich interesting patterns related to
+the local community, geography and culture.&lt;/p&gt;
+
+&lt;p&gt;The city of Phoenix has published such data since November 2015. In this project,
+I look at the crimes trend in Phoenix, AZ. The weekly and monthly trends
+of various crime types are studied. I also provide a D3 visualization of
+weekly trends for all crime types. In addition, safer zip codes are determined.&lt;/p&gt;
+
+&lt;p&gt;A Bernoulli Naive Bayes classifier is trained on data to predict the type of
+a crime given its location and time.&lt;/p&gt;
+
+&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/phoenixcrime&#34;&gt;https://github.com/Mahdisadjadi/phoenixcrime&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Webpage: &lt;a href=&#34;http://mahdisadjadi.com/phoenixcrime/&#34;&gt;http://mahdisadjadi.com/phoenixcrime/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pipeline incidents in the US</title>
+      <link>http://mahdisadjadi.github.io/project/oil_pipelines/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/project/oil_pipelines/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_29_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Repository: &lt;a href=&#34;https://github.com/Mahdisadjadi/pipeline-incidents&#34;&gt;https://github.com/Mahdisadjadi/pipeline-incidents&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Report (blog post): &lt;a href=&#34;http://mahdisadjadi.com/blog/20161203_pipeline/&#34;&gt;http://mahdisadjadi.com/blog/20161203_pipeline/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scrapping Geno 2.0 Next Generation webpage in Python using BeautifulSoup</title>
+      <link>http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/</link>
       <pubDate>Sat, 03 Jun 2017 12:00:00 +0000</pubDate>
       
-      <guid>http://mahdisadjadi.github.io/blog/</guid>
-      <description></description>
+      <guid>http://mahdisadjadi.github.io/blog/20170603_scrapping_geno2/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.crummy.com/software/BeautifulSoup/&#34;&gt;&lt;code&gt;Beautiful Soup&lt;/code&gt;&lt;/a&gt; is a Python library to search and extract what we need from a document. In this post, I use it to access the data in &lt;code&gt;Geno 2.0 Next Generation&lt;/code&gt; &lt;a href=&#34;https://genographic.nationalgeographic.com/reference-populations-next-gen/&#34;&gt;webpage&lt;/a&gt; for each population. This project contains information of more than 830000 volunteers from 140 countries who have participated in the project. The webpage summarizes the results and shows what is the share of various genetic affiliations in each population. Possibly, novel insights is hidden in the data, but first of all we need to collect them for post-processing!&lt;/p&gt;
+
+&lt;p&gt;The overall workflow looks like this:
+1. Identify a source, whether a website url or a locally saved file.
+2. In BeautifulSoup, use a parser to parse HTML source code. The default is &lt;code&gt;html.parser&lt;/code&gt;. Other options include &lt;code&gt;html5lib&lt;/code&gt; library to parse sources written in HTML5, but you have install it separately. see the instructions &lt;a href=&#34;https://pypi.python.org/pypi/html5lib&#34;&gt;here&lt;/a&gt;.
+3. Find HTML elements  such as &lt;code&gt;div&lt;/code&gt; or &lt;code&gt;a&lt;/code&gt; that hold the required data. We can also select elements with certain &lt;code&gt;id&lt;/code&gt; or &lt;code&gt;class&lt;/code&gt;.
+4. Then use commands such as &lt;code&gt;findAll&lt;/code&gt; or &lt;code&gt;find&lt;/code&gt; to find all or an instance of the data, you are looking for.
+5. Possibly do a post-process on the scraped data, to make it in the required format. Here, I collect them in an ordered dictionary to convert the dataset into &lt;code&gt;JSON&lt;/code&gt; file and &lt;code&gt;pandas&lt;/code&gt; dataframe.&lt;/p&gt;
+
+&lt;p&gt;This script uses libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BeautifulSoup&lt;/code&gt;: To scrape the webpage&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Collections&lt;/code&gt;: To hold an ordered list of items in a dictionary&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;json&lt;/code&gt;: To save extracted data in JSON format&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pandas&lt;/code&gt;: To create a dataframe&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;numpy&lt;/code&gt;: To do numerics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from bs4 import BeautifulSoup
+from collections import OrderedDict
+import json
+import pandas as pd
+import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;specifying-the-source&#34;&gt;Specifying the source&lt;/h2&gt;
+
+&lt;p&gt;As I said in the above workflow, we could use either a locally save file or a url. The most usual way is to use a url using libraries like &lt;code&gt;urllib&lt;/code&gt; or &lt;code&gt;requests&lt;/code&gt;. But for this particular webpage that I am intrested in, we are not able to extract all data because part of data is generated through javascript code. There are workarounds to access data in webpages rendered by javascript (like &lt;a href=&#34;https://github.com/niklasb/dryscrape&#34;&gt;&lt;code&gt;dryscrape&lt;/code&gt;&lt;/a&gt;), but since I only work with 1 page, it is easier to save it locally. I have saved a local copy of the webpage in &lt;code&gt;webpage&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# url to scrape
+url_to_scrape = &#39;https://genographic.nationalgeographic.com/reference-populations-next-gen/&#39;
+
+# local file to scrape
+file_to_scrape = open(&amp;quot;./webpage/Reference Populations - Geno 2.0 Next Generation.html&amp;quot;)
+# Create a beautifulsoup object from html content
+soup = BeautifulSoup(file_to_scrape,&amp;quot;html.parser&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;looking-into-soup&#34;&gt;Looking into soup!&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see what is inside the variable &lt;code&gt;soup&lt;/code&gt;. It contains all HTML elements in the webpage. Looking through the code, I realized the info that I&amp;rsquo;m interested in are wrapped in &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements that look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;pop-211&amp;quot;&amp;gt;
+...
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The class name is &lt;code&gt;pop-x&lt;/code&gt; where &lt;code&gt;x&lt;/code&gt; ranges from 200 to 260. But we don&amp;rsquo;t need to know the exact range, as we will see later. Within each of these &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements, there are a few &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; items which look like the following block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;li class=&amp;quot;pop-id-2105&amp;quot; style=&amp;quot;width:8%;&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;wp-autosomal-bar-label&amp;quot;&amp;gt;
+                &amp;lt;p&amp;gt;Eastern Africa&amp;lt;/p&amp;gt;
+                &amp;lt;div class=&amp;quot;wp-autosomal-bar-line&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div class=&amp;quot;wp-autosomal-bar-section&amp;quot;&amp;gt;
+                &amp;lt;h3&amp;gt;2%&amp;lt;/h3&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We are interested in the strings within &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; (&lt;code&gt;&amp;lt;p&amp;gt;Eastern Africa&amp;lt;/p&amp;gt;&lt;/code&gt;) and &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt; (&lt;code&gt;&amp;lt;h3&amp;gt;2%&amp;lt;/h3&amp;gt;&lt;/code&gt;) tags. So the idea is this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Find all &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements with &lt;code&gt;class=pop-x&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;Extract the text within &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; elements in &lt;code&gt;&amp;lt;div class=&amp;quot;wp-autosomal-bar-label&amp;quot;&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Extract the text within &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt; elements in &lt;code&gt;&amp;lt;div class=&amp;quot;wp-autosomal-bar-section&amp;quot;&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Number two gives the population name and number three gives us the percentage. We&amp;rsquo;re ready to crawl the webpage and extract the data. The idea is going through the page and collect the data in a dictionary. Later, we use the dictionaries to create a dataframe.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# create an empty parent dictionary containing
+# dictionaries for all labels
+dic = []
+
+for identifier in range(200,261):
+    # make sure you use a wide enough range
+    # to include all possible numbers
+
+    # create an ordered dictionary to keep
+    # all info about genetic contributions
+    # of this identifier
+    d = OrderedDict()
+
+    # find all `div elements corresponding to `identifier`
+    # This contains all HTML codes within that &amp;lt;div&amp;gt;
+    data = soup.findAll(&#39;div&#39;, class_=&amp;quot;pop-&amp;quot;+str(identifier))[0]
+
+    # Population selected to find its genetic contributions
+    population_label = data.findAll(&#39;h3&#39;)[0].get_text()
+    d[&#39;title&#39;] = population_label
+
+    # How much each gene contributes in the selected populations
+    # find &amp;lt;div&amp;gt;s with the mentioned classes
+    label = [key.find(&#39;p&#39;).text for key in data.findAll(&#39;div&#39;,class_=&amp;quot;wp-autosomal-bar-label&amp;quot;)]
+    percent = [key.find(&#39;h3&#39;).text for key in data.findAll(&#39;div&#39;,class_=&amp;quot;wp-autosomal-bar-section&amp;quot;)]
+
+    # make sure that the number of labels
+    # and percentages match!
+    if (len(label)==len(percent)):
+        # if yes, put them in an ordered dictionary
+        for i in range(len(label)):
+            d[label[i]]=percent[i].split(&#39;%&#39;)[0]
+
+    # append the ordered dictionary to the parent dictionary
+    dic.append(d)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we could see how a dictionary for each label looks like. It contains a &lt;code&gt;title&lt;/code&gt; (e.g. Chinese) with a set of &lt;code&gt;labels&lt;/code&gt; (e.g. &amp;lsquo;Finland &amp;amp; Northern Siberia&amp;rsquo;,&amp;hellip;) and &lt;code&gt;values&lt;/code&gt; (e.g. &amp;lsquo;2&amp;rsquo;, &amp;hellip;) for each genetic type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dic[7]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;OrderedDict([(&#39;title&#39;, &#39;Chinese&#39;),
+             (&#39;Finland &amp;amp; Northern Siberia&#39;, &#39;2&#39;),
+             (&#39;Eastern Asia&#39;, &#39;81&#39;),
+             (&#39;Central Asia&#39;, &#39;8&#39;),
+             (&#39;Southeast Asia &amp;amp; Oceania&#39;, &#39;7&#39;)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;saving-the-results&#34;&gt;Saving the results&lt;/h2&gt;
+
+&lt;p&gt;Finally we need to decide what is the best way to store data in a file. For example, I can save all the results in a &lt;code&gt;JSON&lt;/code&gt; (JavaScript Object Notation) file to use it later in a &lt;code&gt;D3&lt;/code&gt; visualization.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;with open(&#39;data.json&#39;, &#39;w&#39;) as outfile:
+    json.dump(dic, outfile)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But a very common way is to save data in a dataframe. We need to achieve a dataframe that looks like this:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Population&lt;/th&gt;
+&lt;th&gt;Arabia&lt;/th&gt;
+&lt;th&gt;Asia Minor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;African-American (Southwestern US)&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Altaian (Siberian)&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Amerindian (Mexico)&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So all populations are stored in a column while each regional affiliation has its own column. The numbers show percentage of the share of regional affiliations in that population. So I need to find out all regional affiliations plus all populations by looping through &lt;code&gt;dic&lt;/code&gt; which hold all scraped data. Since an affiliations can appears in more than one population, we need to find unique affiliations, so we use &lt;code&gt;set&lt;/code&gt; class to hold them. We&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# find all regional affiliations and sort them
+regions = sorted(list(set([keys for v in dic for keys in v if keys!=&#39;title&#39;])))
+# find all populations
+titles = [v[&#39;title&#39;] for v in dic]
+# what is the number of rows in our dataset?
+n = len(titles)
+# initialize a dataset but set the share equal to zero temporarily
+columns=OrderedDict()
+for r in regions:
+    print
+    columns[r]=np.zeros(n)
+df = pd.DataFrame(columns,index=titles)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we created the dataframe using pandas but the all elements are zero. So we loop through &lt;code&gt;dic&lt;/code&gt; again to fill the dataset with scraped values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for d in dic:
+    # the population
+    title = d[&#39;title&#39;]
+    # select the row related the title
+    row = df.loc[title]
+    # fill the cell using the percentage value
+    for k in d:
+        if k!=&#39;title&#39;: row[k]=d[k]
+df.ix[0:5,0:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Arabia&lt;/th&gt;
+      &lt;th&gt;Asia Minor&lt;/th&gt;
+      &lt;th&gt;Central Asia&lt;/th&gt;
+      &lt;th&gt;Eastern Africa&lt;/th&gt;
+      &lt;th&gt;Eastern Asia&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;African-American (Southwestern US)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Altaian (Siberian)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;42.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Amerindian (Mexico)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Bermudian&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Bougainville-Nasioi (Oceania)&lt;/th&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;13.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now the dataset contains the percentage values and if an affiliation does not contribute into a population, its share is 0. Finally I convert the populations into a column on their own and save the dataset to use it in my next project.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.reset_index(inplace=True)
+df.ix[0:5,0:5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;index&lt;/th&gt;
+      &lt;th&gt;Arabia&lt;/th&gt;
+      &lt;th&gt;Asia Minor&lt;/th&gt;
+      &lt;th&gt;Central Asia&lt;/th&gt;
+      &lt;th&gt;Eastern Africa&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;African-American (Southwestern US)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Altaian (Siberian)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;42.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Amerindian (Mexico)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Bermudian&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Bougainville-Nasioi (Oceania)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;British (United Kingdom)&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.to_csv(&#39;./geno2.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This post is written in Jupyter notebook and is available with the required dataset as a &lt;a href=&#34;https://github.com/Mahdisadjadi/gene-similarity&#34;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pipelines incidents: not as rare!</title>
+      <link>http://mahdisadjadi.github.io/blog/20161203_pipeline/</link>
+      <pubDate>Sat, 03 Dec 2016 12:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/blog/20161203_pipeline/</guid>
+      <description>
+
+&lt;p&gt;Dakota Access Pipeline is no longer an unfamiliar name. The controversy over the pipeline comes from two opposing views. On the one hand, people are of afraid of (water) pollution. On the contrary, the corporation responsible for the pipeline says it&amp;rsquo;s safe. So the question is clear: Is the pipeline really safe?&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s hard to answer this for a not operational pipeline, but we can look at pipeline incidents data to answer if &lt;em&gt;pipelines&lt;/em&gt; are safe. Fortunately, the Pipeline and Hazardous Materials Safety (PHMS) Administration provides data on every single pipeline accidents from 1986 to now. The dataset is rich with a lot of raw data showing all kinds of details about the accidents.&lt;/p&gt;
+
+&lt;p&gt;The analysis of the pipeline data is not unprecedented. The New York Times in 2014, created an interactive map of &lt;a href=&#34;http://www.nytimes.com/interactive/2014/11/23/us/north-dakota-spill-database.html?_r=0&#34;&gt;environmental incidents in North Dakota&lt;/a&gt; from 2006-2014. Back in 2015, &lt;a href=&#34;http://www.scpr.org/news/2015/06/10/52332/santa-barbara-oil-spill-cleanup-costs-reach-69m-3m/&#34;&gt;High Country News&lt;/a&gt; wrote a piece on crude oil spills after an incident in &lt;a href=&#34;http://www.scpr.org/news/2015/06/10/52332/santa-barbara-oil-spill-cleanup-costs-reach-69m-3m/&#34;&gt;Santa Barbara&lt;/a&gt; costing more than $62M at the time. Also after an incident in &lt;a href=&#34;http://insideenergy.org/2015/01/28/in-north-dakota-oilfield-spill-problems-worsen/&#34;&gt;North Dakota&lt;/a&gt;, Inside Energy analyzed &lt;a href=&#34;http://insideenergy.org/2015/01/30/wastewater-spills-in-north-dakota-what-the-data-tell-us/&#34;&gt;wastewater spills in North Dakota&lt;/a&gt;. All these articles emphasize that the spills are not as rare as one might think.&lt;/p&gt;
+
+&lt;p&gt;This post is my take on the pipeline incidents. I&amp;rsquo;m interested in answering these specific questions:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;How common are spills?&lt;/li&gt;
+&lt;li&gt;What is their spatial and temporal distributions?&lt;/li&gt;
+&lt;li&gt;What is their scale regarding volume and cost?&lt;/li&gt;
+&lt;li&gt;What are the main causes of spills?&lt;/li&gt;
+&lt;li&gt;What places have a higher risk?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are tons of other questions to ask, but these are basic questions to understand the problem better. Hopefully, similar studies are done for policy making.&lt;/p&gt;
+
+&lt;h2 id=&#34;dataset-and-technical-details&#34;&gt;Dataset and technical details&lt;/h2&gt;
+
+&lt;p&gt;I am doing the analysis in &lt;code&gt;Python&lt;/code&gt; using its standard libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;numpy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pandas&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;matplotlib&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I also use &lt;code&gt;plotly&lt;/code&gt;, but only for plotting points on the US map. I have customized &lt;code&gt;matplotlib&lt;/code&gt; style using the recommendations of &lt;a href=&#34;http://www.futurile.net/2016/02/27/matplotlib-beautiful-plots-with-style/&#34;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+%matplotlib inline
+plt.style.use(&#39;ggplot&#39;)
+plt.rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39;
+plt.rcParams[&#39;font.serif&#39;] = &#39;Helvetica Neue&#39;
+plt.rcParams[&#39;font.monospace&#39;] = &#39;Helvetica Neue&#39;
+plt.rcParams[&#39;font.size&#39;] = 10
+plt.rcParams[&#39;axes.labelsize&#39;] = 10
+plt.rcParams[&#39;axes.labelweight&#39;] = &#39;bold&#39;
+plt.rcParams[&#39;axes.titlesize&#39;] = 12
+plt.rcParams[&#39;xtick.labelsize&#39;] = 10
+plt.rcParams[&#39;ytick.labelsize&#39;] = 10
+plt.rcParams[&#39;legend.fontsize&#39;] = 10
+plt.rcParams[&#39;figure.titlesize&#39;] = 12
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can download the dataset from &lt;a href=&#34;http://www.phmsa.dot.gov/pipeline/library/data-stats/flagged-data-files&#34;&gt;PHMS website&lt;/a&gt; with &lt;code&gt;xlsx&lt;/code&gt; format.  The dataset is broken into different time periods. Here I only focus on the data from 2010-2016 (filename is &lt;code&gt;hl2010toPresent&lt;/code&gt;, converted to &lt;code&gt;CSV&lt;/code&gt; format). Although, many incidents in 2016 are not reported yet. This data contains massive details of each incident (having 255 columns for each record shows this!). I only select a few columns and rename them to be more descriptive:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Year&lt;/li&gt;
+&lt;li&gt;Location (longitude and latitude)&lt;/li&gt;
+&lt;li&gt;Commodity type&lt;/li&gt;
+&lt;li&gt;The released volume (in barrels)&lt;/li&gt;
+&lt;li&gt;State&lt;/li&gt;
+&lt;li&gt;Release type&lt;/li&gt;
+&lt;li&gt;Whether water was contaminated&lt;/li&gt;
+&lt;li&gt;Total cost (in 1984 dollars)&lt;/li&gt;
+&lt;li&gt;Cause&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I make a few changes in the dataset to make it more approachable:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The cost comes in 1984 dollar. According to &lt;a href=&#34;http://www.in2013dollars.com/1984-dollars-in-2016?amount=1&#34;&gt;this website&lt;/a&gt;, \$1 in 1984 is equal to \$2.3 in 2016.&lt;/li&gt;
+&lt;li&gt;The released volume is in barrels, so I convert it to gallons which I have a better sense of (1 barrel = 42 US gallons).&lt;/li&gt;
+&lt;li&gt;The commodity names are long, so I make them shorter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;usefulcols=[&amp;quot;LOCAL_DATETIME&amp;quot;,&amp;quot;IYEAR&amp;quot;,&amp;quot;LOCATION_LATITUDE&amp;quot;,&amp;quot;LOCATION_LONGITUDE&amp;quot;,
+            &amp;quot;COMMODITY_RELEASED_TYPE&amp;quot;,&amp;quot;UNINTENTIONAL_RELEASE_BBLS&amp;quot;,&amp;quot;ONSHORE_STATE_ABBREVIATION&amp;quot;,
+            &amp;quot;RELEASE_TYPE&amp;quot;,&amp;quot;WATER_CONTAM_IND&amp;quot;,&amp;quot;TOTAL_COST_IN84&amp;quot;,&amp;quot;CAUSE&amp;quot;]
+dataset = pd.read_csv(&amp;quot;./hl2010toPresent.csv&amp;quot;, usecols = usefulcols)
+
+dataset.columns = [&amp;quot;time&amp;quot;, &amp;quot;year&amp;quot;, &amp;quot;lat&amp;quot;, &amp;quot;long&amp;quot;, &amp;quot;commodity&amp;quot;, &amp;quot;volume&amp;quot;,&amp;quot;state&amp;quot;, &amp;quot;release type&amp;quot;, &amp;quot;water&amp;quot;,&amp;quot;cost&amp;quot;,&amp;quot;cause&amp;quot;]
+
+dataset[&#39;commodity&#39;].unique()
+dataset[&#39;commodity&#39;].replace(
+    {&#39;REFINED AND/OR PETROLEUM PRODUCT (NON-HVL) WHICH IS A LIQUID AT AMBIENT CONDITIONS&#39;:&#39;REFINED LIQUIDS&#39;,
+    &#39;CO2 (CARBON DIOXIDE)&#39;: &#39;CARBON DIOXIDE&#39;,
+    &#39;HVL OR OTHER FLAMMABLE OR TOXIC FLUID WHICH IS A GAS AT AMBIENT CONDITIONS&#39;:&#39;FLAMMABLE GASES&#39;,
+    &#39;BIOFUEL / ALTERNATIVE FUEL(INCLUDING ETHANOL BLENDS)&#39;:&#39;BIOFUEL&#39;
+    }
+    , inplace=True)
+
+# convert to gallons
+dataset[&#39;volume&#39;] = 42 * (dataset[&#39;volume&#39;].astype(int))
+
+# convert to 2016 dollars
+dataset[&#39;cost&#39;] = 2.3 * dataset[&#39;cost&#39;]
+
+# save the cleaned dataset in a new file
+dataset.to_csv(&#39;./hl2010toPresent_cleaned.csv&#39;,index=False)
+dataset.head(5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;year&lt;/th&gt;
+      &lt;th&gt;lat&lt;/th&gt;
+      &lt;th&gt;long&lt;/th&gt;
+      &lt;th&gt;commodity&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;release type&lt;/th&gt;
+      &lt;th&gt;water&lt;/th&gt;
+      &lt;th&gt;cost&lt;/th&gt;
+      &lt;th&gt;cause&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;2/16/10 7:42&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;41.94352&lt;/td&gt;
+      &lt;td&gt;-88.23353&lt;/td&gt;
+      &lt;td&gt;REFINED LIQUIDS&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;IL&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;38379.865371&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;3/1/10 11:50&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;37.10847&lt;/td&gt;
+      &lt;td&gt;-100.80037&lt;/td&gt;
+      &lt;td&gt;CARBON DIOXIDE&lt;/td&gt;
+      &lt;td&gt;84&lt;/td&gt;
+      &lt;td&gt;KS&lt;/td&gt;
+      &lt;td&gt;OTHER&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;4414.659264&lt;/td&gt;
+      &lt;td&gt;OTHER INCIDENT CAUSE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;2/22/10 10:38&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;32.22471&lt;/td&gt;
+      &lt;td&gt;-101.40440&lt;/td&gt;
+      &lt;td&gt;FLAMMABLE GASES&lt;/td&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;33782.834143&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2/19/10 6:50&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;40.60860&lt;/td&gt;
+      &lt;td&gt;-74.23990&lt;/td&gt;
+      &lt;td&gt;REFINED LIQUIDS&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;NJ&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;21507.314365&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2/21/10 12:45&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;31.13284&lt;/td&gt;
+      &lt;td&gt;-101.18974&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;378&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;21991.543373&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;spread-of-spills&#34;&gt;Spread of spills&lt;/h2&gt;
+
+&lt;p&gt;The first plot shows the volume of the released commodities for all incidents in each year. Both plots are exactly the same, except the marker size is representing two different things. On the left plot, the size shows the cost of the spill. Unsurprisingly, the most costly incidents are those with a high volume usually $&amp;gt;10^4$.&lt;/p&gt;
+
+&lt;p&gt;The right panel, on the other hand, offers an alternative and interesting view (and it looks like they are a bunch of earrings!). The size of each point is proportional to the cost of the spill divided by the release volume. This reveals a very interesting trend: The cost per volume is more for small spills! I don&amp;rsquo;t know exactly why but my guess is the actions need to be taken are partly independent of the spill volume (this is up for debate, of course).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, axes = plt.subplots(nrows=1, ncols=2,figsize=(12,6))
+dataset.plot.scatter(x=&amp;quot;year&amp;quot;, y=&amp;quot;volume&amp;quot;,s=dataset.cost/80000,ax=axes[0])
+dataset.plot.scatter(x=&amp;quot;year&amp;quot;, y=&amp;quot;volume&amp;quot;,s=0.04*dataset.cost/dataset.volume,ax=axes[1])
+for ax in axes:
+    ax.get_xaxis().get_major_formatter().set_useOffset(False)
+    ax.set_yscale(&#39;log&#39;)
+    ax.set_xlim([2009,2017])
+    ax.set_ylim([10**0,10**7])
+    ax.set_ylabel(&#39;Volume (Gallons)&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_6_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Based on the commodity, the crude oil is the leading released commodity. Among 2693 incidents (roughly 1.5 incidents a day) reported from 2010 to October 2016, 1344 incidents involve releasing crude oil followed by refined fluid by 911 incidents. Together they make up ~$\%84$ of the incidents.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax = dataset[&amp;quot;commodity&amp;quot;].value_counts(sort=True).plot.barh()
+ax.set_title(&amp;quot;The number of spills by commodity&amp;quot;)
+for p in ax.patches:
+    ax.annotate(&#39;{:.0f}&#39;.format(p.get_width()), (1.1*p.get_x()+p.get_width(), p.get_y()+p.get_height()/3 ))
+ax.set_xlim(0,1500)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_8_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is worrying that number of the incidents has been constantly growing. Let&amp;rsquo;s look at the data by year and the reason of spill. Obviously &lt;em&gt;leak&lt;/em&gt; is the leading cause and unfortunately constantly number of the leaks is increasing. I see no reason that this trend  stops at this year. Other causes have more or less the same frequency over these years.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;release_year = pd.crosstab(dataset[&#39;year&#39;],dataset[&#39;release type&#39;])
+ax = release_year.plot(kind=&#39;bar&#39;, stacked=True, grid=False)
+ax.set_ylabel(&amp;quot;number of incidents&amp;quot;)
+ax.set_xlabel(&amp;quot;year&amp;quot;)
+ax.legend(loc = &#39;upper left&#39;)
+ax.set_ylim(0,700)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_10_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From here on, I will focus on incidents involving crude oil only. The number of such incidents has constantly increased with the exception of 2011. But the released volume follows no such pattern. Also, as dataset clearly mentions, part of the released oil can be recovered but it is not reported in the dataset. In 1344 incidents of crude oil, more than 8.5 million gallons are released.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;data = dataset[dataset[&amp;quot;commodity&amp;quot;]==&amp;quot;CRUDE OIL&amp;quot;]
+data.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;year&lt;/th&gt;
+      &lt;th&gt;lat&lt;/th&gt;
+      &lt;th&gt;long&lt;/th&gt;
+      &lt;th&gt;commodity&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;release type&lt;/th&gt;
+      &lt;th&gt;water&lt;/th&gt;
+      &lt;th&gt;cost&lt;/th&gt;
+      &lt;th&gt;cause&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;ctime&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2/21/10 12:45&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;31.13284&lt;/td&gt;
+      &lt;td&gt;-101.18974&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;378&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;LEAK&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;21991.543373&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-02-21&lt;/td&gt;
+      &lt;td&gt;2/21/10 12:45&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;2/20/10 6:30&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;32.47850&lt;/td&gt;
+      &lt;td&gt;-94.86790&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;336&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;OVERFILL OR OVERFLOW&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;117614.823872&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-02-20&lt;/td&gt;
+      &lt;td&gt;2/20/10 6:30&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt;3/1/10 9:16&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;47.68857&lt;/td&gt;
+      &lt;td&gt;-95.41732&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;126&lt;/td&gt;
+      &lt;td&gt;MN&lt;/td&gt;
+      &lt;td&gt;OVERFILL OR OVERFLOW&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;23997.634976&lt;/td&gt;
+      &lt;td&gt;INCORRECT OPERATION&lt;/td&gt;
+      &lt;td&gt;2010-03-01&lt;/td&gt;
+      &lt;td&gt;3/1/10 9:16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;td&gt;3/1/10 8:10&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;32.48325&lt;/td&gt;
+      &lt;td&gt;-94.83034&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;8316&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;RUPTURE&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;20146.442193&lt;/td&gt;
+      &lt;td&gt;CORROSION FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-03-01&lt;/td&gt;
+      &lt;td&gt;3/1/10 8:10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;1/25/10 11:07&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+      &lt;td&gt;29.47000&lt;/td&gt;
+      &lt;td&gt;-90.25444&lt;/td&gt;
+      &lt;td&gt;CRUDE OIL&lt;/td&gt;
+      &lt;td&gt;8484&lt;/td&gt;
+      &lt;td&gt;LA&lt;/td&gt;
+      &lt;td&gt;OVERFILL OR OVERFLOW&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;838911.034004&lt;/td&gt;
+      &lt;td&gt;EQUIPMENT FAILURE&lt;/td&gt;
+      &lt;td&gt;2010-01-25&lt;/td&gt;
+      &lt;td&gt;1/25/10 11:07&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, axes = plt.subplots(nrows=1, ncols=2,figsize=(12,6))
+data[&amp;quot;year&amp;quot;].value_counts(sort=False).plot(kind=&#39;bar&#39;,rot=0,ax=axes[0])
+
+axes[0].set_title(&amp;quot;The number of crude oil accidents per year&amp;quot;)
+axes[0].set_ylabel(&amp;quot;number of accidents&amp;quot;)
+axes[0].set_xlabel(&amp;quot;year&amp;quot;)
+for p in axes[0].patches:
+    # write number on the bars
+    axes[0].annotate(&#39;{:.0f}&#39;.format(p.get_height()), (p.get_x() + p.get_width()/8, p.get_height() * 1.005))
+
+(data.groupby([&#39;year&#39;])[&#39;volume&#39;].sum()/(10**6)).plot(kind=&#39;bar&#39;,rot=0,ax=axes[1])
+axes[1].set_title(&amp;quot;The volume of crude oil in million gallons per year&amp;quot;)
+axes[1].set_ylabel(&amp;quot;volume (million gallons)&amp;quot;)
+axes[1].set_xlabel(&amp;quot;year&amp;quot;)
+for p in axes[1].patches:
+    axes[1].annotate(&#39;{:.1f}&#39;.format(p.get_height()), (p.get_x() + p.get_width()/8, p.get_height() * 1.005))
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_13_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;which-states-are-dealing-with-the-incidents&#34;&gt;Which states are dealing with the incidents?&lt;/h3&gt;
+
+&lt;p&gt;Texas by far has the most spills, followed by Oklahoma, California, and Wyoming. In fact, Texas and Oklahoma deal with more than %51 of the incidents. This is not unexpected as according to &lt;a href=&#34;http://www.rrc.state.tx.us/pipeline-safety/&#34;&gt;Railroad Commission of Texas&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Texas has the largest pipeline infrastructure in the nation, with more than 439,771 miles of pipeline representing about &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;6&lt;/sub&gt; of the total pipeline mileage of the entire United States.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax=data[&amp;quot;state&amp;quot;].value_counts(sort=True).plot(kind=&#39;bar&#39;)
+ax.set_title(&amp;quot;The number of crude oil accidents in different states&amp;quot;)
+ax.set_ylabel(&amp;quot;number of accidents&amp;quot;)
+ax.set_xlabel(&amp;quot;state&amp;quot;)
+plt.show()
+# share of the first two states from the incidents
+data[&amp;quot;state&amp;quot;].value_counts(sort=True,normalize=True)[0:2].sum()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_16_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0.51190476190476186
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;what-is-total-money-spent&#34;&gt;What is total money spent?&lt;/h3&gt;
+
+&lt;p&gt;Another factor in a pipeline incident is the cost of each incident. Shown in 2016 dollar, look at the alternating pattern in the cost. This is probably because cleaning and fixing the issue takes a long time (maybe about a year?). Also, the companies are supposed to report the data at the end of fixing and cleaning process, so some incidents are not reported completely. The total reported cost so far has been $2.16 billion since 2010.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ax = (data.groupby([&#39;year&#39;])[&#39;cost&#39;].sum()/10**6).plot(kind=&#39;bar&#39;,rot=0)
+ax.set_title(&amp;quot;The total cost of spills in 2016 dollar&amp;quot;)
+ax.set_ylabel(&amp;quot;million dollar&amp;quot;)
+ax.set_xlabel(&amp;quot;year&amp;quot;)
+for p in ax.patches:
+    ax.annotate(&#39;{:.0f}&#39;.format(p.get_height()), (p.get_x()+ p.get_width()/2, p.get_height() * 0.98),
+                ha=&#39;center&#39;, va=&#39;center&#39;, xytext=(0, 10), textcoords=&#39;offset points&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_19_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;was-water-contaminated&#34;&gt;Was water contaminated?&lt;/h3&gt;
+
+&lt;p&gt;Maybe the most concerning aspect of spills is whether they pollute the water. Fortunately, this is often not the case (in %91 of cases). Although, we don&amp;rsquo;t know if those spills happen close to the water or not. Maybe, we have been lucky that pipelines mostly are not crossing close to the water resources.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;data[&#39;water&#39;].value_counts().plot.bar(title=&amp;quot;Whether water was contaminated or not&amp;quot;,rot=0)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_22_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;geographic-distributions&#34;&gt;Geographic distributions&lt;/h2&gt;
+
+&lt;p&gt;The color intensity represents the number of spills in each states. The color palettes
+on the US map is from &lt;a href=&#34;http://colorbrewer2.org/&#34;&gt;colorbrewer2&lt;/a&gt;. As it was mentioned, Texas is by far the worst state
+in terms of number of incididents.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+from IPython.display import Image
+init_notebook_mode(connected=True)
+import plotly.plotly as py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script&gt;requirejs.config({paths: { &#39;plotly&#39;: [&#39;https://cdn.plot.ly/plotly-latest.min&#39;]},});if(!window.Plotly) {{require([&#39;plotly&#39;],function(plotly) {window.Plotly=plotly;});}}&lt;/script&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.DataFrame(data[&amp;quot;state&amp;quot;].value_counts(sort=True).reset_index())
+df.columns = [&amp;quot;code&amp;quot;,&amp;quot;counts&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;datax = [ dict(
+        type=&#39;choropleth&#39;,
+        autocolorscale = False,
+        colorscale=[[0, &#39;rgb(255,237,160)&#39;],[0.5, &#39;rgb(254,178,76)&#39;],[1, &#39;rgb(240,59,32)&#39;]],
+        locations = df[&amp;quot;code&amp;quot;],
+        z = df[&amp;quot;counts&amp;quot;],
+        locationmode = &#39;USA-states&#39;,
+        marker = dict(line = dict (color = &#39;rgb(0,0,0)&#39;,width = 1,) ),
+        colorbar = dict(title = &amp;quot;&amp;quot;),
+        ) ]
+
+layout = dict(
+        title = &#39;The number of spills from 2010-October 2016&#39;,  
+        geo = dict(
+            scope=&#39;usa&#39;,
+            projection=dict( type=&#39;albers usa&#39; ),
+            showland = True,
+            landcolor = &amp;quot;rgb(229, 229, 229)&amp;quot;,
+            subunitcolor = &amp;quot;rgb(0,5,5)&amp;quot;,
+            countrycolor = &amp;quot;rgb(0,50,5)&amp;quot;,
+            countrywidth = 0.5,
+            subunitwidth = 0.5        
+        ),
+    )
+
+fig = dict( data=datax, layout=layout )
+#iplot( fig, filename=&#39;./d3-cloropleth-map&#39;,) #image=&#39;png&#39;
+#py.image.save_as(fig,&#39;./incident_states.png&#39;)
+Image(&#39;./incident_states.png&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_27_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;incidents-on-map&#34;&gt;Incidents on map&lt;/h3&gt;
+
+&lt;p&gt;Finally, maybe the most informative plot is the spatial distribution of all incidents. The map shows that spills really happen wherever there is a pipeline. Possibly connecting points will show exactly where pipelines are placed. The color of points is proportional to the released volume. The two large black points are two accidents in North Dakota (July 2013, 865000 gallons, \$20 million) and Michigan (July 2010, 843000 gallons, \$1 billion).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;datax = [ dict(
+        type = &#39;scattergeo&#39;,
+        locationmode = &#39;USA-states&#39;,
+        lon = data[&#39;long&#39;],
+        lat = data[&#39;lat&#39;],
+        text = data[&#39;cost&#39;].astype(str),
+        mode = &#39;markers&#39;,
+        hoverinfo = &#39;lon+lat+location&#39;,
+        marker = dict(
+            size = 9,
+            symbol = &#39;circle&#39;,
+            line = dict(width=1,color=&#39;rgba(10, 10, 1)&#39;),
+            opacity = 0.9,
+            reversescale = False,
+            autocolorscale = False,
+            colorscale=[[0, &#39;rgb(255,237,160)&#39;],[0.5, &#39;rgb(254,178,76)&#39;],[1, &#39;rgb(240,59,32)&#39;]],
+            cmin = 0,
+            color = data[&#39;volume&#39;],
+            cmax = data[&#39;volume&#39;].max(),
+            colorbar=dict(title=&amp;quot;Gallons&amp;quot;),
+        ))]
+
+layout = dict(
+        title = &#39;All crude oil incidents from 2010-October 2016&#39;,   
+        geo = dict(
+            scope=&#39;usa&#39;,
+            projection=dict( type=&#39;albers usa&#39; ),
+            showland = True,
+            landcolor = &amp;quot;rgb(229, 229, 229)&amp;quot;,
+            subunitcolor = &amp;quot;rgb(0,5,5)&amp;quot;,
+            countrycolor = &amp;quot;rgb(0,50,5)&amp;quot;,
+            countrywidth = 0.5,
+            subunitwidth = 0.5        
+        ),
+    )
+
+fig = dict( data=datax, layout=layout )
+#iplot( fig, filename=&#39;d3-airports&#39; )
+#py.image.save_as(fig,&#39;./incident_ditribution.png&#39;)
+Image(&#39;./incident_ditribution.png&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://mahdisadjadi.github.io/img/20161203_pipeline_output_29_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion-future-ideas&#34;&gt;Conclusion &amp;amp; future ideas&lt;/h2&gt;
+
+&lt;p&gt;During the period 2010 to October 2016, more than 8.5 million gallons of crude oil is spilled. The total cost of these spills is well over 2 billion dollars. In one of the worst cases, 843444 gallons was released in Michigan, resulting in a massive 1 billion cost in 2016 dollars and water contamination. In 2016 alone, more than 54 million dollars is the cost of releasing 800000 gallons of crude oil. Although, &lt;a href=&#34;http://www.pipeline101.com/are-pipelines-safe&#34;&gt;it is claimed&lt;/a&gt; that most incidents happen within the facilities not in the public land. Although, confirming this needs further analysis.&lt;/p&gt;
+
+&lt;p&gt;As &lt;a href=&#34;http://www.christopherfjones.com/&#34;&gt;Christofer Jones&lt;/a&gt;, historian of energy at ASU &lt;a href=&#34;http://www.zocalopublicsquare.org/2015/06/11/theres-no-such-thing-as-a-spill-proof-way-to-transport-oil/ideas/nexus/&#34;&gt;points out&lt;/a&gt;: &amp;ldquo;While it’s true that improved technology and regulation have reduced spills significantly—much like flying today is far safer than in the early years of commercial aviation—the fact remains that there exists no such thing as a spill-proof pipeline. Recognizing this historical reality is crucial to crafting future policy.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Whether this is currently a real priority is another question. At the time of writing, there are &lt;a href=&#34;http://phmsa.dot.gov/pipeline/inspections&#34;&gt;188 federal and 340 state inspectors&lt;/a&gt; to inspect &amp;ldquo;2.7 million miles of pipelines, 148 liquefied natural gas plants, and 7,574 hazardous liquid breakout tanks.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;This quick analysis shows different aspects of the pipeline incidents but many aspects of this dataset is unexplored. Some that I can think of are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The number of casualties,&lt;/li&gt;
+&lt;li&gt;Whether the pipeline is underground or on ground ,&lt;/li&gt;
+&lt;li&gt;possible seasonal/temporal patterns in incidents (one might guess winters are the worst seasons!),&lt;/li&gt;
+&lt;li&gt;Whether the spill happened close to the well or far from the pipeline. This is important as some pipelines cross lands close to farming areas and cities.&lt;/li&gt;
+&lt;li&gt;How long was the response time?&lt;/li&gt;
+&lt;li&gt;What are the most vulnerable areas? Is the vulnerability related to their age?&lt;/li&gt;
+&lt;li&gt;How does cost depend on the commodity, volume and cost?&lt;/li&gt;
+&lt;li&gt;Categorizing spills based on the volume and cost because many spills have really small volumes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;ll be grateful to hear your ideas, comments, and suggestions!&lt;/p&gt;
+
+&lt;p&gt;This post is written in Jupyter notebook and is available with the required dataset
+as a &lt;a href=&#34;https://github.com/Mahdisadjadi/pipeline-incidents&#34;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ring correlations in random networks</title>
+      <link>http://mahdisadjadi.github.io/publication/02/</link>
+      <pubDate>Mon, 14 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/publication/02/</guid>
+      <description>&lt;p&gt;Featured in &lt;a href=&#34;https://journals.aps.org/pre/kaleidoscope/pre/94/6/062304&#34;&gt;kaleidoscope&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -42,19 +996,24 @@
       <pubDate>Sun, 30 Oct 2016 22:10:07 -0700</pubDate>
       
       <guid>http://mahdisadjadi.github.io/links/</guid>
-      <description>&lt;p&gt;Like many people, I constantly find interesting codes, projects and datasets
+      <description>
+
+&lt;p&gt;Like many people, I constantly find interesting codes, projects and datasets
 everyday. Here is a partial list of more interesting projects that I&amp;rsquo;m using them
 in my research or learning or I might check them out later! There&amp;rsquo;s a short
 description plus their source code address, if available.&lt;/p&gt;
+
 &lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#datasets&#34;&gt;Datasets&lt;/a&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#data.gov&#34;&gt;DATA.GOV&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ungp&#34;&gt;United Nations Global Pulse&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#codes&#34;&gt;Codes &amp;amp; software&lt;/a&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#ann&#34;&gt;ANN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#autograd&#34;&gt;Autograd&lt;/a&gt;&lt;/li&gt;
@@ -69,117 +1028,248 @@ description plus their source code address, if available.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;#pypercolate&#34;&gt;pypercolate&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#slepc&#34;&gt;SLEPc&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#stonybrook&#34;&gt;Stony Brook Algorithms&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#Communities&#34;&gt;Communities&lt;/a&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#electronicspoint&#34;&gt;Electronics Point&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+
 &lt;h2 id=&#34;datasets&#34;&gt;Datasets&lt;/h2&gt;
-&lt;h3 id=&#34;datagov-a-iddatagova&#34;&gt;DATA.GOV &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;data-gov-a-id-data-gov-a&#34;&gt;DATA.GOV &lt;a id=&#34;data.gov&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;This is a collection of &amp;gt;150000 fully open datasets managed and hosted by the U.S. General Services Administration. This website contains collections across many topics from agriculture and local governments to science and finance.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://www.cgal.org/&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/CGAL/cgal&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;united-nations-global-pulse-a-idungpa&#34;&gt;United Nations Global Pulse &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;united-nations-global-pulse-a-id-ungp-a&#34;&gt;United Nations Global Pulse &lt;a id=&#34;ungp&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;This is a UN initiative focusing on big data to tackle problems for public good.
 They have done many important projects so far that you can find on their website and
 data is also available for some projects, although not in a central place.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://unglobalpulse.org/projects&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;codes&#34;&gt;Codes&lt;/h2&gt;
+
 &lt;h3 id=&#34;ann&#34;&gt;ANN&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;ANN&lt;/code&gt; is a library written in C++, which supports data structures and algorithms for both exact and approximate nearest neighbor searching in arbitrarily high dimensions. In the nearest neighbor problem a set of data points in d-dimensional space is given. These points are preprocessed into a data structure, so that given any query point q, the nearest or generally k nearest points of P to q can be reported efficiently. The distance between two points can be defined in many ways. ANN assumes that distances are measured using any class of distance functions called Minkowski metrics. These include the well known Euclidean distance, Manhattan distance, and max distance.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://www.cs.umd.edu/~mount/ANN/&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;autograd&#34;&gt;Autograd&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;Autograd&lt;/code&gt; can automatically differentiate native Python and Numpy code. It can handle a large subset of Python&amp;rsquo;s features, including loops, ifs, recursion and closures, and it can even take derivatives of derivatives of derivatives.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://github.com/HIPS/autograd&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;autoscale&#34;&gt;autoScale&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;autoScale.py&lt;/code&gt; is a program that performs an automatic finite-size scaling analysis for given sets of simulated data. It implements a quite general scaling assumption and optimizes an initial set of scaling parameters that enforce a data collapse of the different data sets. The presented guide describes how the program works, it presents a detailed example and finally gives some hints on how to improve the results of a scaling analysis.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/0910.5403&#34;&gt;Paper&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/omelchert/SCALING_ANALYSIS&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;cgal&#34;&gt;CGAL&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;CGAL&lt;/code&gt; is a software project that provides easy access to efficient and reliable geometric algorithms in the form of a C++ library. CGAL is used in various areas needing geometric computation, such as geographic information systems, computer aided design, molecular biology, medical imaging, computer graphics, and robotics.
 The library offers data structures and algorithms like triangulations, Voronoi diagrams, Boolean operations on polygons and polyhedra, point set processing, arrangements of curves, surface and volume mesh generation, geometry processing, alpha shapes, convex hull algorithms, shape analysis, AABB and KD trees.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://www.data.gov/&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/GSA/data.gov/&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;dynamo&#34;&gt;Dynamo&lt;/h3&gt;
+
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;DynamO&lt;/code&gt; is a free and open-source event-driven particle simulator. Event-driven simulation is a fast and analytical technique for particle simulation and is an alternative approach to the more traditional time-stepping approaches (such as those found in Gromacs, Liggghts, and NAMD). DynamO is a reference implementation of many established event-driven models and a research platform for the latest advances in event-driven algorithms.&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;DynamO&lt;/code&gt; is a free and open-source event-driven particle simulator. Event-driven simulation is a fast and analytical technique for particle simulation and is an alternative approach to the more traditional time-stepping approaches (such as those found in Gromacs, Liggghts, and NAMD). DynamO is a reference implementation of many established event-driven models and a research platform for the latest advances in event-driven algorithms.&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://dynamomd.org/&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/toastedcrumpets/DynamO&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;eigen&#34;&gt;Eigen&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;Eigen&lt;/code&gt; is an excellent C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://eigen.tuxfamily.org/index.php?title=Main_Page&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/toastedcrumpets/DynamO&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;geometry-algorithms-a-idgeoliba&#34;&gt;Geometry algorithms &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;geometry-algorithms-a-id-geolib-a&#34;&gt;Geometry algorithms &lt;a id=&#34;geolib&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;This is not a library in the technical sense but the purpose of this site is
 to provide practical geometric algorithms for the software developer. It has
 explanation of algorithms plus C++ code.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://geomalgorithms.com/&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;hoomd-blue&#34;&gt;HOOMD-blue&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;HOOMD-blue&lt;/code&gt; is a general-purpose particle simulation toolkit. It scales from a single CPU core to thousands of GPUs.
 You define particle initial conditions and interactions in a high-level python script. Then tell HOOMD-blue how you want to execute the job and it takes care of the rest. Python job scripts give you unlimited flexibility to create custom initialization routines, control simulation parameters, and perform in situ analysis.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://glotzerlab.engin.umich.edu/hoomd-blue/&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://bitbucket.org/glotzer/hoomd-blue&#34;&gt;Bitbucket&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;openmm&#34;&gt;OpenMM&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;OpenMM&lt;/code&gt; includes everything one needs to run modern molecular simulations. It is extremely flexible with its custom functions, is open-source, and has high performance, especially on recent GPUs.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://simtk.org/projects/openmm&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/pandegroup/openmm&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;pyfssa&#34;&gt;pyfssa&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;pyfssa is a scientific Python package for algorithmic finite-size scaling
 analysis at phase transitions.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://pyfssa.readthedocs.io/en/stable/index.html&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/andsor/pyfssa&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;pypercolate&#34;&gt;pypercolate&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;pypercolate&lt;/code&gt; is a scientific Python package that implements the Newman-Ziff
 algorithm for Monte Carlo simulation of percolation on graphs.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://pypercolate.readthedocs.io/en/stable/&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://github.com/andsor/pypercolate&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;slepc&#34;&gt;SLEPc&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;The &amp;ldquo;Scalable Library for Eigenvalue Problem Computations&amp;rdquo;, &lt;code&gt;SLEPc&lt;/code&gt; is a software library for the solution of large scale sparse eigenvalue problems on parallel computers. It is an extension of PETSc and can be used for linear eigenvalue problems in either standard or generalized form, with real or complex arithmetic. It can also be used for computing a partial SVD of a large, sparse, rectangular matrix, and to solve nonlinear eigenvalue problems (polynomial or general). Additionally, SLEPc provides solvers for the computation of the action of a matrix function on a vector.&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href=&#34;http://slepc.upv.es/&#34;&gt;Website&lt;/a&gt; |
 &lt;a href=&#34;https://bitbucket.org/slepc/slepc&#34;&gt;Bitbucket&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;stony-brook-algorithms-a-idstonybrooka&#34;&gt;Stony Brook algorithms &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;stony-brook-algorithms-a-id-stonybrook-a&#34;&gt;Stony Brook algorithms &lt;a id=&#34;stonybrook&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;A comprehensive collection of algorithm implementations for over seventy of the most fundamental problems in combinatorial algorithms. The problem taxonomy, implementations, and supporting material are all drawn from my book The Algorithm Design Manual.&amp;rdquo;&amp;quot;
+&lt;p&gt;&amp;ldquo;A comprehensive collection of algorithm implementations for over seventy of the most fundamental problems in combinatorial algorithms. The problem taxonomy, implementations, and supporting material are all drawn from my book The Algorithm Design Manual.&amp;rdquo;&amp;rdquo;
 &lt;a href=&#34;http://www3.cs.stonybrook.edu/~algorith/&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+
 &lt;h2 id=&#34;communities&#34;&gt;Communities&lt;/h2&gt;
+
 &lt;h3 id=&#34;electronics-point&#34;&gt;Electronics Point&lt;/h3&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;A community where members can discuss, advise and debate electronics-related topics.
 The aim is to explore up-and-coming components, designs, and consumer products and
 assess the pending progress of the industry as it relates to the hardware engineer.
 &lt;a href=&#34;https://www.electronicspoint.com&#34;&gt;Website&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cellular materials</title>
+      <link>http://mahdisadjadi.github.io/project/cellular_materials/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/project/cellular_materials/</guid>
+      <description>&lt;p&gt;You can barely find someone not amazed by honeycombs: a packing of seemingly
+perfect hexagons. Honeycomb is a cellular network. In fact,
+they are many similar structures in nature resembling the honeycomb. Although,
+most naturally occurring cellular networks are not as ordered as honeycomb. But
+it&amp;rsquo;s not hard to notice in the image (top left corner), even in honeycomb
+there are a few cells with 5 neighbors instead of 6.&lt;/p&gt;
+
+&lt;figure&gt;&lt;a href=&#34;http://www.newdesignfile.com/post_honeycomb-texture-psd-free_202486/&#34;&gt;
+    &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_01.jpg&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Honeycomb, a cellular material&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;p&gt;Partitioning any surface or volume into closed
+cells results in a &amp;ldquo;cellular network&amp;rdquo;.
+Examples are soap foam, grains, biological tissues, crack networks, ecological
+territories, and Voronoi tessellations. It is amazing how very distinct processes
+lead to cellular networks which are topologically the same. The following image
+shows bubbles as a cellular network where an interface separates order-disorder phases.
+If you look at the disordered phase carefully, you will notice that large bubbles are
+surrounded by small bubbles. This is no accident! This
+tendency of smaller and larger rings being adjacent is called &amp;ldquo;Aboav-Weaire&amp;rdquo; law.&lt;/p&gt;
+
+&lt;figure&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/File:Order_and_Chaos.tif&#34;&gt;
+    &lt;img src=&#34;http://mahdisadjadi.github.io/img/projects_cellmaterials_02.jpg&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+            &lt;h4&gt;A foam with interface order-disorder&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;p&gt;According to the law, average size of cells $m(n)$ around a cell with $n$ sides is:&lt;/p&gt;
+
+&lt;p&gt;$$
+m(n) = A+\frac{B}{n}
+$$&lt;/p&gt;
+
+&lt;p&gt;$A$ and $B$ are two constants determined for each specific network. This is not
+an exact equation but works very well!&lt;/p&gt;
+
+&lt;p&gt;My interest in cellular networks comes from network glasses. Although in glass science,
+they are often called random network instead of cellular network and cells
+are called &amp;ldquo;rings&amp;rdquo;. Network glasses are very important networks since they
+are microscopic and interactions are vert different from commonly studied random
+networks. But the issue is, rings in bulk glasses (which are 3D) are hard to
+observe or even define uniquely.&lt;/p&gt;
+
+&lt;p&gt;The breakthrough happened only recently. Researchers have been able to image
+a bilayer silica (SiO${}_{2}$) showing, for the very first time, how atoms are arranged to
+make the network of polygons creating the ring structure of the glass.
+Another example of these thin materials is
+amorphous graphene. Although people have studied glasses for years, the issue is
+ their structure is disordered (and there are $~10^{23}$ atoms to image!),
+so experimental methods used in crystallography (like x-ray) can&amp;rsquo;t determine
+the structure uniquely. This leaves a lot of room for &lt;em&gt;scientific&lt;/em&gt; speculations.&lt;/p&gt;
+
+&lt;p&gt;Note how different these materials are, ranging from atomic scale to&lt;/p&gt;
+
+&lt;p&gt;Although my research is mainly concerned with fundamental aspects of cellular
+materials but they also have wide applications. These materials are low density
+(lightweight) and are suitable to make boats, airplane and our bones.&lt;/p&gt;
+
+&lt;p&gt;[1] Sadjadi M, Thorpe MF. Ring correlations in random networks. Physical Review E. 2016 Dec 9;94(6):062304.
+arXiv:&lt;a href=&#34;https://arxiv.org/abs/1607.06568&#34;&gt;1607.06568&lt;/a&gt;; &lt;a href=&#34;https://doi.org/10.1103/PhysRevE.94.062304&#34;&gt;DOI&lt;/a&gt; (2016).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Anchored boundary conditions for locally isostatic networks</title>
+      <link>http://mahdisadjadi.github.io/publication/01/</link>
+      <pubDate>Mon, 30 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://mahdisadjadi.github.io/publication/01/</guid>
+      <description>&lt;p&gt;Featured in &lt;a href=&#34;https://journals.aps.org/pre/kaleidoscope/pre/92/5/053306&#34;&gt;kaleidoscope&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
