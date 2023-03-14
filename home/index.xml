@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Mahdi Sadjadi</title>
@@ -7,18 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mahdi Sadjadi</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://mahdisadjadi.github.io/home/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://mahdisadjadi.github.io/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>teaching</title>
       <link>http://mahdisadjadi.github.io/home/teaching/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/home/teaching/</guid>
-      <description> 14-15 Aug 2019 - Software Carpentry at University of California Los Angeles, website 09-10 Sep 2017 - Software Carpentry at Utah State University, website 14-15 Aug 2017 - Software Carpentry at University of Delaware,website 18-19 May 2017 - Software Carpentry at University of Arkansas, website 22-23 Aug 2016 - Software Carpentry at Johns Hopkins University, website  </description>
+      <description> 14-15 Aug 2019 - Software Carpentry at University of California Los Angeles, website 09-10 Sep 2017 - Software Carpentry at Utah State University, website 14-15 Aug 2017 - Software Carpentry at University of Delaware,website 18-19 May 2017 - Software Carpentry at University of Arkansas, website 22-23 Aug 2016 - Software Carpentry at Johns Hopkins University, website </description>
     </item>
     
     <item>
@@ -27,9 +23,8 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://mahdisadjadi.github.io/home/about/</guid>
-      <description>Hello! I am a data scientist at VideoAmp working on cross-screen planning and measurement of TV viewership and advertisement.
-I have a strong passion for data science, analytics, and programming. Previously, I was a Data Science Fellow at Insight Data Science during Spring 2018 and have been an instructor at Software Carpentry since 2016.
-I received my Ph.D. in physics from ASU working with Mike Thorpe. My research combined experimental results, computer simulations and mathematical theorems to gain a better understanding of rigidity of glassy/disordered structures.</description>
+      <description>Hello! I&amp;rsquo;m currently a data scientist at YieldMo working on a broad set of problem in digital advertising and using ML/AI to address them. Previously, I worked at VideoAmp on cross-screen planning and measurement of TV viewership and advertisement. And before that, I was a Data Science Fellow at Insight Data Science during Spring 2018 and have been an instructor at Software Carpentry since 2016.
+I received my Ph.D. in physics from ASU working with Mike Thorpe.</description>
     </item>
     
   </channel>

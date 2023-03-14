@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.53" />
+
   <meta name="author" content="Mahdi Sadjadi">
   <meta name="description" content="PhD student">
 
@@ -26,8 +26,8 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="http://mahdisadjadi.github.io/index.xml" type="application/rss+xml" title="Mahdi Sadjadi">
-  <link rel="feed" href="http://mahdisadjadi.github.io/index.xml" type="application/rss+xml" title="Mahdi Sadjadi">
+  <link rel="alternate" href="." type="application/rss+xml" title="Mahdi Sadjadi">
+  <link rel="feed" href="." type="application/rss+xml" title="Mahdi Sadjadi">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
@@ -135,24 +135,19 @@
 
 
         <div class="article-style" itemprop="articleBody">
-            
-
-<p>Like many people, I constantly find interesting codes, projects and datasets
+            <p>Like many people, I constantly find interesting codes, projects and datasets
 everyday. Here is a partial list of more interesting projects that I&rsquo;m using them
 in my research or learning or I might check them out later! There&rsquo;s a short
 description plus their source code address, if available.</p>
-
 <h2 id="table-of-contents">Table of Contents</h2>
-
 <ul>
 <li><a href="#datasets">Datasets</a>
-
 <ul>
 <li><a href="#data.gov">DATA.GOV</a></li>
 <li><a href="#ungp">United Nations Global Pulse</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="#codes">Codes &amp; software</a>
-
 <ul>
 <li><a href="#ann">ANN</a></li>
 <li><a href="#autograd">Autograd</a></li>
@@ -167,159 +162,111 @@ description plus their source code address, if available.</p>
 <li><a href="#pypercolate">pypercolate</a></li>
 <li><a href="#slepc">SLEPc</a></li>
 <li><a href="#stonybrook">Stony Brook Algorithms</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="#Communities">Communities</a>
-
 <ul>
 <li><a href="#electronicspoint">Electronics Point</a></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="datasets">Datasets</h2>
-
-<h3 id="data-gov-a-id-data-gov-a">DATA.GOV <a id="data.gov"></a></h3>
-
+<h3 id="datagov-a-iddatagova">DATA.GOV <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <blockquote>
 <p>This is a collection of &gt;150000 fully open datasets managed and hosted by the U.S. General Services Administration. This website contains collections across many topics from agriculture and local governments to science and finance.</p>
 </blockquote>
-
 <p><a href="http://www.cgal.org/">Website</a> |
 <a href="https://github.com/CGAL/cgal">Github</a></p>
-
-<h3 id="united-nations-global-pulse-a-id-ungp-a">United Nations Global Pulse <a id="ungp"></a></h3>
-
+<h3 id="united-nations-global-pulse-a-idungpa">United Nations Global Pulse <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <blockquote>
 <p>This is a UN initiative focusing on big data to tackle problems for public good.
 They have done many important projects so far that you can find on their website and
 data is also available for some projects, although not in a central place.</p>
 </blockquote>
-
 <p><a href="http://unglobalpulse.org/projects">Website</a></p>
-
 <h2 id="codes">Codes</h2>
-
 <h3 id="ann">ANN</h3>
-
 <blockquote>
 <p><code>ANN</code> is a library written in C++, which supports data structures and algorithms for both exact and approximate nearest neighbor searching in arbitrarily high dimensions. In the nearest neighbor problem a set of data points in d-dimensional space is given. These points are preprocessed into a data structure, so that given any query point q, the nearest or generally k nearest points of P to q can be reported efficiently. The distance between two points can be defined in many ways. ANN assumes that distances are measured using any class of distance functions called Minkowski metrics. These include the well known Euclidean distance, Manhattan distance, and max distance.</p>
 </blockquote>
-
 <p><a href="http://www.cs.umd.edu/~mount/ANN/">Website</a></p>
-
 <h3 id="autograd">Autograd</h3>
-
 <blockquote>
 <p><code>Autograd</code> can automatically differentiate native Python and Numpy code. It can handle a large subset of Python&rsquo;s features, including loops, ifs, recursion and closures, and it can even take derivatives of derivatives of derivatives.</p>
 </blockquote>
-
 <p><a href="https://github.com/HIPS/autograd">Github</a></p>
-
 <h3 id="autoscale">autoScale</h3>
-
 <blockquote>
 <p><code>autoScale.py</code> is a program that performs an automatic finite-size scaling analysis for given sets of simulated data. It implements a quite general scaling assumption and optimizes an initial set of scaling parameters that enforce a data collapse of the different data sets. The presented guide describes how the program works, it presents a detailed example and finally gives some hints on how to improve the results of a scaling analysis.</p>
 </blockquote>
-
 <p><a href="https://arxiv.org/abs/0910.5403">Paper</a> |
 <a href="https://github.com/omelchert/SCALING_ANALYSIS">Github</a></p>
-
 <h3 id="cgal">CGAL</h3>
-
 <blockquote>
 <p><code>CGAL</code> is a software project that provides easy access to efficient and reliable geometric algorithms in the form of a C++ library. CGAL is used in various areas needing geometric computation, such as geographic information systems, computer aided design, molecular biology, medical imaging, computer graphics, and robotics.
 The library offers data structures and algorithms like triangulations, Voronoi diagrams, Boolean operations on polygons and polyhedra, point set processing, arrangements of curves, surface and volume mesh generation, geometry processing, alpha shapes, convex hull algorithms, shape analysis, AABB and KD trees.</p>
 </blockquote>
-
 <p><a href="https://www.data.gov/">Website</a> |
 <a href="https://github.com/GSA/data.gov/">Github</a></p>
-
 <h3 id="dynamo">Dynamo</h3>
-
 <blockquote>
-<p><code>DynamO</code> is a free and open-source event-driven particle simulator. Event-driven simulation is a fast and analytical technique for particle simulation and is an alternative approach to the more traditional time-stepping approaches (such as those found in Gromacs, Liggghts, and NAMD). DynamO is a reference implementation of many established event-driven models and a research platform for the latest advances in event-driven algorithms.&rdquo;</p>
+<p><code>DynamO</code> is a free and open-source event-driven particle simulator. Event-driven simulation is a fast and analytical technique for particle simulation and is an alternative approach to the more traditional time-stepping approaches (such as those found in Gromacs, Liggghts, and NAMD). DynamO is a reference implementation of many established event-driven models and a research platform for the latest advances in event-driven algorithms.&quot;</p>
 </blockquote>
-
 <p><a href="http://dynamomd.org/">Website</a> |
 <a href="https://github.com/toastedcrumpets/DynamO">Github</a></p>
-
 <h3 id="eigen">Eigen</h3>
-
 <blockquote>
 <p><code>Eigen</code> is an excellent C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.</p>
 </blockquote>
-
 <p><a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Website</a> |
 <a href="https://github.com/toastedcrumpets/DynamO">Github</a></p>
-
-<h3 id="geometry-algorithms-a-id-geolib-a">Geometry algorithms <a id="geolib"></a></h3>
-
+<h3 id="geometry-algorithms-a-idgeoliba">Geometry algorithms <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <blockquote>
 <p>This is not a library in the technical sense but the purpose of this site is
 to provide practical geometric algorithms for the software developer. It has
 explanation of algorithms plus C++ code.</p>
 </blockquote>
-
 <p><a href="http://geomalgorithms.com/">Website</a></p>
-
 <h3 id="hoomd-blue">HOOMD-blue</h3>
-
 <blockquote>
 <p><code>HOOMD-blue</code> is a general-purpose particle simulation toolkit. It scales from a single CPU core to thousands of GPUs.
 You define particle initial conditions and interactions in a high-level python script. Then tell HOOMD-blue how you want to execute the job and it takes care of the rest. Python job scripts give you unlimited flexibility to create custom initialization routines, control simulation parameters, and perform in situ analysis.</p>
 </blockquote>
-
 <p><a href="http://glotzerlab.engin.umich.edu/hoomd-blue/">Website</a> |
 <a href="https://bitbucket.org/glotzer/hoomd-blue">Bitbucket</a></p>
-
 <h3 id="openmm">OpenMM</h3>
-
 <blockquote>
 <p><code>OpenMM</code> includes everything one needs to run modern molecular simulations. It is extremely flexible with its custom functions, is open-source, and has high performance, especially on recent GPUs.</p>
 </blockquote>
-
 <p><a href="https://simtk.org/projects/openmm">Website</a> |
 <a href="https://github.com/pandegroup/openmm">Github</a></p>
-
 <h3 id="pyfssa">pyfssa</h3>
-
 <blockquote>
 <p>pyfssa is a scientific Python package for algorithmic finite-size scaling
 analysis at phase transitions.</p>
 </blockquote>
-
 <p><a href="http://pyfssa.readthedocs.io/en/stable/index.html">Website</a> |
 <a href="https://github.com/andsor/pyfssa">Github</a></p>
-
 <h3 id="pypercolate">pypercolate</h3>
-
 <blockquote>
 <p><code>pypercolate</code> is a scientific Python package that implements the Newman-Ziff
 algorithm for Monte Carlo simulation of percolation on graphs.</p>
 </blockquote>
-
 <p><a href="http://pypercolate.readthedocs.io/en/stable/">Website</a> |
 <a href="https://github.com/andsor/pypercolate">Github</a></p>
-
 <h3 id="slepc">SLEPc</h3>
-
 <blockquote>
 <p>The &ldquo;Scalable Library for Eigenvalue Problem Computations&rdquo;, <code>SLEPc</code> is a software library for the solution of large scale sparse eigenvalue problems on parallel computers. It is an extension of PETSc and can be used for linear eigenvalue problems in either standard or generalized form, with real or complex arithmetic. It can also be used for computing a partial SVD of a large, sparse, rectangular matrix, and to solve nonlinear eigenvalue problems (polynomial or general). Additionally, SLEPc provides solvers for the computation of the action of a matrix function on a vector.</p>
 </blockquote>
-
 <p><a href="http://slepc.upv.es/">Website</a> |
 <a href="https://bitbucket.org/slepc/slepc">Bitbucket</a></p>
-
-<h3 id="stony-brook-algorithms-a-id-stonybrook-a">Stony Brook algorithms <a id="stonybrook"></a></h3>
-
+<h3 id="stony-brook-algorithms-a-idstonybrooka">Stony Brook algorithms <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <blockquote>
-<p>&ldquo;A comprehensive collection of algorithm implementations for over seventy of the most fundamental problems in combinatorial algorithms. The problem taxonomy, implementations, and supporting material are all drawn from my book The Algorithm Design Manual.&rdquo;&rdquo;
+<p>&ldquo;A comprehensive collection of algorithm implementations for over seventy of the most fundamental problems in combinatorial algorithms. The problem taxonomy, implementations, and supporting material are all drawn from my book The Algorithm Design Manual.&rdquo;&quot;
 <a href="http://www3.cs.stonybrook.edu/~algorith/">Website</a></p>
 </blockquote>
-
 <h2 id="communities">Communities</h2>
-
 <h3 id="electronics-point">Electronics Point</h3>
-
 <blockquote>
 <p>A community where members can discuss, advise and debate electronics-related topics.
 The aim is to explore up-and-coming components, designs, and consumer products and
@@ -344,7 +291,7 @@ assess the pending progress of the industry as it relates to the hardware engine
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

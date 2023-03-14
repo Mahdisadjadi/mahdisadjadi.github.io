@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.53" />
+
   <meta name="author" content="Mahdi Sadjadi">
   <meta name="description" content="PhD student">
 
@@ -26,8 +26,8 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="http://mahdisadjadi.github.io/index.xml" type="application/rss+xml" title="Mahdi Sadjadi">
-  <link rel="feed" href="http://mahdisadjadi.github.io/index.xml" type="application/rss+xml" title="Mahdi Sadjadi">
+  <link rel="alternate" href="." type="application/rss+xml" title="Mahdi Sadjadi">
+  <link rel="feed" href="." type="application/rss+xml" title="Mahdi Sadjadi">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
@@ -147,19 +147,16 @@
 
 
         <div class="article-style" itemprop="articleBody">
-            
-
-<p><a href="https://www.crummy.com/software/BeautifulSoup/"><code>Beautiful Soup</code></a> is a Python library to search and extract what we need from a document. In this post, I use it to access the data in <code>Geno 2.0 Next Generation</code> <a href="https://genographic.nationalgeographic.com/reference-populations-next-gen/">webpage</a> for each population. This project contains information of more than 830000 volunteers from 140 countries who have participated in the project. The webpage summarizes the results and shows what is the share of various genetic affiliations in each population. Possibly, novel insights is hidden in the data, but first of all we need to collect them for post-processing!</p>
-
-<p>The overall workflow looks like this:
-1. Identify a source, whether a website url or a locally saved file.
-2. In BeautifulSoup, use a parser to parse HTML source code. The default is <code>html.parser</code>. Other options include <code>html5lib</code> library to parse sources written in HTML5, but you have install it separately. see the instructions <a href="https://pypi.python.org/pypi/html5lib">here</a>.
-3. Find HTML elements  such as <code>div</code> or <code>a</code> that hold the required data. We can also select elements with certain <code>id</code> or <code>class</code>.
-4. Then use commands such as <code>findAll</code> or <code>find</code> to find all or an instance of the data, you are looking for.
-5. Possibly do a post-process on the scraped data, to make it in the required format. Here, I collect them in an ordered dictionary to convert the dataset into <code>JSON</code> file and <code>pandas</code> dataframe.</p>
-
+            <p><a href="https://www.crummy.com/software/BeautifulSoup/"><code>Beautiful Soup</code></a> is a Python library to search and extract what we need from a document. In this post, I use it to access the data in <code>Geno 2.0 Next Generation</code> <a href="https://genographic.nationalgeographic.com/reference-populations-next-gen/">webpage</a> for each population. This project contains information of more than 830000 volunteers from 140 countries who have participated in the project. The webpage summarizes the results and shows what is the share of various genetic affiliations in each population. Possibly, novel insights is hidden in the data, but first of all we need to collect them for post-processing!</p>
+<p>The overall workflow looks like this:</p>
+<ol>
+<li>Identify a source, whether a website url or a locally saved file.</li>
+<li>In BeautifulSoup, use a parser to parse HTML source code. The default is <code>html.parser</code>. Other options include <code>html5lib</code> library to parse sources written in HTML5, but you have install it separately. see the instructions <a href="https://pypi.python.org/pypi/html5lib">here</a>.</li>
+<li>Find HTML elements  such as <code>div</code> or <code>a</code> that hold the required data. We can also select elements with certain <code>id</code> or <code>class</code>.</li>
+<li>Then use commands such as <code>findAll</code> or <code>find</code> to find all or an instance of the data, you are looking for.</li>
+<li>Possibly do a post-process on the scraped data, to make it in the required format. Here, I collect them in an ordered dictionary to convert the dataset into <code>JSON</code> file and <code>pandas</code> dataframe.</li>
+</ol>
 <p>This script uses libraries:</p>
-
 <ul>
 <li><code>BeautifulSoup</code>: To scrape the webpage</li>
 <li><code>Collections</code>: To hold an ordered list of items in a dictionary</li>
@@ -167,118 +164,90 @@
 <li><code>pandas</code>: To create a dataframe</li>
 <li><code>numpy</code>: To do numerics</li>
 </ul>
-
-<pre><code class="language-python">from bs4 import BeautifulSoup
-from collections import OrderedDict
-import json
-import pandas as pd
-import numpy as np
-</code></pre>
-
-<h2 id="specifying-the-source">Specifying the source</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> OrderedDict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span></code></pre></div><h2 id="specifying-the-source">Specifying the source</h2>
 <p>As I said in the above workflow, we could use either a locally save file or a url. The most usual way is to use a url using libraries like <code>urllib</code> or <code>requests</code>. But for this particular webpage that I am intrested in, we are not able to extract all data because part of data is generated through javascript code. There are workarounds to access data in webpages rendered by javascript (like <a href="https://github.com/niklasb/dryscrape"><code>dryscrape</code></a>), but since I only work with 1 page, it is easier to save it locally. I have saved a local copy of the webpage in <code>webpage</code> directory.</p>
-
-<pre><code class="language-python"># url to scrape
-url_to_scrape = 'https://genographic.nationalgeographic.com/reference-populations-next-gen/'
-
-# local file to scrape
-file_to_scrape = open(&quot;./webpage/Reference Populations - Geno 2.0 Next Generation.html&quot;)
-# Create a beautifulsoup object from html content
-soup = BeautifulSoup(file_to_scrape,&quot;html.parser&quot;)
-</code></pre>
-
-<h2 id="looking-into-soup">Looking into soup!</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># url to scrape</span>
+</span></span><span style="display:flex;"><span>url_to_scrape <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://genographic.nationalgeographic.com/reference-populations-next-gen/&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># local file to scrape</span>
+</span></span><span style="display:flex;"><span>file_to_scrape <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;./webpage/Reference Populations - Geno 2.0 Next Generation.html&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a beautifulsoup object from html content</span>
+</span></span><span style="display:flex;"><span>soup <span style="color:#f92672">=</span> BeautifulSoup(file_to_scrape,<span style="color:#e6db74">&#34;html.parser&#34;</span>)
+</span></span></code></pre></div><h2 id="looking-into-soup">Looking into soup!</h2>
 <p>Let&rsquo;s see what is inside the variable <code>soup</code>. It contains all HTML elements in the webpage. Looking through the code, I realized the info that I&rsquo;m interested in are wrapped in <code>&lt;div&gt;</code> elements that look like this:</p>
-
-<pre><code>&lt;div class=&quot;pop-211&quot;&gt;
+<pre tabindex="0"><code>&lt;div class=&#34;pop-211&#34;&gt;
 ...
 &lt;/div&gt;
-</code></pre>
-
-<p>The class name is <code>pop-x</code> where <code>x</code> ranges from 200 to 260. But we don&rsquo;t need to know the exact range, as we will see later. Within each of these <code>&lt;div&gt;</code> elements, there are a few <code>&lt;li&gt;</code> items which look like the following block:</p>
-
-<pre><code>&lt;li class=&quot;pop-id-2105&quot; style=&quot;width:8%;&quot;&gt;
-            &lt;div class=&quot;wp-autosomal-bar-label&quot;&gt;
+</code></pre><p>The class name is <code>pop-x</code> where <code>x</code> ranges from 200 to 260. But we don&rsquo;t need to know the exact range, as we will see later. Within each of these <code>&lt;div&gt;</code> elements, there are a few <code>&lt;li&gt;</code> items which look like the following block:</p>
+<pre tabindex="0"><code>&lt;li class=&#34;pop-id-2105&#34; style=&#34;width:8%;&#34;&gt;
+            &lt;div class=&#34;wp-autosomal-bar-label&#34;&gt;
                 &lt;p&gt;Eastern Africa&lt;/p&gt;
-                &lt;div class=&quot;wp-autosomal-bar-line&quot;&gt;&lt;/div&gt;
+                &lt;div class=&#34;wp-autosomal-bar-line&#34;&gt;&lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;wp-autosomal-bar-section&quot;&gt;
+            &lt;div class=&#34;wp-autosomal-bar-section&#34;&gt;
                 &lt;h3&gt;2%&lt;/h3&gt;
             &lt;/div&gt;
         &lt;/li&gt;
-</code></pre>
-
-<p>We are interested in the strings within <code>&lt;p&gt;</code> (<code>&lt;p&gt;Eastern Africa&lt;/p&gt;</code>) and <code>&lt;h3&gt;</code> (<code>&lt;h3&gt;2%&lt;/h3&gt;</code>) tags. So the idea is this:</p>
-
+</code></pre><p>We are interested in the strings within <code>&lt;p&gt;</code> (<code>&lt;p&gt;Eastern Africa&lt;/p&gt;</code>) and <code>&lt;h3&gt;</code> (<code>&lt;h3&gt;2%&lt;/h3&gt;</code>) tags. So the idea is this:</p>
 <ol>
 <li>Find all <code>&lt;div&gt;</code> elements with <code>class=pop-x</code>,</li>
 <li>Extract the text within <code>&lt;p&gt;</code> elements in <code>&lt;div class=&quot;wp-autosomal-bar-label&quot;&gt;</code>.</li>
 <li>Extract the text within <code>&lt;h3&gt;</code> elements in <code>&lt;div class=&quot;wp-autosomal-bar-section&quot;&gt;</code>.</li>
 </ol>
-
 <p>Number two gives the population name and number three gives us the percentage. We&rsquo;re ready to crawl the webpage and extract the data. The idea is going through the page and collect the data in a dictionary. Later, we use the dictionaries to create a dataframe.</p>
-
-<pre><code class="language-python"># create an empty parent dictionary containing
-# dictionaries for all labels
-dic = []
-
-for identifier in range(200,261):
-    # make sure you use a wide enough range
-    # to include all possible numbers
-
-    # create an ordered dictionary to keep
-    # all info about genetic contributions
-    # of this identifier
-    d = OrderedDict()
-
-    # find all `div elements corresponding to `identifier`
-    # This contains all HTML codes within that &lt;div&gt;
-    data = soup.findAll('div', class_=&quot;pop-&quot;+str(identifier))[0]
-
-    # Population selected to find its genetic contributions
-    population_label = data.findAll('h3')[0].get_text()
-    d['title'] = population_label
-
-    # How much each gene contributes in the selected populations
-    # find &lt;div&gt;s with the mentioned classes
-    label = [key.find('p').text for key in data.findAll('div',class_=&quot;wp-autosomal-bar-label&quot;)]
-    percent = [key.find('h3').text for key in data.findAll('div',class_=&quot;wp-autosomal-bar-section&quot;)]
-
-    # make sure that the number of labels
-    # and percentages match!
-    if (len(label)==len(percent)):
-        # if yes, put them in an ordered dictionary
-        for i in range(len(label)):
-            d[label[i]]=percent[i].split('%')[0]
-
-    # append the ordered dictionary to the parent dictionary
-    dic.append(d)
-</code></pre>
-
-<p>Now we could see how a dictionary for each label looks like. It contains a <code>title</code> (e.g. Chinese) with a set of <code>labels</code> (e.g. &lsquo;Finland &amp; Northern Siberia&rsquo;,&hellip;) and <code>values</code> (e.g. &lsquo;2&rsquo;, &hellip;) for each genetic type.</p>
-
-<pre><code class="language-python">dic[7]
-</code></pre>
-
-<pre><code>OrderedDict([('title', 'Chinese'),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># create an empty parent dictionary containing</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dictionaries for all labels</span>
+</span></span><span style="display:flex;"><span>dic <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> identifier <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">261</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># make sure you use a wide enough range</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># to include all possible numbers</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># create an ordered dictionary to keep</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># all info about genetic contributions</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># of this identifier</span>
+</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">=</span> OrderedDict()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># find all `div elements corresponding to `identifier`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># This contains all HTML codes within that &lt;div&gt;</span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop-&#34;</span><span style="color:#f92672">+</span>str(identifier))[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Population selected to find its genetic contributions</span>
+</span></span><span style="display:flex;"><span>    population_label <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;h3&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>get_text()
+</span></span><span style="display:flex;"><span>    d[<span style="color:#e6db74">&#39;title&#39;</span>] <span style="color:#f92672">=</span> population_label
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># How much each gene contributes in the selected populations</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># find &lt;div&gt;s with the mentioned classes</span>
+</span></span><span style="display:flex;"><span>    label <span style="color:#f92672">=</span> [key<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;p&#39;</span>)<span style="color:#f92672">.</span>text <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> data<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;div&#39;</span>,class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wp-autosomal-bar-label&#34;</span>)]
+</span></span><span style="display:flex;"><span>    percent <span style="color:#f92672">=</span> [key<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;h3&#39;</span>)<span style="color:#f92672">.</span>text <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> data<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;div&#39;</span>,class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wp-autosomal-bar-section&#34;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># make sure that the number of labels</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># and percentages match!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (len(label)<span style="color:#f92672">==</span>len(percent)):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># if yes, put them in an ordered dictionary</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(label)):
+</span></span><span style="display:flex;"><span>            d[label[i]]<span style="color:#f92672">=</span>percent[i]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;%&#39;</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># append the ordered dictionary to the parent dictionary</span>
+</span></span><span style="display:flex;"><span>    dic<span style="color:#f92672">.</span>append(d)
+</span></span></code></pre></div><p>Now we could see how a dictionary for each label looks like. It contains a <code>title</code> (e.g. Chinese) with a set of <code>labels</code> (e.g. &lsquo;Finland &amp; Northern Siberia&rsquo;,&hellip;) and <code>values</code> (e.g. &lsquo;2&rsquo;, &hellip;) for each genetic type.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dic[<span style="color:#ae81ff">7</span>]
+</span></span></code></pre></div><pre><code>OrderedDict([('title', 'Chinese'),
              ('Finland &amp; Northern Siberia', '2'),
              ('Eastern Asia', '81'),
              ('Central Asia', '8'),
              ('Southeast Asia &amp; Oceania', '7')])
 </code></pre>
-
 <h2 id="saving-the-results">Saving the results</h2>
-
 <p>Finally we need to decide what is the best way to store data in a file. For example, I can save all the results in a <code>JSON</code> (JavaScript Object Notation) file to use it later in a <code>D3</code> visualization.</p>
-
-<pre><code class="language-python">with open('data.json', 'w') as outfile:
-    json.dump(dic, outfile)
-</code></pre>
-
-<p>But a very common way is to save data in a dataframe. We need to achieve a dataframe that looks like this:</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;data.json&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> outfile:
+</span></span><span style="display:flex;"><span>    json<span style="color:#f92672">.</span>dump(dic, outfile)
+</span></span></code></pre></div><p>But a very common way is to save data in a dataframe. We need to achieve a dataframe that looks like this:</p>
 <table>
 <thead>
 <tr>
@@ -287,20 +256,17 @@ for identifier in range(200,261):
 <th>Asia Minor</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>African-American (Southwestern US)</td>
 <td>0</td>
 <td>0</td>
 </tr>
-
 <tr>
 <td>Altaian (Siberian)</td>
 <td>0</td>
 <td>0</td>
 </tr>
-
 <tr>
 <td>Amerindian (Mexico)</td>
 <td>0</td>
@@ -308,168 +274,36 @@ for identifier in range(200,261):
 </tr>
 </tbody>
 </table>
-
 <p>So all populations are stored in a column while each regional affiliation has its own column. The numbers show percentage of the share of regional affiliations in that population. So I need to find out all regional affiliations plus all populations by looping through <code>dic</code> which hold all scraped data. Since an affiliations can appears in more than one population, we need to find unique affiliations, so we use <code>set</code> class to hold them. We</p>
-
-<pre><code class="language-python"># find all regional affiliations and sort them
-regions = sorted(list(set([keys for v in dic for keys in v if keys!='title'])))
-# find all populations
-titles = [v['title'] for v in dic]
-# what is the number of rows in our dataset?
-n = len(titles)
-# initialize a dataset but set the share equal to zero temporarily
-columns=OrderedDict()
-for r in regions:
-    print
-    columns[r]=np.zeros(n)
-df = pd.DataFrame(columns,index=titles)
-</code></pre>
-
-<p>Now we created the dataframe using pandas but the all elements are zero. So we loop through <code>dic</code> again to fill the dataset with scraped values:</p>
-
-<pre><code class="language-python">for d in dic:
-    # the population
-    title = d['title']
-    # select the row related the title
-    row = df.loc[title]
-    # fill the cell using the percentage value
-    for k in d:
-        if k!='title': row[k]=d[k]
-df.ix[0:5,0:5]
-</code></pre>
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Arabia</th>
-      <th>Asia Minor</th>
-      <th>Central Asia</th>
-      <th>Eastern Africa</th>
-      <th>Eastern Asia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>African-American (Southwestern US)</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>Altaian (Siberian)</th>
-      <td>0.0</td>
-      <td>8.0</td>
-      <td>42.0</td>
-      <td>0.0</td>
-      <td>18.0</td>
-    </tr>
-    <tr>
-      <th>Amerindian (Mexico)</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>Bermudian</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>Bougainville-Nasioi (Oceania)</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>13.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># find all regional affiliations and sort them</span>
+</span></span><span style="display:flex;"><span>regions <span style="color:#f92672">=</span> sorted(list(set([keys <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> dic <span style="color:#66d9ef">for</span> keys <span style="color:#f92672">in</span> v <span style="color:#66d9ef">if</span> keys<span style="color:#f92672">!=</span><span style="color:#e6db74">&#39;title&#39;</span>])))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># find all populations</span>
+</span></span><span style="display:flex;"><span>titles <span style="color:#f92672">=</span> [v[<span style="color:#e6db74">&#39;title&#39;</span>] <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> dic]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># what is the number of rows in our dataset?</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> len(titles)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># initialize a dataset but set the share equal to zero temporarily</span>
+</span></span><span style="display:flex;"><span>columns<span style="color:#f92672">=</span>OrderedDict()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> regions:
+</span></span><span style="display:flex;"><span>    print
+</span></span><span style="display:flex;"><span>    columns[r]<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros(n)
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns,index<span style="color:#f92672">=</span>titles)
+</span></span></code></pre></div><p>Now we created the dataframe using pandas but the all elements are zero. So we loop through <code>dic</code> again to fill the dataset with scraped values:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> dic:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># the population</span>
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> d[<span style="color:#e6db74">&#39;title&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># select the row related the title</span>
+</span></span><span style="display:flex;"><span>    row <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>loc[title]
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># fill the cell using the percentage value</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> d:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> k<span style="color:#f92672">!=</span><span style="color:#e6db74">&#39;title&#39;</span>: row[k]<span style="color:#f92672">=</span>d[k]
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>ix[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>]
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>Now the dataset contains the percentage values and if an affiliation does not contribute into a population, its share is 0. Finally I convert the populations into a column on their own and save the dataset to use it in my next project.</p>
-
-<pre><code class="language-python">df.reset_index(inplace=True)
-df.ix[0:5,0:5]
-</code></pre>
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>Arabia</th>
-      <th>Asia Minor</th>
-      <th>Central Asia</th>
-      <th>Eastern Africa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>African-American (Southwestern US)</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Altaian (Siberian)</td>
-      <td>0.0</td>
-      <td>8.0</td>
-      <td>42.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Amerindian (Mexico)</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Bermudian</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Bougainville-Nasioi (Oceania)</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>British (United Kingdom)</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">df.to_csv('./geno2.csv')
-</code></pre>
-
-<p>This post is written in Jupyter notebook and is available with the required dataset as a <a href="https://github.com/Mahdisadjadi/gene-similarity">github repository</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>reset_index(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>ix[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>]
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;./geno2.csv&#39;</span>)
+</span></span></code></pre></div><p>This post is written in Jupyter notebook and is available with the required dataset as a <a href="https://github.com/Mahdisadjadi/gene-similarity">github repository</a>.</p>
 
         </div>
 
@@ -490,7 +324,7 @@ df.ix[0:5,0:5]
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
